@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 BIDARA Innovation Canvas | Nature-Inspired Strategic Design Tool | Zokratiq</title>
+    <meta name="description" content="A nature-inspired innovation tool for product teams, systems thinkers, and reality hackers. Build products following nature's proven patterns of emergence and adaptability.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "BIDARA Innovation Canvas",
+        "description": "A nature-inspired innovation tool for product teams, systems thinkers, and reality hackers.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Zokratiq",
+            "url": "https://zokratiq.com"
+        }
+    }
+    </script>
+
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette + Nature Theme */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-charcoal-light: #1a1a1a;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-heritage-red: #DC2626;
+            --color-deep-indigo: #1E293B;
+            --color-muted-ochre: #D97706;
+            --color-weird-purple: #8B5CF6;
+            --color-nature-green: #16A34A;
+            --color-forest-green: #065F46;
+            --color-leaf-green: #22C55E;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-sm {
+            padding: 3rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: var(--color-primary-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-primary-teal);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary-teal);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-nature-green), var(--color-primary-teal));
+            color: var(--color-soft-white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-leaf-green);
+            border: 2px solid var(--color-leaf-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-leaf-green);
+            color: var(--color-base-black);
+        }
+
+        .btn-lg {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, 
+                rgba(12, 12, 12, 0.9) 0%, 
+                rgba(6, 95, 70, 0.3) 30%,
+                rgba(22, 163, 74, 0.1) 70%,
+                rgba(12, 12, 12, 0.9) 100%);
+            padding: 8rem 0 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="leaf" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1.5" fill="%2316A34A" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23leaf)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--color-soft-white);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--color-cloud-gray);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Resource Icon */
+        .resource-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-nature-green), var(--color-primary-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+        }
+
+        /* Cards and Grids */
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(22, 163, 74, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(22, 163, 74, 0.5);
+            box-shadow: 0 10px 30px rgba(22, 163, 74, 0.15);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-5 { grid-template-columns: repeat(5, 1fr); }
+
+        /* Canvas Preview */
+        .canvas-preview {
+            background: rgba(6, 95, 70, 0.1);
+            border: 2px solid var(--color-nature-green);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .canvas-block {
+            background: rgba(245, 247, 250, 0.95);
+            color: var(--color-base-black);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--color-nature-green);
+        }
+
+        .canvas-block h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--color-forest-green);
+            border-bottom: 1px solid var(--color-nature-green);
+            padding-bottom: 0.25rem;
+        }
+
+        .canvas-block .prompt {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--color-forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .canvas-block .space {
+            height: 80px;
+            background: rgba(22, 163, 74, 0.05);
+            border: 1px dashed var(--color-nature-green);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-forest-green);
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+
+        /* Strategic Tags */
+        .strategic-tags {
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .tag-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .tag-group h4 {
+            color: var(--color-nature-green);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tag-list {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            background: rgba(22, 163, 74, 0.2);
+            border: 1px solid var(--color-nature-green);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            color: var(--color-leaf-green);
+        }
+
+        /* Origin Section */
+        .origin-section {
+            background: rgba(6, 95, 70, 0.1);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .origin-section h3 {
+            color: var(--color-nature-green);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, 
+                rgba(22, 163, 74, 0.2), 
+                rgba(0, 179, 166, 0.1));
+            border: 2px solid var(--color-nature-green);
+            border-radius: 16px;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .grid-2, .grid-3, .grid-5 {
+                grid-template-columns: 1fr;
+            }
+
+            .canvas-preview {
+                padding: 2rem;
+            }
+
+            .final-cta {
+                padding: 2rem;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-deep-charcoal);
+            border: 2px solid var(--color-nature-green);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--color-cloud-gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--color-heritage-red);
+            color: var(--color-soft-white);
+        }
+
+        .prompt-container {
+            background: var(--color-charcoal-light);
+            border: 1px solid var(--color-nature-green);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--color-cloud-gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            margin: 1.5rem 0;
+        }
+
+        .prompt-container:hover {
+            background: var(--color-deep-charcoal);
+            border-color: var(--color-leaf-green);
+        }
+
+        .tooltip {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-forest-green);
+            color: var(--color-soft-white);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: var(--color-forest-green);
+        }
+
+        .prompt-container:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../about">About</a></li>
+                <li><a href="../labs">Labs</a></li>
+                <li><a href="../work-is-weird">Mis/Fits</a></li>
+                <li><a href="../essays">Essays</a></li>
+                <li><a href="./">Resources</a></li>
+                <li><a href="../contact">Contact</a></li>
+                <li><a href="../scan/" class="btn btn-primary" style="padding: 0.5rem 1rem;">Reality Scan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="resource-icon">
+                        🌿
+                    </div>
+                    
+                    <h1 class="hero-title">BIDARA Innovation Canvas</h1>
+                    
+                    <p class="hero-subtitle">
+                        A nature-inspired innovation tool for product teams, systems thinkers, and reality hackers.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            🌱 Download Canvas (PDF)
+                        </a>
+                        <a href="#ai-walkthrough" class="btn btn-secondary btn-lg">
+                            🤖 Try AI-Guided Walkthrough
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Origin Section -->
+        <section class="section">
+            <div class="container">
+                <div class="origin-section">
+                    <h3>🧬 Origin</h3>
+                    
+                    <div class="grid grid-2" style="gap: 3rem;">
+                        <div>
+                            <h4 style="color: var(--color-leaf-green); margin-bottom: 1rem; font-size: 1.125rem;">Inspired by:</h4>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6; margin-bottom: 1.5rem;">
+                                The BIDARA Design Spiral (Define → Biologize → Discover → Abstract → Re-Align/Emulate) used in biomimicry, drawing from billions of years of nature's R&D.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: var(--color-leaf-green); margin-bottom: 1rem; font-size: 1.125rem;">Zokratiq Adaptation:</h4>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                We repurpose it for post-template innovation design — where products are not just useful, but resonant, sustainable, and emergent.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Canvas Preview -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 1000px; margin: 0 auto;">
+                    <div class="text-center mb-12">
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white); font-family: 'Playfair Display', serif;">
+                            The 5-Block Innovation Spiral
+                        </h2>
+                        <p style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.6;">
+                            A life-aligned strategic design tool for innovation teams, product builders, and regenerative organizations.
+                        </p>
+                    </div>
+
+                    <div class="canvas-preview">
+                        <div class="canvas-block">
+                            <h3>1. DEFINE the Function</h3>
+                            <p class="prompt">What is the core function we seek to fulfill? (Not the product — the effect in the system.)</p>
+                            <div class="space">Space for sketching/writing</div>
+                        </div>
+
+                        <div class="canvas-block">
+                            <h3>2. BIOLOGIZE the Challenge</h3>
+                            <p class="prompt">How would a living system describe this challenge? What survival functions does it relate to? (e.g. flow, feedback, signal processing, coherence, regeneration)</p>
+                            <div class="space">Space for sketching/writing</div>
+                        </div>
+
+                        <div class="canvas-block">
+                            <h3>3. DISCOVER Nature's Strategies</h3>
+                            <p class="prompt">Where in nature do we see this challenge already solved? What ecosystems or organisms manage similar tensions?</p>
+                            <div class="space">Space for sketching/writing</div>
+                        </div>
+
+                        <div class="canvas-block">
+                            <h3>4. ABSTRACT the Principles</h3>
+                            <p class="prompt">What core principles or design patterns can we extract from those biological strategies? (e.g. modularity, nested feedback loops, redundancy, distributed sensing)</p>
+                            <div class="space">Space for sketching/writing</div>
+                        </div>
+
+                        <div class="canvas-block">
+                            <h3>5. RE-ALIGN & EMULATE</h3>
+                            <p class="prompt">How might we redesign or prototype our solution using those principles? What shifts if we treat our product/strategy like an evolving ecosystem?</p>
+                            <div class="space">Space for sketching/writing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who It's For -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="text-center mb-12">
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white); font-family: 'Playfair Display', serif;">
+                            Who It's For
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3 style="color: var(--color-nature-green); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Innovation Labs & Product Teams
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                Teams ready to move beyond templates and build products that follow nature's proven patterns of emergence and adaptability.
+                            </p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 style="color: var(--color-leaf-green); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Systems Designers & Reality Hackers
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                Designers and strategists exploring regenerative approaches to innovation and whole-system redesign.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why This Model -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-center;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: var(--color-soft-white); font-family: 'Playfair Display', serif;">
+                        Why This Model
+                    </h2>
+                    
+                    <div style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.8; margin-bottom: 3rem;">
+                        <p style="margin-bottom: 2rem;">
+                            <strong style="color: var(--color-nature-green);">Nature is the ultimate innovation lab.</strong> Over 3.8 billion years, life has solved every design challenge we face: efficiency, resilience, adaptation, regeneration.
+                        </p>
+                        
+                        <p style="margin-bottom: 2rem;">
+                            <strong style="color: var(--color-leaf-green);">Biomimicry meets systems design.</strong> The BIDARA method bridges biological wisdom with strategic innovation, helping teams build solutions that work with natural patterns, not against them.
+                        </p>
+                        
+                        <p style="font-style: italic; color: var(--color-primary-teal); font-size: 1.4rem;">
+                            This isn't just sustainable design—it's regenerative innovation that creates more value than it consumes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Tags -->
+        <section class="section">
+            <div class="container">
+                <div class="strategic-tags">
+                    <h3 style="color: var(--color-nature-green); font-size: 1.5rem; font-weight: 700; margin-bottom: 2rem; text-align: center;">
+                        Strategic Context
+                    </h3>
+                    
+                    <div class="grid grid-2" style="gap: 3rem;">
+                        <div>
+                            <div class="tag-group">
+                                <h4>Scenario Type</h4>
+                                <div class="tag-list">
+                                    <span class="tag">Regenerative Innovation</span>
+                                    <span class="tag">Whole-System Redesign</span>
+                                    <span class="tag">Post-Template Strategy</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tag-group">
+                                <h4>Applicability</h4>
+                                <div class="tag-list">
+                                    <span class="tag">Innovation Labs</span>
+                                    <span class="tag">Product Teams</span>
+                                    <span class="tag">Systems Designers</span>
+                                    <span class="tag">Conscious Organizations</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="tag-group">
+                                <h4>Time Horizon</h4>
+                                <div class="tag-list">
+                                    <span class="tag">Mid to Long-Term (6–24 months)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="tag-group">
+                                <h4>Best Used In</h4>
+                                <div class="tag-list">
+                                    <span class="tag">Vision Sprints</span>
+                                    <span class="tag">Strategic Retreats</span>
+                                    <span class="tag">Early-Stage Prototyping</span>
+                                    <span class="tag">Reframe Sessions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="text-center mb-12">
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white); font-family: 'Playfair Display', serif;">
+                            What's Included
+                        </h2>
+                    </div>
+
+                    <div class="card" style="border-color: rgba(22, 163, 74, 0.3);">
+                        <div style="display: flex; align-items: start; margin-bottom: 1.5rem;">
+                            <span style="color: var(--color-nature-green); font-weight: bold; margin-right: 1rem; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--color-cloud-gray);">A printable landscape canvas with 5 spiral blocks</span>
+                        </div>
+                        <div style="display: flex; align-items: start; margin-bottom: 1.5rem;">
+                            <span style="color: var(--color-nature-green); font-weight: bold; margin-right: 1rem; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--color-cloud-gray);">Reflective prompts grounded in biomimicry principles</span>
+                        </div>
+                        <div style="display: flex; align-items: start; margin-bottom: 1.5rem;">
+                            <span style="color: var(--color-nature-green); font-weight: bold; margin-right: 1rem; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--color-cloud-gray);">Guided space for sketching and strategic ideation</span>
+                        </div>
+                        <div style="display: flex; align-items: start;">
+                            <span style="color: var(--color-nature-green); font-weight: bold; margin-right: 1rem; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--color-cloud-gray);">AI-guided prompt walkthrough (with email signup)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Walk Away With -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="text-center mb-12">
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white); font-family: 'Playfair Display', serif;">
+                            What You Walk Away With
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-3">
+                        <div class="card">
+                            <h3 style="color: var(--color-nature-green); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Strategic Clarity
+                            </h3>
+                            <p style="color: var(--color-cloud-gray);">
+                                Clear direction rooted in proven natural patterns
+                            </p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 style="color: var(--color-leaf-green); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Reframing Lens
+                            </h3>
+                            <p style="color: var(--color-cloud-gray);">
+                                New perspective on old challenges through nature's wisdom
+                            </p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 style="color: var(--color-primary-teal); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Prototype Direction
+                            </h3>
+                            <p style="color: var(--color-cloud-gray);">
+                                Actionable next steps for regenerative innovation
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div class="final-cta" id="download">
+                    <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white); font-family: 'Playfair Display', serif;">
+                        Ready to Innovation Like Nature?
+                    </h2>
+                    
+                    <p style="font-size: 1.25rem; color: var(--color-cloud-gray); margin-bottom: 3rem; line-height: 1.6;">
+                        Download the BIDARA Innovation Canvas and start building products that follow nature's proven patterns of emergence, sustainability, and adaptability.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-primary btn-lg" onclick="downloadCanvas()">
+                            🌱 Download Canvas (PDF)
+                        </a>
+                        <a href="#" class="btn btn-secondary btn-lg" id="ai-walkthrough" onclick="getAIWalkthrough()">
+                            🤖 Get AI Walkthrough
+                        </a>
+                    </div>
+                    
+                    <p style="font-size: 0.875rem; color: var(--color-cloud-gray); margin-top: 2rem; opacity: 0.8;">
+                        Free canvas download. AI walkthrough requires email for full prompt pack.
+                    </p>
+                </div>
+
+                <!-- Footer -->
+                <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(22, 163, 74, 0.2); color: var(--color-cloud-gray); font-size: 0.875rem;">
+                    <p style="margin-bottom: 0.5rem;">From Zokratiq — the Reality Exploration Studio for visionary teams and institutions.</p>
+                    <p>Explore more tools: <a href="../resources/" style="color: var(--color-primary-teal);">zokratiq.com/resources</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Walkthrough Modal -->
+    <div class="modal" id="aiWalkthroughModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            
+            <h2 style="color: var(--color-nature-green); margin-bottom: 1rem; font-size: 1.75rem; font-family: 'Playfair Display', serif;">
+                🌿 BIDARA AI Walkthrough Megaprompt
+            </h2>
+            
+            <p style="color: var(--color-cloud-gray); margin-bottom: 1.5rem; line-height: 1.6;">
+                Copy this complete prompt to your AI assistant (ChatGPT, Claude, etc.) to get guided through the entire BIDARA Innovation Spiral:
+            </p>
+            
+            <div class="prompt-container" onclick="copyPrompt()">
+                <div class="tooltip">Copy this megaprompt to your own AI</div>
+                <div id="megaprompt">🌿 BIDARA Innovation Canvas - Complete AI Walkthrough
+
+You are a biomimicry and systems design expert guiding a team through the BIDARA Innovation Spiral. This is a nature-inspired framework for developing products and strategies that follow proven patterns of emergence, sustainability, and adaptability.
+
+Your role: Act as a collaborative facilitator who helps users think like nature to solve innovation challenges. Be curious, ask probing questions, and help them see biological parallels they might miss.
+
+OVERVIEW: The BIDARA method follows nature's R&D - Define → Biologize → Discover → Abstract → Re-Align/Emulate
+
+═══════════════════════════════════════════════
+
+🌱 STEP 1: DEFINE the Function
+
+Ask: "Let's start with the core function you want to fulfill. Don't describe a product or solution yet—instead, tell me about the EFFECT you want to create in the system. What change, flow, or outcome are you seeking?"
+
+Wait for their response, then help them refine by asking:
+- "How would this function serve the larger ecosystem it operates in?"
+- "What would happen if this function worked perfectly?"
+- "Who or what benefits when this function is fulfilled?"
+- "Can you describe this function without using any technology words?"
+
+Guide them to a clear, essential function statement before moving to Step 2.
+
+═══════════════════════════════════════════════
+
+🧬 STEP 2: BIOLOGIZE the Challenge
+
+Ask: "Now let's think like a living system. How would a organism describe this challenge? What survival functions does this relate to?"
+
+Prompt them to consider:
+- Flow (nutrients, energy, information)
+- Feedback (sensing, responding, adapting)
+- Signal processing (communication, coordination)
+- Coherence (maintaining identity while changing)
+- Regeneration (renewal, healing, growth)
+- Resource optimization (efficiency, waste elimination)
+
+Help them reframe their challenge in biological terms.
+
+═══════════════════════════════════════════════
+
+🔍 STEP 3: DISCOVER Nature's Strategies
+
+Ask: "Where in nature do we see this challenge already solved? What ecosystems or organisms manage similar tensions or functions?"
+
+Guide them to explore:
+- Specific organisms (plants, animals, microbes)
+- Ecosystem dynamics (forests, coral reefs, mycelial networks)
+- Biological processes (photosynthesis, immune systems, collective intelligence)
+- Natural phenomena (flocking, crystallization, emergence)
+
+Encourage them to research and gather 2-3 concrete biological examples.
+
+═══════════════════════════════════════════════
+
+⚡ STEP 4: ABSTRACT the Principles
+
+Ask: "What core principles or design patterns can we extract from those biological strategies? What are the underlying rules that make them work?"
+
+Help them identify patterns like:
+- Modularity (interchangeable parts)
+- Nested feedback loops (sensors and responses)
+- Redundancy (multiple pathways)
+- Distributed sensing (many inputs)
+- Self-organization (emergent order)
+- Adaptive cycles (birth, growth, death, renewal)
+- Symbiosis (mutual benefit)
+- Edge conditions (interfaces and gradients)
+
+Push them to get specific about HOW nature solves the problem.
+
+═══════════════════════════════════════════════
+
+🌿 STEP 5: RE-ALIGN & EMULATE
+
+Ask: "How might we redesign or prototype our solution using those principles? What shifts if we treat our product/strategy like an evolving ecosystem?"
+
+Guide them to:
+- Sketch new solution concepts based on biological principles
+- Consider how their solution could be self-organizing
+- Think about feedback loops and adaptation mechanisms
+- Explore regenerative rather than extractive approaches
+- Design for emergence rather than control
+
+FINAL QUESTIONS:
+- "What would the first small prototype look like?"
+- "How would you test if this solution is working with natural patterns?"
+- "What could you build in the next 30 days to explore this direction?"
+
+═══════════════════════════════════════════════
+
+FACILITATION NOTES:
+- Keep them grounded in specific biological examples
+- Push for concrete, actionable insights
+- Help them see patterns across different scales
+- Encourage sketching and visual thinking
+- Challenge assumptions about "how things work"
+- Connect back to the original function throughout
+
+Remember: Nature has solved every design problem through 3.8 billion years of R&D. Your job is to help them tap into that wisdom.
+
+Ready to begin? Let me know what challenge or opportunity you'd like to explore!</div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--color-nature-green); font-size: 0.9rem; margin-bottom: 1rem;">
+                    ✅ Copied! Paste this into your favorite AI assistant to begin.
+                </p>
+                
+                <p style="color: var(--color-cloud-gray); font-size: 0.875rem; opacity: 0.8;">
+                    Want more tools like this? Check out our full 
+                    <a href="../resources/" style="color: var(--color-primary-teal);">resource library</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Canvas download functionality
+        function downloadCanvas() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'download', {
+                    'file_type': 'pdf',
+                    'resource': 'bidara_innovation_canvas'
+                });
+            }
+            
+            alert('Canvas PDF download would start here. Link this to your actual PDF file.');
+        }
+
+        // AI Walkthrough modal
+        function getAIWalkthrough() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'ai_walkthrough_request', {
+                    'resource': 'bidara_innovation_canvas'
+                });
+            }
+            
+            document.getElementById('aiWalkthroughModal').classList.add('active');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('aiWalkthroughModal').classList.remove('active');
+        }
+
+        // Copy prompt to clipboard
+        function copyPrompt() {
+            const promptText = document.getElementById('megaprompt').textContent;
+            
+            // Try to use the modern clipboard API
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(promptText).then(() => {
+                    showCopyConfirmation();
+                }).catch(err => {
+                    // Fallback for older browsers
+                    fallbackCopyTextToClipboard(promptText);
+                });
+            } else {
+                // Fallback for older browsers or non-secure contexts
+                fallbackCopyTextToClipboard(promptText);
+            }
+        }
+
+        // Fallback copy method
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopyConfirmation();
+                }
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Show copy confirmation
+        function showCopyConfirmation() {
+            const confirmation = document.querySelector('.modal-content p:last-of-type');
+            confirmation.style.color = 'var(--color-nature-green)';
+            confirmation.innerHTML = '✅ Copied! Paste this into your favorite AI assistant to begin.';
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'prompt_copied', {
+                    'resource': 'bidara_innovation_canvas'
+                });
+            }
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('aiWalkthroughModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Update navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.nav-header');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 100) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.2)';
+            }
+        });
+
+        // Initialize animations when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.card, .origin-section, .canvas-preview');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

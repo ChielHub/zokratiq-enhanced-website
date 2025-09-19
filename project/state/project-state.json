@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-08-26T17:45:00Z",
+  "routes": ["/", "/scan", "/sample-pages", "/dashboards", "/download"],
+  "sectionsLibrary": ["Hero", "HowItWorks", "Outcomes", "CardsGrid", "CTA_Band", "Footer"],
+  "styleDirection": {
+    "voice": "Zokratiq Houseblend",
+    "layout": "premium, deliberate spacing, interactive subtleties",
+    "animations": "Framer Motion entry/hover; no jank"
+  },
+  "designTokens": {
+    "colors": {
+      "ink": "#0B0F14",
+      "fog": "#6B7280", 
+      "glow": "#F7F7F9",
+      "brand": "#5B8CFF",
+      "brand-2": "#A9C1FF"
+    },
+    "radii": {
+      "sm": "8px",
+      "md": "14px", 
+      "lg": "20px",
+      "xl": "28px"
+    },
+    "shadow": {
+      "card": "0 8px 24px rgba(0,0,0,.08)"
+    },
+    "type": {
+      "font": "Inter, system-ui, -apple-system, Segoe UI, Roboto",
+      "scale": {
+        "h1": "40/48/700",
+        "h2": "28/36/700", 
+        "h3": "20/28/700",
+        "body": "16/26/400",
+        "label": "12/16/600"
+      }
+    },
+    "spacers": {
+      "xs": "8px",
+      "sm": "12px",
+      "md": "16px", 
+      "lg": "24px",
+      "xl": "40px",
+      "xxl": "64px"
+    },
+    "container": {
+      "max": "1200px",
+      "pad": "20px"
+    }
+  },
+  "nonDeletionPolicy": true,
+  "contractValidation": {
+    "Hero": "{ headline: string, eyebrow?: string, subtitle: string, primaryCTA: string, secondaryCTA?: string, background?: string }",
+    "HowItWorks": "{ steps: Array<{ num: number, title: string, desc: string }> }",
+    "Outcomes": "{ bullets: Array<{ text: string, metric?: string }> }",
+    "CardsGrid": "{ cards: Array<{ thumb?: string, title: string, tags: string[], author?: string, copyable?: boolean }> }",
+    "CTA_Band": "{ title: string, subtitle?: string, primaryCTA: string }",
+    "Footer": "{ cols: Array<any>, smallprint: string }"
+  }
+}

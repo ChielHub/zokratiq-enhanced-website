@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Belief Capital Score | Zokratiq</title>
+    <meta name="description" content="Detailed analysis, gap map, and next moves for your belief capital diagnostic results.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-charcoal-light: #1a1a1a;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-heritage-red: #DC2626;
+            --color-deep-indigo: #1E293B;
+            --color-muted-ochre: #D97706;
+            --color-weird-purple: #8B5CF6;
+            --color-beta-orange: #FB923C;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: var(--color-primary-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua));
+            color: var(--color-base-black);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-weird-purple);
+            border: 2px solid var(--color-weird-purple);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-weird-purple);
+            color: var(--color-base-black);
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+        }
+
+        /* Score Display */
+        .score-header {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-band {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-bright-aqua);
+            margin-bottom: 1rem;
+        }
+
+        .band-description {
+            font-size: 1.1rem;
+            color: var(--color-cloud-gray);
+            font-style: italic;
+            font-family: 'Crimson Text', serif;
+        }
+
+
+        /* Analysis Section */
+        .analysis-section {
+            margin: 3rem 0;
+        }
+
+        .analysis-card {
+            background: rgba(198, 151, 44, 0.1);
+            border: 1px solid var(--color-warm-accent);
+            border-left: 4px solid var(--color-warm-accent);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        .analysis-title {
+            color: var(--color-warm-accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .analysis-content {
+            color: var(--color-soft-white);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .analysis-content h4 {
+            color: var(--color-bright-aqua);
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        .analysis-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .analysis-content li {
+            margin-bottom: 0.5rem;
+            color: var(--color-cloud-gray);
+        }
+
+        /* Action Buttons */
+        .action-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(139, 92, 246, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: var(--color-cloud-gray);
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-weird-purple); }
+        .text-accent { color: var(--color-bright-aqua); }
+        .text-muted { color: var(--color-cloud-gray); }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-8 { margin-top: 2rem; }
+
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../../" class="nav-logo">
+                <img src="../../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: 2rem;">
+            <div class="container">
+                <div style="max-width: 1000px; margin: 0 auto;">
+                    <div class="text-center mb-8">
+                        <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-soft-white);">
+                            Your Belief Capital <span class="font-playfair text-primary" style="font-style: italic;">Results</span>
+                        </h1>
+                    </div>
+
+                    <!-- Score Display -->
+                    <div class="score-header">
+                        <span class="score-number" id="score-display">--</span>
+                        <div class="score-band" id="band-display">Loading...</div>
+                        <div class="band-description" id="band-description">Analyzing your results...</div>
+                    </div>
+
+
+                    <!-- Analysis Section -->
+                    <div class="analysis-section">
+                        <div class="analysis-card">
+                            <h3 class="analysis-title">📊 Your Belief Capital Analysis</h3>
+                            <div class="analysis-content" id="analysis-content">
+                                <!-- Analysis will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Section -->
+                    <div class="action-section">
+                        <h3 style="color: var(--color-soft-white); margin-bottom: 1rem; font-size: 1.5rem;">
+                            Next Steps
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                            Transform your belief capital insights into actionable strategy with our specialized tools and resources.
+                        </p>
+                        <div class="action-buttons">
+                            <a href="../canvas-blank" class="btn btn-primary">
+                                📋 Open Belief Canvas
+                            </a>
+                            <a href="#" id="pdf-link" class="btn btn-secondary">
+                                📄 Download PDF Report
+                            </a>
+                        </div>
+                        <p class="disclaimer">
+                            You'll receive: detailed gap analysis, narrative framework, 3 prioritized moves, and canvas templates.
+                        </p>
+                    </div>
+
+                    <!-- Return to Diagnostic -->
+                    <div class="text-center mt-8">
+                        <a href="../" style="color: var(--color-cloud-gray); text-decoration: underline; opacity: 0.8;">
+                            ← Return to Belief Capital Diagnostic
+                        </a>
+                        <br><br>
+                        <button onclick="testAnalysis()" style="background: var(--color-weird-purple); color: white; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; font-size: 0.8rem;">
+                            🧪 Force Reload Analysis (Test)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Dimension labels and descriptions
+        const DIMENSION_DATA = {
+            "Coherence": "Is your internal story aligned across all stakeholders?",
+            "Resonance": "Does your market feel and respond to your beliefs?", 
+            "Proof": "Do you have evidence and social proof backing your beliefs?",
+            "Talent Signal": "Do you attract talent who share your worldview?",
+            "Rituals": "Do you have repeated behaviors that embody your beliefs?",
+            "Narrative–Market Fit": "How clear is your story within your category?"
+        };
+
+        const BAND_DESCRIPTIONS = {
+            "Latent": "raw signal, mostly untapped",
+            "Emerging": "fragments present, coherence low", 
+            "Coalescing": "coherent, needs proof & rituals",
+            "Compelling": "market-ready narrative engine"
+        };
+
+        // Get URL parameters
+        function getURLParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                score: parseInt(urlParams.get('score') || '0'),
+                band: urlParams.get('band') || 'Latent',
+                company: urlParams.get('company') || 'Your Organization',
+                role: urlParams.get('role') || '',
+                sector: urlParams.get('sector') || '',
+                dims: urlParams.get('dims') ? JSON.parse(urlParams.get('dims')) : {}
+            };
+        }
+
+        // Initialize the page
+        function initializePage() {
+            const params = getURLParams();
+            
+            console.log('Initializing page with params:', params);
+            
+            // Update score display
+            document.getElementById('score-display').textContent = params.score;
+            document.getElementById('band-display').textContent = `${params.band} Capital`;
+            document.getElementById('band-description').textContent = BAND_DESCRIPTIONS[params.band] || '';
+            
+            // Update page title with company name
+            if (params.company !== 'Your Organization') {
+                document.querySelector('h1').innerHTML = `${params.company}'s Belief Capital <span class="font-playfair text-primary" style="font-style: italic;">Results</span>`;
+            }
+            
+            
+            // Generate analysis with a small delay to ensure DOM is ready
+            console.log('About to generate analysis...');
+            setTimeout(() => {
+                generateAnalysis(params);
+            }, 100);
+            
+            // Update PDF link
+            document.getElementById('pdf-link').href = `../api/pdf?score=${params.score}&company=${encodeURIComponent(params.company)}`;
+        }
+
+
+        // Generate analysis using the sophisticated analyst
+        async function generateAnalysis(params) {
+            const { score, band, dims, company, role, sector } = params;
+            const container = document.getElementById('analysis-content');
+            
+            // Show loading state
+            container.innerHTML = '<div style="text-align: center; color: var(--color-cloud-gray); padding: 2rem;">Analyzing your belief capital... 🧠</div>';
+            
+            try {
+                const analysisPayload = {
+                    company: company,
+                    sector: sector || '',
+                    role: role || '',
+                    score: score,
+                    band: band,
+                    dimensions: dims
+                };
+
+                console.log('Sending analysis request:', analysisPayload);
+
+                const response = await fetch('../analyze.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(analysisPayload)
+                });
+
+                console.log('Response status:', response.status);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log('Analysis response:', data);
+
+                if (data.success) {
+                    displayAnalysis(data.analysis);
+                } else {
+                    throw new Error(data.error || 'Analysis failed');
+                }
+            } catch (error) {
+                console.error('Analysis error:', error);
+                console.error('Error details:', {
+                    message: error.message,
+                    stack: error.stack,
+                    analysisPayload
+                });
+                
+                // Show a more informative error message
+                container.innerHTML = `<div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-heritage-red); margin-bottom: 1rem;">⚠️ Analysis Temporarily Unavailable</h4>
+                    <p style="color: var(--color-cloud-gray);">We're having trouble generating your advanced analysis right now. Error: ${error.message}</p>
+                    <p style="color: var(--color-cloud-gray); font-size: 0.8rem; margin-top: 1rem;">Try the "Force Reload Analysis" button below, or check browser console for details.</p>
+                </div>`;
+                // Fallback to basic analysis
+                displayFallbackAnalysis(params);
+            }
+        }
+        
+        function displayAnalysis(analysis) {
+            const container = document.getElementById('analysis-content');
+            
+            let html = `
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-bright-aqua); margin-bottom: 1rem;">📊 Executive Summary</h4>
+                    <p style="line-height: 1.6;">${analysis.summary}</p>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-weird-purple); margin-bottom: 1rem;">🎯 Priority Moves (Next 14 Days)</h4>
+                    <div style="display: grid; gap: 1rem;">`;
+            
+            analysis.moves.forEach(move => {
+                html += `
+                    <div style="background: rgba(139, 92, 246, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--color-weird-purple);">
+                        <h5 style="color: var(--color-soft-white); margin-bottom: 0.5rem; font-size: 1.1rem;">${move.rank}. ${move.title}</h5>
+                        <p style="color: var(--color-cloud-gray); margin-bottom: 0.75rem; font-size: 0.9rem;"><strong>Why:</strong> ${move.why}</p>
+                        <p style="color: var(--color-bright-aqua); margin-bottom: 0.75rem; font-size: 0.9rem;"><strong>First step:</strong> ${move.micro_step}</p>
+                        <p style="color: var(--color-warm-accent); font-size: 0.9rem;"><strong>Track:</strong> ${move.kpi}</p>
+                    </div>`;
+            });
+            
+            html += `</div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-warm-accent); margin-bottom: 1rem;">✨ Message Upgrade</h4>
+                    <div style="background: rgba(198, 151, 44, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--color-warm-accent);">
+                        <p style="font-style: italic; font-size: 1.05rem; line-height: 1.5;">${analysis.message_upgrade}</p>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-heritage-red); margin-bottom: 1rem;">📈 Metrics to Watch (Next 30 Days)</h4>
+                    <ul style="list-style: none; padding: 0;">`;
+            
+            analysis.metrics.forEach(metric => {
+                html += `<li style="padding: 0.5rem 0; color: var(--color-cloud-gray); border-bottom: 1px solid rgba(139, 92, 246, 0.1);">• ${metric}</li>`;
+            });
+            
+            html += `</ul>
+                </div>`;
+            
+            container.innerHTML = html;
+        }
+        
+        function displayFallbackAnalysis(params) {
+            // Keep the original analysis as fallback
+            const { score, band, dims, company } = params;
+            const container = document.getElementById('analysis-content');
+            
+            let analysis = `<div style="margin-bottom: 2rem;">
+                <h4 style="color: var(--color-bright-aqua); margin-bottom: 1rem;">📊 Basic Analysis</h4>`;
+            
+            if (score >= 75) {
+                analysis += `<p><strong>${company}</strong> demonstrates compelling belief capital with a score of ${score}/100. Your narrative engine is market-ready and should be leveraged for competitive advantage.</p>`;
+            } else if (score >= 50) {
+                analysis += `<p><strong>${company}</strong> shows coalescing belief capital with a score of ${score}/100. Your story is coherent but needs stronger proof points and consistent rituals.</p>`;
+            } else if (score >= 25) {
+                analysis += `<p><strong>${company}</strong> has emerging belief capital with a score of ${score}/100. While fragments of your story exist, you need greater coherence and market resonance.</p>`;
+            } else {
+                analysis += `<p><strong>${company}</strong> has latent belief capital with a score of ${score}/100. Your story represents raw signal that needs significant development and articulation.</p>`;
+            }
+
+            analysis += `</div>
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-weird-purple); margin-bottom: 1rem;">🎯 Key Insights</h4>
+                    <p style="color: var(--color-cloud-gray);">Advanced analysis temporarily unavailable. Your ${band} belief capital indicates ${band === 'Latent' ? 'significant development opportunities' : band === 'Emerging' ? 'foundational elements in place' : band === 'Coalescing' ? 'strong coherence needing activation' : 'market-ready narrative power'}.</p>
+                </div>`;
+            
+            container.innerHTML = analysis;
+        }
+
+        // Test function to force reload analysis
+        function testAnalysis() {
+            const params = getURLParams();
+            console.log('Forcing analysis reload with params:', params);
+            generateAnalysis(params);
+        }
+
+        // Initialize when page loads - use multiple triggers to ensure it runs
+        document.addEventListener('DOMContentLoaded', initializePage);
+        window.addEventListener('load', initializePage);
+
+        // Handle missing parameters
+        if (new URLSearchParams(window.location.search).get('score') === null) {
+            // If no parameters, redirect to diagnostic
+            window.location.href = '../';
+        }
+        
+        // Also try to initialize immediately if DOM is already ready
+        if (document.readyState === 'loading') {
+            // DOM is still loading
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            // DOM is already loaded
+            setTimeout(initializePage, 50);
+        }
+    </script>
+</body>
+</html>

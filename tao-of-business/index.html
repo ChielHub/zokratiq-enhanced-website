@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building the Tao of Business for the Age of Wizardry | Zokratiq</title>
+    <meta name="description" content="Why business needs a new reality model. Moving beyond left-brain logic loops to embrace the Middle Way - a synthesis of reason and revelation for the Age of Wizardry.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors */
+        .text-soft-white { color: #F5F7FA; }
+        .text-cloud-gray { color: #C7D2FE; }
+        .text-primary-teal { color: #00B3A6; }
+        .bg-charcoal-light { background-color: #1a1a1a; }
+        .bg-charcoal-medium { background-color: #141414; }
+        .bg-base-black { background-color: #0a0a0a; }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .main-content {
+            width: 100%;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F5F7FA;
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: #C7D2FE;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: #00B3A6;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00B3A6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 179, 166, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-family: 'Crimson Text', serif;
+            color: #C7D2FE;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #C7D2FE;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: 0 0 5rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+            min-width: 0;
+            overflow-wrap: break-word;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #F5F7FA;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-number {
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .content-section p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #C7D2FE;
+        }
+
+        .content-section ul {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.75rem;
+            color: #C7D2FE;
+            font-size: 1.125rem;
+        }
+
+        /* Quote Styling */
+        .quote-block {
+            background: #141414;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: '"';
+            font-size: 6rem;
+            color: rgba(0, 179, 166, 0.2);
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-block p {
+            color: #F5F7FA;
+            font-style: italic;
+            font-size: 1.25rem;
+            margin-left: 2rem;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .quote-attribution {
+            margin-top: 1rem;
+            color: #00B3A6;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-left: 2rem;
+        }
+
+        /* Insight Boxes */
+        .insight-box {
+            background: linear-gradient(135deg, rgba(0, 179, 166, 0.1) 0%, rgba(74, 223, 214, 0.05) 100%);
+            border-left: 4px solid #00B3A6;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-box p {
+            color: #F5F7FA;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+
+        /* Special Callouts */
+        .wizardry-callout {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .wizardry-callout h3 {
+            color: #0a0a0a;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+
+        .wizardry-callout p {
+            color: #1a1a1a;
+            font-size: 1.125rem;
+            margin-bottom: 0;
+        }
+
+        /* Tired/Wired Box */
+        .tired-wired {
+            background: rgba(0, 179, 166, 0.1);
+            border: 1px solid rgba(0, 179, 166, 0.3);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .tired-wired-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .tired-section {
+            opacity: 0.6;
+        }
+
+        .tired-section h4 {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .wired-section h4 {
+            color: #00B3A6;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tired-section p, .wired-section p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background: #1a1a1a;
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00B3A6;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #4ADFD6;
+        }
+
+        /* Section Dividers */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 179, 166, 0.3), transparent);
+            margin: 4rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-top: 1px solid rgba(0, 179, 166, 0.2);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            color: #00B3A6;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-section a {
+            color: #C7D2FE;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #00B3A6;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #F5F7FA;
+        }
+        
+        .footer-tagline {
+            color: #C7D2FE;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .footer-description {
+            color: #9CA3AF;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9CA3AF;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            color: #00B3A6;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            height: fit-content;
+            width: 280px;
+            flex-shrink: 0;
+        }
+        
+        
+        .sidebar h3 {
+            color: #00B3A6;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .sidebar-nav a {
+            color: #C7D2FE;
+            text-decoration: none;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            display: block;
+            padding: 0.4rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-nav a:hover {
+            color: #00B3A6;
+            border-left-color: rgba(0, 179, 166, 0.5);
+            padding-left: 1rem;
+        }
+        
+        .sidebar-nav a.active {
+            color: #00B3A6;
+            border-left-color: #00B3A6;
+            font-weight: 600;
+        }
+        
+        .roman-numeral {
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            min-width: 1.5rem;
+        }
+
+
+        /* Outline Box Styles */
+        .outline-box {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .outline-box h3 {
+            color: #00B3A6;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        
+        .outline-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .outline-nav li {
+            margin-bottom: 0;
+        }
+        
+        .outline-nav a {
+            color: #C7D2FE;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.75rem;
+            display: block;
+            background: rgba(30, 30, 30, 0.5);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .outline-nav a:hover {
+            color: #00B3A6;
+            border-left-color: rgba(0, 179, 166, 0.5);
+            background: rgba(0, 179, 166, 0.1);
+        }
+        
+        .outline-roman-numeral {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: rgba(0, 179, 166, 0.7);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .outline-nav {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .tired-wired-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(to right, #00B3A6, #4ADFD6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/zokratiq-logo-new.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/about/">About</a></li>
+                <li><a href="/labs/">Labs</a></li>
+                <li><a href="/misfits/">Mis/Fits</a></li>
+                <li><a href="/resources/">Resources</a></li>
+                <li><a href="/partner-with-us/">Work With Us</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><a href="/scan/" class="nav-cta">Reality Scan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title text-soft-white">
+                    Building the Tao of Business for the Age of <span class="gradient-text font-playfair">Wizardry</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Why Business Needs a New Reality Model
+                </p>
+                <div class="hero-description">
+                    <p>In times of collapse and reconfiguration, clinging to old business playbooks is not strategy—it's superstition. The world is shapeshifting, yet when you peek into boardrooms and Zoom calls, you'll often find the same cognitive trap: left-brain logic loops reinforced by groupthink.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Outline -->
+    <section class="section-sm">
+        <div class="article-container">
+            <div class="outline-box">
+                <h3>Article Navigation</h3>
+                <nav class="outline-nav">
+                    <li><a href="#eternal-questions"><span class="outline-roman-numeral">I.</span>Eternal Questions for Age-Old Challenges</a></li>
+                    <li><a href="#ship-of-theseus"><span class="outline-roman-numeral">II.</span>It's Almost Never None of Your Business</a></li>
+                    <li><a href="#unexamined-business"><span class="outline-roman-numeral">III.</span>The Unexamined Business is Not Worth Running</a></li>
+                    <li><a href="#age-of-prophecy"><span class="outline-roman-numeral">IV.</span>We're Still in the Age of Prophecy</a></li>
+                    <li><a href="#age-of-wizardry"><span class="outline-roman-numeral">V.</span>Enter the Age of Wizardry</a></li>
+                    <li><a href="#building-the-tao"><span class="outline-roman-numeral">VI.</span>Building the Tao of Business</a></li>
+                    <li><a href="#platos-rave"><span class="outline-roman-numeral">VII.</span>Your Invitation to Plato's Rave Party</a></li>
+                    <li><a href="#small-space"><span class="outline-roman-numeral">VIII.</span>A Small Space to See with Different Eyes</a></li>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="article-content">
+        <div class="article-container">
+            <div class="main-content">
+                <p>We've mistaken surface perception for truth, rationality for wisdom, and KPIs for purpose. But in the Age of Wizardry—the strange, emerging epoch we now enter—better answers aren't enough. We need better questions.</p>
+                
+                <div class="insight-box">
+                    <p>Zokratiq exists to help organizations explore these questions by building businesses that align with the Tao—the flow of reality as it actually is, not as dashboards pretend it to be.</p>
+                </div>
+
+                <div class="section-divider"></div>
+
+            <!-- I. Eternal Questions -->
+            <section class="content-section" id="eternal-questions">
+                <h2><span class="section-number">I.</span>Eternal Questions for Age-Old Challenges</h2>
+                
+                <div class="quote-block">
+                    <p>"Who are we, what is the world, and what are we doing here?"</p>
+                    <div class="quote-attribution">— Plotinus</div>
+                </div>
+                
+                <p>In 3rd century Rome, Plotinus envisioned a City of Philosophers: a real-life Plato's Republic built in southern Italy. It was never constructed, but the vision lingers. He lived through societal collapse, much like ours, and believed the world we see is a pale reflection of something truer and deeper.</p>
+                
+                <p>We bring this up not as a history lesson, but as a signal: that even now, we're due for another Plotinian pivot. Businesses today are no longer just economic units—they're soul-scapes, shaped by belief, perception, and collective intention.</p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- II. Ship of Theseus -->
+            <section class="content-section" id="ship-of-theseus">
+                <h2><span class="section-number">II.</span>It's Almost Never None of Your Business</h2>
+                
+                <p>What is a business, really? A collection of people and decisions. A Ship of Theseus made of shifting teams, evolving products, and fading goals. Is your customer part of your business? Your competitor? Your supplier's algorithm?</p>
+                
+                <p>To operate in complexity, we must move beyond the spreadsheet. As Randy Komisar wrote, business is a canvas, not a calculator. And like consciousness, its boundaries are porous. It changes when you do.</p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- III. Unexamined Business -->
+            <section class="content-section" id="unexamined-business">
+                <h2><span class="section-number">III.</span>The Unexamined Business is Not Worth Running</h2>
+                
+                <div class="quote-block">
+                    <p>"You're not thinking. You're merely being logical."</p>
+                    <div class="quote-attribution">— Niels Bohr</div>
+                </div>
+                
+                <p>We've engineered cultures that worship control. Data = God. But most employees don't feel free—they feel severed. We've prioritized optimization over orientation.</p>
+                
+                <p>But what if Socrates was right about business, too? What if companies need to ask: What are we really doing here? Not in a vision statement, but in a full-body sense.</p>
+                
+                <p>Without that self-inquiry, we default into an auto-loop: logic feeding perception, perception feeding belief, belief feeding inertia. Until the whole company becomes a closed feedback chamber unable to sense, much less act on, the real.</p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- IV. Age of Prophecy -->
+            <section class="content-section" id="age-of-prophecy">
+                <h2><span class="section-number">IV.</span>We're Still in the Age of Prophecy</h2>
+                
+                <p>Everywhere, grand narratives collapse. Politics splinters. Institutions wobble. Employees resign in body or spirit. And innovation? Stagnant. Where's the next Apollo program?</p>
+                
+                <p>We've over-specialized and under-synthesized. We've traded genius for efficiency, curiosity for compliance. The world groans for reinvention, yet most organizations are still acting like it's 2003.</p>
+                
+                <p>We're stuck in prophecy—predictive models, deterministic plans, and linear progressions. But what if we're not in a line… but a spiral?</p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- V. Age of Wizardry -->
+            <section class="content-section" id="age-of-wizardry">
+                <h2><span class="section-number">V.</span>Enter the Age of Wizardry</h2>
+                
+                <div class="quote-block">
+                    <p>"What we need to accomplish is magical in nature, and thus we cannot use logic."</p>
+                    <div class="quote-attribution">— Edward Rooster</div>
+                </div>
+                
+                <div class="wizardry-callout">
+                    <h3>The boundary is no longer the material world. It's the mental one.</h3>
+                    <p>We are stepping into an era where imagination becomes infrastructure. GPT, DALL-E, synthetic biology, quantum cognition—these are not just tools. They are wands.</p>
+                </div>
+                
+                <p>The most valuable business trait will not be execution but extrapolation. Not scale, but sorcery.</p>
+                
+                <p>In the Age of Wizardry, your edge is not how fast you answer. It's how wisely you question.</p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- VI. Building the Tao -->
+            <section class="content-section" id="building-the-tao">
+                <h2><span class="section-number">VI.</span>Building the Tao of Business</h2>
+                
+                <div class="quote-block">
+                    <p>"The divide is not between reason and intuition, but between those who mechanize both."</p>
+                    <div class="quote-attribution">— Iain McGilchrist</div>
+                </div>
+                
+                <p>The Middle Way is calling: a new synthesis of reason and revelation, rigor and wonder. Your business needs modern-day Daoist sages—people who can listen with both hemispheres of the brain.</p>
+                
+                <p>This means embracing neurodiverse teams. It means letting ideas collide without knowing the outcome. It means giving power back to perceptual right-brains while retaining the precision of the left.</p>
+                
+                <div class="insight-box">
+                    <p>The most dangerous assumption is that ideas come from hierarchy. They don't. They come from the margins, the misfits, the daimon-guided builders who can "out-different-think" the market.</p>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- VII. Plato's Rave -->
+            <section class="content-section" id="platos-rave">
+                <h2><span class="section-number">VII.</span>Your Invitation to Plato's Rave Party</h2>
+                
+                <p>We're launching something weird. Something alive.</p>
+                
+                <p>Zokratiq is building a network of interdisciplinary thinkers, free-range philosophers, and poetic pragmatists—ready to infect business with new eyes.</p>
+                
+                <p>We're not here to optimize your funnel. We're here to host a rave in your epistemology.</p>
+                
+                <p>No KPIs. No ROI slides. Just modern Socratics exploring with business leaders what it means to build something real.</p>
+                
+                <p>Our pilot labs (Zokratiq Dialoqs) will run as open-ended, founder-facing explorations. No goals. No slides. Just calibrated insight collisions.</p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- VIII. Small Space -->
+            <section class="content-section" id="small-space">
+                <h2><span class="section-number">VIII.</span>A Small Space to See with Different Eyes</h2>
+                
+                <p>Zokratiq is a Reality Exploration Studio. Our mission is to help businesses become whole-brain organisms capable of navigating the weirdness of the world.</p>
+                
+                <p>We connect frontier thinkers—those asking the big, beautiful, destabilizing questions—with operators ready to listen, rethink, and rewire.</p>
+                
+                <p>This is your invitation.</p>
+                
+                <p>We're not building the future by prediction. We're building it by perception.</p>
+                
+                <p>If you're a corporate misfit, philosopher, interdisciplinary sensemaker, or curious executive ready to see with new eyes—reach out.</p>
+                
+                <p><strong>Let's build the Tao of Business for the Age of Wizardry.</strong></p>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Contact CTA -->
+            <div class="contact-cta">
+                <h3>Ready to Join the Conversation?</h3>
+                <div class="contact-info">
+                    <a href="mailto:hello@zokratiq.com" class="contact-link">
+                        📮 hello@zokratiq.com
+                    </a>
+                    <a href="https://twitter.com/zokratiq" class="contact-link" target="_blank">
+                        🐦 @zokratiq
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tired/Wired -->
+            <div class="tired-wired">
+                <div class="tired-wired-grid">
+                    <div class="tired-section">
+                        <h4>Tired</h4>
+                        <p>Chief Innovation Officer</p>
+                    </div>
+                    <div class="wired-section">
+                        <h4>Wired</h4>
+                        <p>Chief Philosophy Officer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">Zokratiq</div>
+                    <div class="footer-tagline">Reality Exploration Studio</div>
+                    <div class="footer-description">
+                        We turn curiosity into operating leverage—designing Playful Businesses where exploration fuels strategy, product, and culture.
+                    </div>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/labs">Zokratiq Labs</a></li>
+                        <li><a href="/misfits">Mis/Fits</a></li>
+                        <li><a href="/scan">Reality Scan</a></li>
+                        <li><a href="/partner-with-us">Work With Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Section -->
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/resources">Resources</a></li>
+                        <li><a href="/manifesto-for-misfits.html">Manifesto</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    © 2024 Zokratiq. All rights reserved. Built for the perceptive.
+                </div>
+                <div class="footer-social">
+                    <a href="https://twitter.com/zokratiq" target="_blank" aria-label="Twitter">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/zokratiq" target="_blank" aria-label="LinkedIn">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Active section highlighting
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+            
+            let currentSection = '';
+            const scrollPosition = window.scrollY + 150;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        // Update active section on scroll
+        window.addEventListener('scroll', updateActiveSection);
+        window.addEventListener('load', updateActiveSection);
+    </script>
+</body>
+</html>

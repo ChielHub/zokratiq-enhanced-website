@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work is Weird (beta) — A Talent Studio for the Age of Wizardry | Zokratiq</title>
+    <meta name="description" content="A talent studio for the Age of Wizardry. We help you hire for strangeness. Scout polymaths, philosophers, neurodivergent tinkerers, and outsiders who see the world sideways.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Talent Placement & Recruitment",
+        "name": "Work is Weird",
+        "description": "A talent studio for the Age of Wizardry",
+        "provider": {
+            "@type": "Organization",
+            "name": "Zokratiq",
+            "url": "https://zokratiq.com",
+            "sameAs": [
+                "https://zokratiq.com"
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is this recruiting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. We're translators. We map your context and introduce high-fit outliers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How fast can we meet candidates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Usually within 1–3 weeks after the Intake."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if we don't know what role to hire?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start with the Intake — we'll identify the leverage point before naming the role."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-charcoal-light: #1a1a1a;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-heritage-red: #DC2626;
+            --color-deep-indigo: #1E293B;
+            --color-muted-ochre: #D97706;
+            --color-weird-purple: #8B5CF6;
+            --color-beta-orange: #FB923C;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-sm {
+            padding: 3rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: var(--color-primary-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-primary-teal);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary-teal);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua));
+            color: var(--color-base-black);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-weird-purple);
+            border: 2px solid var(--color-weird-purple);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-weird-purple);
+            color: var(--color-base-black);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-cloud-gray);
+            border: 1px solid rgba(199, 210, 254, 0.3);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(199, 210, 254, 0.1);
+            color: var(--color-soft-white);
+        }
+
+        /* Beta Badge */
+        .beta-badge {
+            display: inline-block;
+            background: var(--color-beta-orange);
+            color: var(--color-base-black);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 1rem;
+            vertical-align: middle;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--color-weird-purple);
+            padding: 1rem 0;
+            z-index: 999;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Cards and Grids */
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-soft-white);
+            font-weight: 600;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(199, 210, 254, 0.3);
+            border-radius: 6px;
+            background: var(--color-deep-charcoal);
+            color: var(--color-soft-white);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-weird-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-weird-purple); }
+        .text-accent { color: var(--color-bright-aqua); }
+        .text-muted { color: var(--color-cloud-gray); }
+        .text-heritage { color: var(--color-heritage-red); }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-deep-charcoal);
+            border: 1px solid var(--color-weird-purple);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--color-cloud-gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .sticky-cta-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../about">About</a></li>
+                <li><a href="../labs">Labs</a></li>
+                <li><a href="../work-is-weird" style="color: var(--color-weird-purple);">Work is Weird</a></li>
+                <li><a href="../essays">Essays</a></li>
+                <li><a href="../contact">Contact</a></li>
+                <li><a href="../scan/" class="btn btn-primary" style="padding: 0.5rem 1rem;">Reality Scan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCTA">
+        <div class="sticky-cta-content">
+            <span>Weird beats safe. Ready?</span>
+            <a href="#weird-journey" class="btn btn-primary">Start Your Weird Journey</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: 6rem; padding-bottom: 6rem; background: linear-gradient(135deg, rgba(12, 12, 12, 0.9) 0%, rgba(20, 20, 20, 0.8) 50%, rgba(12, 12, 12, 0.9) 100%);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                    <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.1; color: var(--color-soft-white);">
+                        Work is <span class="font-playfair text-primary" style="font-style: italic;">Weird</span>
+                        <span class="beta-badge">beta</span>
+                    </h1>
+                    
+                    <p style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--color-weird-purple); font-family: 'Crimson Text', serif; font-style: italic;">
+                        A talent studio for the Age of Wizardry.
+                    </p>
+                    
+                    <div style="font-size: 1.2rem; color: var(--color-cloud-gray); line-height: 1.7; margin-bottom: 3rem;">
+                        <p style="margin-bottom: 1rem;">Most companies hire for sameness.</p>
+                        <p style="font-weight: 600; color: var(--color-soft-white);">We help you hire for strangeness.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 4rem; flex-wrap: wrap;">
+                        <a href="#weirdness-intake" class="btn btn-primary" onclick="trackCTA('hero_organizations')">
+                            🏢 Start a Weirdness Intake
+                        </a>
+                        <a href="#beta-collective" class="btn btn-secondary" onclick="trackCTA('hero_individuals')">
+                            🚀 Apply to Beta Collective
+                        </a>
+                    </div>
+                    
+                    <!-- Trust indicators -->
+                    <div style="border-top: 1px solid rgba(139, 92, 246, 0.2); padding-top: 2rem;">
+                        <p style="font-size: 0.9rem; color: var(--color-cloud-gray); margin-bottom: 1rem; font-style: italic;">
+                            "Cognitive sameness is the real risk. Add one generative outlier and watch the frame tilt."
+                        </p>
+                        
+                        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 0.875rem; color: var(--color-muted-ochre); font-family: 'JetBrains Mono', monospace;">
+                            <span>No spray-and-pray recruiting</span>
+                            <span>•</span>
+                            <span>Context-first matching</span>
+                            <span>•</span>
+                            <span>Zokratiq-backed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Essence & Mission Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: var(--color-soft-white);">
+                        Essence & Mission
+                    </h2>
+                    
+                    <div style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.7; margin-bottom: 2rem;">
+                        <p>Work is Weird is Zokratiq's beta studio for unconventional talent.</p>
+                        <p style="margin-top: 1.5rem;">We scout polymaths, philosophers, neurodivergent tinkerers, and outsiders who see the world sideways. People who tilt frames and open new futures.</p>
+                    </div>
+                    
+                    <p style="font-size: 1.5rem; font-family: 'Crimson Text', serif; font-style: italic; color: var(--color-weird-purple); font-weight: 600; margin-bottom: 3rem;">
+                        It's talent placement — but tuned for signal, not noise.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Equation Section -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: var(--color-soft-white); text-align: center;">
+                        The Value Equation
+                    </h2>
+
+                    <div class="grid grid-2" style="gap: 3rem;">
+                        <div class="card">
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-weird-purple); margin-bottom: 2rem;">
+                                Dream Outcome
+                            </h3>
+                            <div style="space-y: 1rem;">
+                                <div style="margin-bottom: 1.5rem;">
+                                    <h4 style="color: var(--color-soft-white); font-weight: 600; margin-bottom: 0.5rem;">For organizations:</h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">Build teams that resist stagnation, surface bold ideas, and thrive on difference.</p>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--color-soft-white); font-weight: 600; margin-bottom: 0.5rem;">For individuals:</h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">Find places where your weirdness isn't a liability — it's leverage.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 2rem;">
+                                Perceived Likelihood of Success
+                            </h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="display: flex; align-items: start; margin-bottom: 1rem; color: var(--color-cloud-gray);">
+                                    <span style="color: var(--color-bright-aqua); font-weight: bold; margin-right: 1rem;">•</span>
+                                    We tap polymath networks, creative subcultures, and our global bench of weirdos.
+                                </li>
+                                <li style="display: flex; align-items: start; color: var(--color-cloud-gray);">
+                                    <span style="color: var(--color-bright-aqua); font-weight: bold; margin-right: 1rem;">•</span>
+                                    Matching guided by deep context scans (values, vision, edge) — not keyword filters.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="card">
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-warm-accent); margin-bottom: 2rem;">
+                                Time Delay
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                Weeks, not months. Fast mapping of organizational gaps and curated introductions.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-heritage-red); margin-bottom: 2rem;">
+                                Effort & Sacrifice
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                Minimal. We scout, filter, and frame the story. You just meet the humans.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: var(--color-soft-white); text-align: center;">
+                        What We Do
+                    </h2>
+
+                    <div class="grid grid-2" style="gap: 2rem;">
+                        <div class="card">
+                            <div style="text-align: center; margin-bottom: 1.5rem;">
+                                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🎯</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-weird-purple); margin-bottom: 1rem;">
+                                    Weird Talent Placement
+                                </h3>
+                            </div>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6; text-align: center;">
+                                We're not recruiters. We're translators — matching edge talent to contexts where their oddness creates leverage.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <div style="text-align: center; margin-bottom: 1.5rem;">
+                                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🔍</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 1rem;">
+                                    Cognitive Diversity Audits
+                                </h3>
+                            </div>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6; text-align: center;">
+                                We measure sameness in your leadership pipeline, then stress-test for where generative outsiders can unlock resilience.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <div style="text-align: center; margin-bottom: 1.5rem;">
+                                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">⚡</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-warm-accent); margin-bottom: 1rem;">
+                                    Activation Rituals
+                                </h3>
+                            </div>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6; text-align: center;">
+                                Onboarding is dead. We design immersion rituals so hires don't just "fit in," they tilt the frame.
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <div style="text-align: center; margin-bottom: 1.5rem;">
+                                <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🌐</div>
+                                <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-heritage-red); margin-bottom: 1rem;">
+                                    Beta Collective
+                                </h3>
+                            </div>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6; text-align: center;">
+                                Our global network of unconventional thinkers, makers, and solvers — from meme-scientists to systems poets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Inline CTA -->
+                    <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.3);">
+                        <p style="font-size: 1.25rem; color: var(--color-soft-white); margin-bottom: 2rem;">
+                            👉 <strong>Hire a Weirdo. Save your Boardroom.</strong>
+                        </p>
+                        <a href="#weirdness-intake" class="btn btn-primary" onclick="trackCTA('what_we_do_cta');">
+                            Start Your Weird Journey →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who It's For & Why It Matters Sections -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2" style="gap: 4rem; max-width: 1000px; margin: 0 auto;">
+                    <div>
+                        <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                            Who It's For
+                        </h2>
+                        <ul style="list-style: none; padding: 0; space-y: 1rem;">
+                            <li style="display: flex; align-items: start; margin-bottom: 1.5rem; font-size: 1.125rem; color: var(--color-cloud-gray);">
+                                <span style="color: var(--color-weird-purple); font-weight: bold; margin-right: 1rem;">•</span>
+                                Organizations ready to break the cycle of sameness and embrace lateral thinkers.
+                            </li>
+                            <li style="display: flex; align-items: start; margin-bottom: 1.5rem; font-size: 1.125rem; color: var(--color-cloud-gray);">
+                                <span style="color: var(--color-weird-purple); font-weight: bold; margin-right: 1rem;">•</span>
+                                Individuals too weird for LinkedIn's filters but vital to forward-leaning teams.
+                            </li>
+                            <li style="display: flex; align-items: start; font-size: 1.125rem; color: var(--color-cloud-gray);">
+                                <span style="color: var(--color-weird-purple); font-weight: bold; margin-right: 1rem;">•</span>
+                                Leaders who know the next decade won't be solved by people who all look and think alike.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                            Why It Matters
+                        </h2>
+                        <ul style="list-style: none; padding: 0; space-y: 1rem;">
+                            <li style="display: flex; align-items: start; margin-bottom: 1.5rem; font-size: 1.125rem; color: var(--color-cloud-gray);">
+                                <span style="color: var(--color-bright-aqua); font-weight: bold; margin-right: 1rem;">•</span>
+                                The biggest organizational risk isn't lack of resources — it's sameness.
+                            </li>
+                            <li style="display: flex; align-items: start; margin-bottom: 1.5rem; font-size: 1.125rem; color: var(--color-cloud-gray);">
+                                <span style="color: var(--color-bright-aqua); font-weight: bold; margin-right: 1rem;">•</span>
+                                Teams that survive disruption have outliers, polymaths, and pattern-breakers in their DNA.
+                            </li>
+                            <li style="display: flex; align-items: start; font-size: 1.125rem; color: var(--color-cloud-gray);">
+                                <span style="color: var(--color-bright-aqua); font-weight: bold; margin-right: 1rem;">•</span>
+                                Work is Weird is the first talent studio built for cognitive resilience, not résumé polish.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Second Inline CTA -->
+                <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: rgba(74, 223, 214, 0.1); border-radius: 12px; border: 1px solid rgba(74, 223, 214, 0.3);">
+                    <p style="font-size: 1.25rem; color: var(--color-soft-white); margin-bottom: 2rem;">
+                        🚪 <strong>Ready to break the cycle of sameness?</strong>
+                    </p>
+                    <a href="#beta-collective" class="btn btn-secondary" onclick="trackCTA('why_it_matters_cta');">
+                        Apply Now →
+                    </a>
+                </div>
+
+                <!-- Featured Manifesto Section -->
+                <div style="margin-top: 4rem; padding: 3rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(220, 38, 38, 0.1)); border: 2px solid rgba(139, 92, 246, 0.3); border-radius: 16px; text-align: center;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <span style="color: var(--color-weird-purple); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Featured Reading</span>
+                    </div>
+                    <h3 style="font-size: 2.5rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">
+                        Manifesto for the Misfits
+                    </h3>
+                    <p style="font-size: 1.25rem; color: var(--color-cloud-gray); margin-bottom: 2rem; line-height: 1.6; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Work was never meant to be this small. A rallying cry for polymaths, divergent thinkers, and those who refuse to sand down their strangeness.
+                    </p>
+                    <a href="../manifesto-for-misfits.html" class="btn" style="background: var(--color-weird-purple); color: var(--color-soft-white); border: 2px solid var(--color-weird-purple); padding: 1rem 2rem; font-size: 1.125rem;" onclick="trackCTA('manifesto_cta');">
+                        Read the Manifesto →
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Output & Deliverables Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: var(--color-soft-white); text-align: center;">
+                        Output & Deliverables
+                    </h2>
+
+                    <div class="grid grid-2" style="gap: 3rem;">
+                        <!-- For Organizations -->
+                        <div>
+                            <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--color-weird-purple); margin-bottom: 2rem; text-align: center;">
+                                For Organizations
+                            </h3>
+                            
+                            <div style="space-y: 2rem;">
+                                <div class="card" style="border-left: 4px solid var(--color-weird-purple);">
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--color-weird-purple); margin-bottom: 1rem;">
+                                        Weird Match Reports
+                                    </h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                        Shortlists of high-signal candidates with narrative framing.
+                                    </p>
+                                </div>
+
+                                <div class="card" style="border-left: 4px solid var(--color-bright-aqua);">
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 1rem;">
+                                        Diversity Pulse Decks
+                                    </h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                        Audit of cognitive variety in your org.
+                                    </p>
+                                </div>
+
+                                <div class="card" style="border-left: 4px solid var(--color-warm-accent);">
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--color-warm-accent); margin-bottom: 1rem;">
+                                        Activation Ritual Design Kits
+                                    </h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                        Custom onboarding experiences that amplify weirdness.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- For Individuals -->
+                        <div>
+                            <h3 style="font-size: 1.75rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 2rem; text-align: center;">
+                                For Individuals
+                            </h3>
+                            
+                            <div style="space-y: 2rem;">
+                                <div class="card" style="border-left: 4px solid var(--color-heritage-red);">
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--color-heritage-red); margin-bottom: 1rem;">
+                                        Weirdness Portfolios
+                                    </h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                        Your story beyond the CV.
+                                    </p>
+                                </div>
+
+                                <div class="card" style="border-left: 4px solid var(--color-weird-purple);">
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--color-weird-purple); margin-bottom: 1rem;">
+                                        Beta Collective Membership
+                                    </h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                        Access to our global network of unconventional thinkers.
+                                    </p>
+                                </div>
+
+                                <div class="card" style="border-left: 4px solid var(--color-bright-aqua);">
+                                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 1rem;">
+                                        Edge Placement
+                                    </h4>
+                                    <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                        Placement into organizations hungry for edge.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dual Forms Section -->
+        <section class="section" id="weird-journey">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        Next Steps
+                    </h2>
+                    <p style="font-size: 1.125rem; color: var(--color-cloud-gray); line-height: 1.7;">
+                        Organizations: Schedule a Weirdness Intake. We'll map your sameness blind spots and scout a talent pulse.<br>
+                        Individuals: Apply to the Beta Collective. If you're a square peg, let's find your fractal hole.
+                    </p>
+                </div>
+
+                <div class="grid grid-2" style="gap: 3rem; max-width: 1000px; margin: 0 auto;">
+                    <!-- Weirdness Intake Form (Organizations) -->
+                    <div class="card" id="weirdness-intake" style="border: 2px solid var(--color-weird-purple);">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-weird-purple); margin-bottom: 0.5rem; text-align: center;">
+                            Weirdness Intake
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); text-align: center; margin-bottom: 2rem; font-size: 0.9rem;">
+                            (5 minutes)
+                        </p>
+
+                        <form id="weirdnessIntakeForm">
+                            <div class="form-group">
+                                <label for="org-company" class="form-label">Company / Org Name</label>
+                                <input type="text" id="org-company" name="company" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="org-role" class="form-label">Your Role</label>
+                                <input type="text" id="org-role" name="role" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="org-email" class="form-label">Email</label>
+                                <input type="email" id="org-email" name="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="org-problem" class="form-label">What problem should weirdness solve here?</label>
+                                <textarea id="org-problem" name="problem" class="form-textarea" placeholder="Short answer..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="org-sameness" class="form-label">Where is sameness hurting you most?</label>
+                                <select id="org-sameness" name="sameness" class="form-select" required>
+                                    <option value="">Select...</option>
+                                    <option value="strategy">Strategy</option>
+                                    <option value="product">Product</option>
+                                    <option value="research">Research</option>
+                                    <option value="growth">Growth</option>
+                                    <option value="culture">Culture</option>
+                                    <option value="leadership">Leadership</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="org-urgency" class="form-label">Urgency</label>
+                                <select id="org-urgency" name="urgency" class="form-select" required>
+                                    <option value="">Select...</option>
+                                    <option value="this-quarter">This quarter</option>
+                                    <option value="this-month">This month</option>
+                                    <option value="yesterday">Yesterday</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="org-careers" class="form-label">Optional: Link to your careers or "About" page</label>
+                                <input type="url" id="org-careers" name="careers" class="form-input" placeholder="https://">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Map My Sameness Blind Spots →
+                            </button>
+
+                            <p style="font-size: 0.875rem; color: var(--color-cloud-gray); margin-top: 1rem; opacity: 0.8; text-align: center;">
+                                We don't share your info or pitch candidates without consent.
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- Beta Collective Form (Individuals) -->
+                    <div class="card" id="beta-collective" style="border: 2px solid var(--color-bright-aqua);">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 0.5rem; text-align: center;">
+                            Beta Collective
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); text-align: center; margin-bottom: 2rem; font-size: 0.9rem;">
+                            (Individuals)
+                        </p>
+
+                        <form id="betaCollectiveForm">
+                            <div class="form-group">
+                                <label for="ind-name" class="form-label">Name</label>
+                                <input type="text" id="ind-name" name="name" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ind-email" class="form-label">Email</label>
+                                <input type="email" id="ind-email" name="email" class="form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ind-weirdness" class="form-label">Weirdness in one sentence</label>
+                                <textarea id="ind-weirdness" name="weirdness" class="form-textarea" placeholder="What makes you wonderfully strange?" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ind-links" class="form-label">Links that show your edge</label>
+                                <input type="url" id="ind-links" name="links" class="form-input" placeholder="Portfolio, GitHub, essays, experiments...">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ind-context" class="form-label">What context unlocks you?</label>
+                                <select id="ind-context" name="context" class="form-select" required>
+                                    <option value="">Select...</option>
+                                    <option value="0-to-1-build">0→1 Build</option>
+                                    <option value="r-and-d">R&D</option>
+                                    <option value="narrative">Narrative</option>
+                                    <option value="systems">Systems</option>
+                                    <option value="design">Design</option>
+                                    <option value="ops">Ops</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ind-constraints" class="form-label">Light constraints</label>
+                                <input type="text" id="ind-constraints" name="constraints" class="form-input" placeholder="Location, time, compensation...">
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary" style="width: 100%; background: var(--color-bright-aqua); color: var(--color-base-black);">
+                                Join the Beta Collective →
+                            </button>
+
+                            <p style="font-size: 0.875rem; color: var(--color-cloud-gray); margin-top: 1rem; opacity: 0.8; text-align: center;">
+                                We never share your materials publicly without explicit permission.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Book a Call Option -->
+                <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: rgba(139, 92, 246, 0.05); border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.2);">
+                    <h4 style="color: var(--color-weird-purple); margin-bottom: 1rem; font-size: 1.25rem;">Prefer to talk?</h4>
+                    <p style="color: var(--color-cloud-gray); margin-bottom: 2rem;">15 minutes to define the problem weirdness should solve. No recruiters, no fluff.</p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#book-call" class="btn btn-ghost" onclick="trackCTA('book_call');">
+                            Book a 15-min Fit Call →
+                        </a>
+                        <a href="mailto:hello@zokratiq.com" class="btn btn-ghost" onclick="trackCTA('email_fallback');">
+                            Email hello@zokratiq.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        Tiny FAQ
+                    </h2>
+                </div>
+
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            Is this recruiting?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            No. We're translators. We map your context and introduce high-fit outliers.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            How fast can we meet candidates?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            Usually within 1–3 weeks after the Intake.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            What if we don't know what role to hire?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            Start with the Intake — we'll identify the leverage point before naming the role.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA / Footer -->
+        <section class="section" style="background: linear-gradient(135deg, var(--color-deep-charcoal) 0%, var(--color-charcoal-light) 100%); text-align: center;">
+            <div class="container">
+                <div style="margin-bottom: 3rem;">
+                    <h4 style="color: var(--color-weird-purple); margin-bottom: 1rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; font-family: 'JetBrains Mono', monospace;">Why teams use Work is Weird</h4>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--color-cloud-gray);">
+                        <span>Context scans > keyword filters</span>
+                        <span>•</span>
+                        <span>Shortlists with narrative framing</span>
+                        <span>•</span>
+                        <span>Activation rituals to avoid "culture rejection"</span>
+                        <span>•</span>
+                        <span>Weeks, not months</span>
+                    </div>
+                </div>
+
+                <a href="#weird-journey" class="btn btn-primary" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;" onclick="trackCTA('final_cta');">
+                    Start Your Weird Journey →
+                </a>
+
+                <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(139, 92, 246, 0.2); font-size: 0.875rem; color: var(--color-cloud-gray);">
+                    <p style="margin-bottom: 1rem;">Compliance & Fine Print</p>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <span>GDPR-friendly. You can delete your data any time.</span>
+                        <span>•</span>
+                        <span>We only present candidates with mutual context fit. No spam intros.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Sticky CTA visibility
+        window.addEventListener('scroll', function() {
+            const stickyCTA = document.getElementById('stickyCTA');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 500) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+
+            // Update navbar background
+            const navbar = document.querySelector('.nav-header');
+            if (scrollPosition > 100) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                navbar.style.borderBottomColor = 'rgba(139, 92, 246, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.borderBottomColor = 'rgba(139, 92, 246, 0.2)';
+            }
+        });
+
+        // Track CTA clicks
+        function trackCTA(location) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_click', {
+                    'location': location,
+                    'page': 'work_is_weird_v2'
+                });
+            }
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                icon.innerHTML = '−';
+                icon.style.transform = 'rotate(0deg)';
+                
+                // Track FAQ open event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'faq_open', {
+                        'question': element.textContent.replace('+', '').replace('−', '').trim(),
+                        'page': 'work_is_weird_v2'
+                    });
+                }
+            } else {
+                answer.style.display = 'none';
+                icon.innerHTML = '+';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Weirdness Intake Form (Organizations)
+            const weirdnessIntakeForm = document.getElementById('weirdnessIntakeForm');
+            if (weirdnessIntakeForm) {
+                weirdnessIntakeForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Collect form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData.entries());
+                    
+                    // Track event
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submit', {
+                            'form_type': 'weirdness_intake',
+                            'company': data.company,
+                            'sameness_area': data.sameness,
+                            'urgency': data.urgency
+                        });
+                    }
+                    
+                    // Show success message
+                    alert('Thanks — we\'re mapping your Weirdness Intake and will reply with a short Diversity Pulse (gaps + 1–3 candidate profiles).');
+                    this.reset();
+                });
+            }
+
+            // Beta Collective Form (Individuals)
+            const betaCollectiveForm = document.getElementById('betaCollectiveForm');
+            if (betaCollectiveForm) {
+                betaCollectiveForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Collect form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData.entries());
+                    
+                    // Track event
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submit', {
+                            'form_type': 'beta_collective',
+                            'context': data.context
+                        });
+                    }
+                    
+                    // Show success message
+                    alert('You\'re in the review queue. If there\'s a high-fit context, we\'ll reach out with a Weirdness Portfolio template and next steps.');
+                    this.reset();
+                });
+            }
+
+            // Initialize animations when DOM is ready
+            const animatedElements = document.querySelectorAll('.card, .section');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

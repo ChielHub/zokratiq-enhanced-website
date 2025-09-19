@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reality Exploration Sprint - Q4 2025 Strategy Refresh | Zokratiq</title>
+    <meta name="description" content="Map new growth routes and category bets through Reality Exploration Sprint. 7-day timebox to see your industry in a different perspective and discover fresh frameworks.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0C0C0C;
+            color: #F5F7FA;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+        }
+        
+        .font-serif {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Colors */
+        .text-primary-teal { color: #00B3A6; }
+        .text-bright-aqua { color: #4ADFD6; }
+        .text-soft-white { color: #F5F7FA; }
+        .text-cloud-gray { color: #C8CCD2; }
+        .text-warm-accent { color: #C6972C; }
+        
+        .bg-base-black { background-color: #0C0C0C; }
+        .bg-deep-charcoal { background-color: #141414; }
+        .bg-primary-teal { background-color: #00B3A6; }
+        .bg-warm-accent { background-color: #C6972C; }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .text-center { text-align: center; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mt-16 { margin-top: 4rem; }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary {
+            background-color: #00B3A6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #4ADFD6;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 179, 166, 0.25);
+        }
+        
+        .btn-secondary {
+            border: 2px solid #00B3A6;
+            color: #00B3A6;
+            background: transparent;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #00B3A6;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* Cards */
+        .card {
+            background-color: #141414;
+            border: 1px solid #333;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 179, 166, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 179, 166, 0.1);
+        }
+        
+        /* Typography Sizes */
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F5F7FA;
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        body {
+            padding-top: 80px;
+        }
+        
+        /* Chart styles */
+        .chart-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .pie-chart {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                #00B3A6 0deg 126deg,
+                #4ADFD6 126deg 216deg,
+                #C6972C 216deg 288deg,
+                #666 288deg 360deg
+            );
+            position: relative;
+            margin: 2rem auto;
+        }
+        
+        .pie-chart::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: #0C0C0C;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .chart-legend {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        
+        .legend-color.customer { background-color: #00B3A6; }
+        .legend-color.market { background-color: #4ADFD6; }
+        .legend-color.tech { background-color: #C6972C; }
+        .legend-color.internal { background-color: #666; }
+        
+        /* TL;DR Section */
+        .tldr-section {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 1rem;
+        }
+        
+        .tldr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .tldr-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .tldr-item h4 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0a0a0a;
+        }
+        
+        /* Problem Signal Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        /* Metrics Section */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .metric-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(0, 179, 166, 0.3);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+        
+        .metric-type {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #00B3A6;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Sprint Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+        
+        .timeline-marker {
+            width: 60px;
+            height: 60px;
+            background: #00B3A6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content h4 {
+            color: #00B3A6;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Bullet Lists */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .bullet-list li::before {
+            content: "•";
+            color: #00B3A6;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        
+        /* High-leverage moves */
+        .moves-list {
+            counter-reset: move-counter;
+        }
+        
+        .move-item {
+            counter-increment: move-counter;
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .move-item::before {
+            content: counter(move-counter);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: #00B3A6;
+            color: #0a0a0a;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        
+        .move-title {
+            font-weight: 700;
+            color: #4ADFD6;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Risk cards */
+        .risk-item {
+            background: rgba(198, 151, 44, 0.1);
+            border: 1px solid rgba(198, 151, 44, 0.3);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .risk-title {
+            font-weight: 700;
+            color: #C6972C;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Mini case highlight */
+        .mini-case {
+            background: linear-gradient(135deg, rgba(0, 179, 166, 0.1), rgba(74, 223, 214, 0.05));
+            border: 1px solid rgba(0, 179, 166, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        
+        .cta-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-btn {
+            background: #0a0a0a;
+            color: #00B3A6;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10, 10, 10, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .chart-legend {
+                grid-template-columns: 1fr;
+            }
+            
+            .tldr-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline-marker {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        /* Utilities */
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .italic { font-style: italic; }
+        
+        /* Scroll Arrow Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 179, 166, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 8px rgba(0, 179, 166, 0.1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 179, 166, 0);
+            }
+        }
+        
+        .scroll-arrow:hover {
+            background: rgba(0, 179, 166, 0.1);
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-soft-white mb-8">
+                    Reality Exploration Sprint
+                </h1>
+                <p class="text-xl text-cloud-gray font-serif mb-8">
+                    Map New Growth Routes & Category Bets
+                </p>
+                
+                <!-- Tags -->
+                <div class="tags" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <span class="tag" style="background: rgba(0, 179, 166, 0.2); color: #00B3A6; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 600;">belief capital</span>
+                    <span class="tag" style="background: rgba(0, 179, 166, 0.2); color: #00B3A6; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 600;">hidden-truth extraction</span>
+                    <span class="tag" style="background: rgba(0, 179, 166, 0.2); color: #00B3A6; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 600;">reality design</span>
+                    <span class="tag" style="background: rgba(0, 179, 166, 0.2); color: #00B3A6; padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 600;">antifragility</span>
+                </div>
+                
+                <!-- Audience -->
+                <p class="font-mono text-cloud-gray" style="opacity: 0.8; font-size: 0.9rem; margin-bottom: 3rem;">
+                    For: CEO + LT · Strategy · Product · Brand/GTM · Innovation · (Board optional)
+                </p>
+                
+                <!-- Scroll Down CTA -->
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                    <p style="color: #C8CCD2; font-size: 0.9rem; font-weight: 500;">Scroll down to get the Reality Exploration Kit</p>
+                    <div class="scroll-arrow" style="
+                        width: 30px;
+                        height: 30px;
+                        border: 2px solid #00B3A6;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        animation: pulse 2s infinite;
+                    " onclick="scrollToKit()">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#00B3A6" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TL;DR Section -->
+    <section class="section">
+        <div class="container">
+            <div class="tldr-section">
+                <div class="container">
+                    <h2 class="text-3xl font-bold text-center mb-8">TL;DR</h2>
+                    <div class="tldr-grid">
+                        <div class="tldr-item">
+                            <h4>Situation</h4>
+                            <p>When dashboards show stagnation but reality signals opportunity</p>
+                        </div>
+                        <div class="tldr-item">
+                            <h4>Lens</h4>
+                            <p>Reality Exploration Sprint — see industry from fresh angles</p>
+                        </div>
+                        <div class="tldr-item">
+                            <h4>Move</h4>
+                            <p>7-day cross-functional sprint to map 3 non-obvious growth routes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Signal Section -->
+    <section class="section bg-deep-charcoal">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-primary-teal mb-8">When Reality Exploration Sprints Matter</h2>
+            
+            <div class="problem-grid">
+                <div>
+                    <ul class="bullet-list text-cloud-gray text-lg">
+                        <li><strong>Market disconnect</strong>: Win rates declining while customer needs evolve faster than strategy cycles</li>
+                        <li><strong>Innovation stagnation</strong>: New offerings contribute <10% revenue; leadership debates same 3 growth routes</li>
+                        <li><strong>Decision latency</strong>: Ideas sit in analysis loops while competitors move faster with worse data</li>
+                        <li><strong>Paradigm blindness</strong>: Success metrics plateau; everyone sees the same "obvious" next moves</li>
+                    </ul>
+                </div>
+                
+                <div class="chart-container">
+                    <h4 class="text-xl font-semibold text-primary-teal mb-4">Signal Sources (Sprint)</h4>
+                    <div class="pie-chart"></div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <div class="legend-color customer"></div>
+                            <span><strong>Customer Field Signals 35%</strong></span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color market"></div>
+                            <span>Market Memes 25%</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color tech"></div>
+                            <span>Frontier Tech 20%</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color internal"></div>
+                            <span>Internal Constraints 20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lens Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-primary-teal mb-8">Lens & Why It Works (Zokratiq POV)</h2>
+            
+            <ul class="bullet-list text-cloud-gray text-lg mb-8">
+                <li><strong>Reality design over dashboard analysis</strong> — field signals reveal routes that aggregated data obscures</li>
+                <li><strong>Constraint-based exploration</strong> — your telos emerges clearest when you map what's actually impossible vs. assumed impossible</li>
+                <li><strong>Antifragile positioning</strong> — stress-test assumptions to find categories where volatility becomes advantage</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 3 High-Leverage Moves -->
+    <section class="section bg-deep-charcoal">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-primary-teal mb-8">3 High-Leverage Moves (do these first)</h2>
+            
+            <div class="moves-list">
+                <div class="move-item">
+                    <div class="move-title">Map hidden customer workflows</div>
+                    <p class="text-cloud-gray">2 days field research / Strategy + Product leads</p>
+                </div>
+                
+                <div class="move-item">
+                    <div class="move-title">Stress-test 3 sacred assumptions</div>
+                    <p class="text-cloud-gray">1 day constraint analysis / CEO + Innovation team</p>
+                </div>
+                
+                <div class="move-item">
+                    <div class="move-title">Prototype one impossible route</div>
+                    <p class="text-cloud-gray">3 days rapid concept build / Cross-functional pod</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sprint Plan -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-primary-teal mb-8">Sprint Plan (7 days)</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">0-1</div>
+                    <div class="timeline-content">
+                        <h4>Day 0–1</h4>
+                        <p class="text-cloud-gray">Field signal collection; constraint audit; compliance pre-check</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">2-3</div>
+                    <div class="timeline-content">
+                        <h4>Day 2–3</h4>
+                        <p class="text-cloud-gray">Live session #1 (90min); rapid prototype highest-signal route</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">4-5</div>
+                    <div class="timeline-content">
+                        <h4>Day 4–5</h4>
+                        <p class="text-cloud-gray">Test prototype with 5 target customers; measure belief capital shifts</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">6-7</div>
+                    <div class="timeline-content">
+                        <h4>Day 6–7</h4>
+                        <p class="text-cloud-gray">Live session #2 (90min); go/no-go decisions on 3 routes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="section bg-deep-charcoal">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-primary-teal mb-8">Metrics that Matter (leading > lagging)</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-type">Leading</div>
+                    <ul class="bullet-list text-cloud-gray" style="margin-top: 0.5rem;">
+                        <li><strong>Decision Latency (days):</strong> median days from idea → yes/no</li>
+                        <li><strong>Hypothesis→Experiment Conversion (%):</strong> experiments launched ÷ hypotheses proposed</li>
+                    </ul>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-type">Lagging (30–60 days)</div>
+                    <ul class="bullet-list text-cloud-gray" style="margin-top: 0.5rem;">
+                        <li><strong>Cycle Time (days):</strong> idea → shipped artifact (median)</li>
+                        <li><strong>Revenue from New Bets (%):</strong> contribution of post-sprint initiatives</li>
+                    </ul>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-type">Guardrail</div>
+                    <p class="text-cloud-gray"><strong>SLA / Compliance Breaches (#)</strong> — must be 0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risks & Safeguards -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-primary-teal mb-8">Risks & Safeguards</h2>
+            
+            <div class="risk-item">
+                <div class="risk-title">Risk: Analysis paralysis in discovery</div>
+                <p class="text-cloud-gray"><strong>Safeguard:</strong> 48-hour research timebox; decision forcing event Day 3</p>
+            </div>
+            
+            <div class="risk-item">
+                <div class="risk-title">Risk: Team skepticism of "impossible" routes</div>
+                <p class="text-cloud-gray"><strong>Safeguard:</strong> Belief capital mapping; small-bet validation only</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini-Case -->
+    <section class="section bg-deep-charcoal">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-primary-teal mb-8">Mini-Case</h2>
+            
+            <div class="mini-case">
+                <p>Win rate fell 5pp while competitors gained share. Reality Sprint uncovered three non-obvious customer workflow gaps from field research. Team sunset two legacy assumptions, prototyped one "impossible" route. Decision latency dropped to 12 days; pipeline quality score improved 40% in 3 weeks.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="section">
+        <div class="container">
+            <div class="cta-section">
+                <h3>Want the facilitation kit?</h3>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; font-size: 0.9rem; color: #1a1a1a; opacity: 0.8;">
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #0a0a0a;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                        Free to download
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #0a0a0a;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+                        </svg>
+                        We won't spam you
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="color: #0a0a0a;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                        </svg>
+                        Already downloaded 33 times
+                    </span>
+                </div>
+                <a href="mailto:chiel@zokratiq.com?subject=SPRINT - Reality Exploration Kit Request" class="cta-btn">
+                    Get Sprint Kit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="section">
+        <div class="container text-center">
+            <a href="/" class="btn btn-secondary">
+                ← Back to Zokratiq Home
+            </a>
+        </div>
+    </section>
+
+    <script>
+        function scrollToKit() {
+            const ctaSection = document.querySelector('.cta-section');
+            if (ctaSection) {
+                ctaSection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }
+        }
+    </script>
+</body>
+</html>

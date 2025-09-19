@@ -1,0 +1,179 @@
+{
+  "name": "Belief Capital Diagnostic Flow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "belief-diagnostic",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "belief-diagnostic-webhook"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "email",
+              "value": "={{ $json.email }}"
+            },
+            {
+              "name": "score", 
+              "value": "={{ $json.score }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ $json.timestamp }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "mailerLiteApi",
+        "requestMethod": "POST",
+        "url": "https://api.mailerlite.com/api/v2/subscribers",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"email\": \"{{ $json.email }}\",\n  \"fields\": {\n    \"belief_score\": \"{{ $json.score }}\",\n    \"diagnostic_date\": \"{{ $json.timestamp }}\"\n  },\n  \"type\": \"unconfirmed\"\n}",
+        "options": {}
+      },
+      "name": "Add to MailerLite",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [640, 220]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.pdf_path }}",
+          "mode": "expression"
+        }
+      },
+      "name": "Get PDF Report",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 1,
+      "position": [640, 380]
+    },
+    {
+      "parameters": {
+        "fromEmail": "hello@zokratiq.com",
+        "toEmail": "={{ $json.email }}",
+        "subject": "Your Belief Capital Diagnostic Results",
+        "emailType": "html",
+        "html": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f8fafc; }\n    .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; }\n    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; }\n    .content { padding: 30px; }\n    .score { font-size: 48px; font-weight: bold; color: #667eea; }\n    .cta { background: #667eea; color: white; padding: 15px 30px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 20px 0; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Your Belief Capital Score</h1>\n      <div class=\"score\">{{ $json.score }}</div>\n    </div>\n    <div class=\"content\">\n      <h2>Hey there,</h2>\n      <p>Your belief capital diagnostic is complete! Here's what we found:</p>\n      \n      <h3>Your Score: {{ $json.score }}/100</h3>\n      <p>{{ $json.score >= 80 ? 'Outstanding! Your belief capital is strong.' : $json.score >= 60 ? 'Great foundation. A few moves will amplify your impact.' : $json.score >= 40 ? 'Good potential. Your beliefs need clarity.' : 'Huge opportunity ahead. Your beliefs are your hidden advantage.' }}</p>\n      \n      <p><strong>What's included in your report:</strong></p>\n      <ul>\n        <li>Detailed score breakdown</li>\n        <li>Gap analysis visualization</li>\n        <li>Specific moves for your situation</li>\n        <li>Belief Capital Canvas templates</li>\n        <li>30-day action plan</li>\n      </ul>\n      \n      <p>Ready to turn your beliefs into competitive advantage?</p>\n      <a href=\"https://zokratiq.com\" class=\"cta\">Let's Talk Strategy</a>\n      \n      <p>Questions? Just reply to this email.</p>\n      \n      <p>Cheers,<br>The Zokratiq Team</p>\n    </div>\n  </div>\n</body>\n</html>",
+        "attachments": "={{ $json.pdf_data }}"
+      },
+      "name": "Send Email with Report",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [840, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsApi", 
+        "requestMethod": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Diagnostics!A:E:append?valueInputOption=RAW",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"values\": [[\n    \"{{ $json.timestamp }}\",\n    \"{{ $json.email }}\", \n    \"{{ $json.score }}\",\n    \"{{ JSON.stringify($json.answers) }}\",\n    \"sent\"\n  ]]\n}",
+        "options": {}
+      },
+      "name": "Log to Google Sheets", 
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [1040, 220]
+    },
+    {
+      "parameters": {
+        "channel": "#leads",
+        "text": "🎯 New Belief Capital Diagnostic completed!\n\n📧 Email: {{ $json.email }}\n📊 Score: {{ $json.score }}/100\n⏰ Time: {{ $json.timestamp }}\n\n{{ $json.score >= 70 ? '🔥 High-intent lead!' : '💡 Good prospect for consultation' }}",
+        "otherOptions": {}
+      },
+      "name": "Slack Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [1040, 380]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Data": {
+      "main": [
+        [
+          {
+            "node": "Add to MailerLite",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get PDF Report",
+            "type": "main", 
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add to MailerLite": {
+      "main": [
+        [
+          {
+            "node": "Log to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get PDF Report": {
+      "main": [
+        [
+          {
+            "node": "Send Email with Report",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email with Report": {
+      "main": [
+        [
+          {
+            "node": "Slack Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "createdAt": "2025-08-25T00:00:00.000Z",
+  "updatedAt": "2025-08-25T00:00:00.000Z",
+  "id": "1"
+}

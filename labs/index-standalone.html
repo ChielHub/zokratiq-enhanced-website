@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zokratiq Labs - Reality Exploration Studio</title>
+    <meta name="description" content="A portal for alternate futures and signal intelligence. Where we experiment in public with frontier tech, narrative dynamics, and paradigm shifts.">
+    <meta name="author" content="Zokratiq">
+    <meta name="keywords" content="future intelligence, frontier technology, narrative dynamics, reality exploration, experimental studio">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Zokratiq Labs - Reality Exploration Studio">
+    <meta property="og:description" content="A portal for alternate futures and signal intelligence.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zokratiq Labs - Reality Exploration Studio">
+    <meta name="twitter:description" content="A portal for alternate futures and signal intelligence.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+            color: #F5F7FA;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-weird-purple: #8B5CF6;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(
+                135deg, 
+                rgba(12, 12, 12, 0.8) 0%, 
+                rgba(20, 20, 20, 0.7) 50%, 
+                rgba(12, 12, 12, 0.8) 100%
+            ),
+            url('./hero-image.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 179, 166, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(2px 2px at 25% 25%, rgba(0, 179, 166, 0.3), transparent),
+                radial-gradient(1px 1px at 75% 75%, rgba(74, 223, 214, 0.4), transparent),
+                radial-gradient(1.5px 1.5px at 50% 75%, rgba(0, 179, 166, 0.2), transparent),
+                radial-gradient(1px 1px at 33% 33%, rgba(74, 223, 214, 0.3), transparent);
+            background-size: 200px 200px, 150px 150px, 180px 180px, 120px 120px;
+            animation: drift 20s ease-in-out infinite;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translate(0px, 0px); }
+            33% { transform: translate(10px, -10px); }
+            66% { transform: translate(-5px, 10px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .beta-badge {
+            display: inline-block;
+            background: rgba(0, 179, 166, 0.1);
+            color: var(--color-primary-teal);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 179, 166, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero .labs-text {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-bright-aqua);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-family: 'Crimson Text', serif;
+            color: var(--color-bright-aqua);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--color-cloud-gray);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua));
+            color: var(--color-base-black);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 179, 166, 0.4);
+        }
+
+        .btn svg {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--color-soft-white);
+        }
+
+        /* Lab Cards Grid */
+        .labs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .lab-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lab-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 179, 166, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lab-card:hover {
+            border-color: var(--color-primary-teal);
+            box-shadow: 0 12px 35px rgba(0, 179, 166, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .lab-card:hover::before {
+            opacity: 1;
+        }
+
+        .lab-card .emoji {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .lab-card:hover .emoji {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .lab-card h3 {
+            color: var(--color-primary-teal);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .lab-card:hover h3 {
+            color: var(--color-bright-aqua);
+        }
+
+        .lab-card p {
+            color: var(--color-cloud-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .lab-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lab-card li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            color: var(--color-soft-white);
+        }
+
+        .lab-card li::before {
+            content: "•";
+            color: var(--color-primary-teal);
+            font-weight: bold;
+            margin-right: 1rem;
+            margin-top: 0.1rem;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(199, 210, 254, 0.1);
+            padding: 1rem 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+
+        .nav-brand span {
+            color: var(--color-primary-teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary-teal);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-deep-charcoal);
+            border-top: 1px solid rgba(199, 210, 254, 0.2);
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--color-primary-teal);
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--color-cloud-gray);
+            margin-bottom: 2rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(199, 210, 254, 0.6);
+            border-top: 1px solid rgba(199, 210, 254, 0.1);
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .labs-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .nav-content {
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+
+        .animate-delay-4 {
+            animation-delay: 0.8s;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="/" class="nav-brand">Zokratiq <span>Labs</span></a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/belief/">Belief Capital</a>
+                <a href="/linkedin-optimizer/">LinkedIn</a>
+                <a href="/work-is-weird/">Work is Weird</a>
+                <a href="/scan/">Reality Scan</a>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 80px;">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="beta-badge animate-in">Beta Laboratory</div>
+                    
+                    <h1 class="animate-in animate-delay-1">
+                        Zokratiq <span class="labs-text">Labs</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle animate-in animate-delay-2">
+                        A Portal for Alternate Futures and Signal Intelligence
+                    </p>
+                    
+                    <div class="hero-description animate-in animate-delay-3">
+                        <p>Where we experiment in public. Live explorations, speculative tools, and philosophical briefings on frontier technologies and paradigm shifts.</p>
+                    </div>
+                    
+                    <div class="animate-in animate-delay-4">
+                        <a href="/scan/" class="btn btn-primary">
+                            Join the Experiments
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10h12m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Labs Section -->
+        <section class="section">
+            <div class="container">
+                <div class="labs-grid">
+                    <div class="lab-card">
+                        <span class="emoji">🔬</span>
+                        <h3>Frontier Tech Intelligence</h3>
+                        <p>Quantum computing, neuro-AI interfaces, synthetic biology—we track the edge of what's possible and what it means for business strategy.</p>
+                        <ul>
+                            <li>Technology emergence mapping</li>
+                            <li>Business model disruption analysis</li>
+                            <li>Ethical framework development</li>
+                        </ul>
+                    </div>
+
+                    <div class="lab-card">
+                        <span class="emoji">📖</span>
+                        <h3>Narrative Dynamics</h3>
+                        <p>Stories shape markets. We study memetic evolution, narrative markets, and how worldviews become business models.</p>
+                        <ul>
+                            <li>Memetic market analysis</li>
+                            <li>Story-driven strategy workshops</li>
+                            <li>Cultural mythology mapping</li>
+                        </ul>
+                    </div>
+
+                    <div class="lab-card">
+                        <span class="emoji">🌀</span>
+                        <h3>Future Simulations</h3>
+                        <p>Stress-test your assumptions against alternative realities. Scenario planning that goes beyond linear extrapolation.</p>
+                        <ul>
+                            <li>Paradigm pressure testing</li>
+                            <li>Alternative timeline workshops</li>
+                            <li>Chaos resilience design</li>
+                        </ul>
+                    </div>
+
+                    <div class="lab-card">
+                        <span class="emoji">🧙</span>
+                        <h3>Metaphysics for Operators</h3>
+                        <p>Philosophy as practical business tool. Reality exploration, consciousness studies, and ontological audits for decision-makers.</p>
+                        <ul>
+                            <li>Belief system diagnostics</li>
+                            <li>Reality lens calibration</li>
+                            <li>Sensemaking ritual design</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <p style="font-size: 1.3rem; font-family: 'Crimson Text', serif; font-style: italic; color: var(--color-bright-aqua); margin-bottom: 2rem;">
+                        "In the space between what is and what could be, we find the future."
+                    </p>
+                    <a href="/scan/" class="btn btn-primary">
+                        Run a Reality Scan
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10h12m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-brand">Zokratiq Labs</div>
+            <div class="footer-tagline">Reality Exploration Studio</div>
+            
+            <nav class="footer-nav">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/belief/">Belief Capital</a>
+                <a href="/linkedin-optimizer/">LinkedIn Optimizer</a>
+                <a href="/work-is-weird/">Work Is Weird</a>
+                <a href="/scan/">Reality Scan</a>
+            </nav>
+            
+            <div class="footer-copyright">
+                © 2024 Zokratiq. All rights reserved. Built for the perceptive.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = entry.target.classList.contains('animate-delay-1') ? 'fadeInUp 0.8s ease-out 0.2s forwards' :
+                                                   entry.target.classList.contains('animate-delay-2') ? 'fadeInUp 0.8s ease-out 0.4s forwards' :
+                                                   entry.target.classList.contains('animate-delay-3') ? 'fadeInUp 0.8s ease-out 0.6s forwards' :
+                                                   entry.target.classList.contains('animate-delay-4') ? 'fadeInUp 0.8s ease-out 0.8s forwards' :
+                                                   'fadeInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.lab-card').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.animationDelay = `${index * 0.2}s`;
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.nav');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

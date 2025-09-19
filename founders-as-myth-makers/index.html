@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founders as Myth-Makers — The New Business Playbook | Zokratiq</title>
+    <meta name="description" content="Discover why modern founders succeed by creating belief systems, not just managing operations. Learn how belief becomes infrastructure and asymmetric advantage in business.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data for FAQs -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does 'founders as myth-makers' mean?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It means modern founders succeed not just by managing or building, but by creating belief systems that shape how employees, investors, and customers perceive reality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is belief considered an edge in business?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "In over-optimized markets, most actors chase reaction speed. Belief provides patient conviction, creating asymmetric opportunities others miss."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does belief become infrastructure inside a company?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Through stories, rituals, symbols, and culture. These create coherence and resonance, aligning people with the company's mission."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this just branding in disguise?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Branding decorates. Belief infrastructure transforms—turning companies into living myths people want to inhabit."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can leaders cultivate belief without it becoming cultish?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "By grounding vision in truth, humility, and service. The point is not manipulation, but resonance with something meaningful and real."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors */
+        .text-soft-white { color: #F5F7FA; }
+        .text-cloud-gray { color: #C7D2FE; }
+        .text-primary-teal { color: #00B3A6; }
+        .bg-charcoal-light { background-color: #1a1a1a; }
+        .bg-charcoal-medium { background-color: #141414; }
+        .bg-base-black { background-color: #0a0a0a; }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F5F7FA;
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: #C7D2FE;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: #00B3A6;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00B3A6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 179, 166, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-family: 'Crimson Text', serif;
+            color: #C7D2FE;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        /* Table of Contents */
+        .toc-section {
+            background: #1a1a1a;
+            padding: 3rem 0;
+        }
+
+        .toc {
+            background: rgba(0, 179, 166, 0.05);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        .toc h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #00B3A6;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.75rem;
+        }
+
+        .toc a {
+            color: #C7D2FE;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #00B3A6;
+        }
+
+        /* Article Content */
+        .article-content {
+            padding: 0 0 5rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #F5F7FA;
+            border-bottom: 2px solid rgba(0, 179, 166, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #C7D2FE;
+        }
+
+        .content-section ul {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.75rem;
+            color: #C7D2FE;
+            font-size: 1.125rem;
+        }
+
+        /* Insight Blocks */
+        .insight-block {
+            background: linear-gradient(135deg, rgba(0, 179, 166, 0.1) 0%, rgba(74, 223, 214, 0.05) 100%);
+            border-left: 4px solid #00B3A6;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .insight-block p {
+            color: #F5F7FA;
+            font-weight: 600;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .insight-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Quote Blocks */
+        .quote-block {
+            background: #141414;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: '"';
+            font-size: 6rem;
+            color: rgba(0, 179, 166, 0.2);
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-block p {
+            color: #F5F7FA;
+            font-style: italic;
+            font-size: 1.25rem;
+            margin-left: 2rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: #1a1a1a;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin: 4rem 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: rgba(0, 179, 166, 0.05);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .faq-item h3 {
+            color: #00B3A6;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item p {
+            color: #C7D2FE;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-content h2 {
+            color: #0a0a0a;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            color: #1a1a1a;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: #0a0a0a;
+            color: #00B3A6;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10, 10, 10, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-top: 1px solid rgba(0, 179, 166, 0.2);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            color: #00B3A6;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-section a {
+            color: #C7D2FE;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #00B3A6;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #F5F7FA;
+        }
+        
+        .footer-tagline {
+            color: #C7D2FE;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .footer-description {
+            color: #9CA3AF;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            color: #9CA3AF;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            color: #00B3A6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(to right, #00B3A6, #4ADFD6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../about">About</a></li>
+                <li><a href="../labs">Labs</a></li>
+                <li><a href="../work-is-weird">Work is Weird</a></li>
+                <li><a href="../essays">Essays</a></li>
+                <li><a href="../contact">Contact</a></li>
+                <li><a href="../scan/" class="nav-cta">Reality Scan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title text-soft-white">
+                    Founders as <span class="gradient-text font-playfair">Myth-Makers</span>
+                </h1>
+                <p class="hero-subtitle">
+                    How belief becomes infrastructure in the post-optimization era
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+        <div class="container">
+            <div class="toc">
+                <h2>🧭 Table of contents</h2>
+                <ul>
+                    <li><a href="#paradox-modern-founders">The paradox of modern founders</a></li>
+                    <li><a href="#business-belief-system">Business is a belief system</a></li>
+                    <li><a href="#mythic-role-founder">The mythic role of the founder</a></li>
+                    <li><a href="#belief-infrastructure">Belief as infrastructure</a></li>
+                    <li><a href="#belief-edge">Belief as the edge</a></li>
+                    <li><a href="#new-founder-playbook">The new founder playbook</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="article-content">
+        <div class="container">
+            
+            <!-- The paradox of modern founders -->
+            <section class="content-section" id="paradox-modern-founders">
+                <h2>The paradox of modern founders</h2>
+                
+                <p>You've probably noticed the archetypes shifting.</p>
+                
+                <p>Yesterday's founder was a manager. Rational. Efficient. A systematizer of chaos.</p>
+                
+                <p>Then came the hacker–builder era. Speed mattered most. Ship, iterate, scale.</p>
+                
+                <p>But now? Reaction speed is everywhere. Systems are optimized to the millisecond.<br>
+                What's missing is not more speed—<br>
+                it's belief.</p>
+                
+                <div class="insight-block">
+                    <p><strong>And belief, in this vacuum, becomes asymmetric power.</strong></p>
+                </div>
+            </section>
+
+            <!-- Business is a belief system -->
+            <section class="content-section" id="business-belief-system">
+                <h2>Business is a belief system</h2>
+                
+                <p>Every company is a wager on reality. A metaphysical bet.</p>
+                
+                <p>You're not simply producing software, hardware, or services. You're offering the world a story to live inside.</p>
+                
+                <ul>
+                    <li>Trust this product; it will change how you move through the day.</li>
+                    <li>Believe in this mission; it deserves your life energy.</li>
+                    <li>See the world this way; it is truer, more beautiful, more aligned.</li>
+                </ul>
+                
+                <div class="insight-block">
+                    <p><strong>This is why founding a company is not just operational. It is ontological. It proposes a new layer of reality.</strong></p>
+                </div>
+            </section>
+
+            <!-- The mythic role of the founder -->
+            <section class="content-section" id="mythic-role-founder">
+                <h2>The mythic role of the founder</h2>
+                
+                <p>Investors don't just follow numbers.<br>
+                Employees don't just follow tasks.<br>
+                Customers don't just follow ads.</p>
+                
+                <p><strong>They all follow signal.</strong></p>
+                
+                <div class="insight-block">
+                    <p>Signal is belief made visible.<br>
+                    Signal is conviction embodied.</p>
+                </div>
+                
+                <p>When you hold belief steady, even through volatility, you transmit coherence.<br>
+                That coherence is magnetic.<br>
+                It draws people into orbit.</p>
+                
+                <p><strong>Your real job isn't to micromanage.<br>
+                It's to hold the shape of the myth.</strong></p>
+            </section>
+
+            <!-- Belief as infrastructure -->
+            <section class="content-section" id="belief-infrastructure">
+                <h2>Belief as infrastructure</h2>
+                
+                <p><strong>Great founders don't merely pitch stories; they infrastructure them.</strong></p>
+                
+                <p>They build containers where belief can take root and spread:</p>
+                
+                <ul>
+                    <li>Symbols that encode vision</li>
+                    <li>Stories that invite participation</li>
+                    <li>Rituals that stabilize culture</li>
+                    <li>Language that frames reality</li>
+                    <li>Myths that turn employees into protagonists</li>
+                </ul>
+                
+                <div class="insight-block">
+                    <p>Belief becomes architecture.<br>
+                    It aligns effort, attracts capital, and multiplies attention.</p>
+                    <p>Not mystical fluff.<br>
+                    Practical resonance.</p>
+                </div>
+            </section>
+
+            <!-- Belief as the edge -->
+            <section class="content-section" id="belief-edge">
+                <h2>Belief as the edge</h2>
+                
+                <p>As MiyaHedge put it:</p>
+                
+                <blockquote class="quote-block">
+                    <p>"This might sound stupid, but belief is the largest edge right now.<br>
+                    Everyone's systems are over-optimised for reaction speed and no one is mentally or structurally positioned to wait. This archetype vacuum of traders def creates some heavy asymmetric opportunity."</p>
+                </blockquote>
+                
+                <p>What's true in markets is true in business.<br>
+                If others are chasing speed, the advantage belongs to those who can hold faith.</p>
+                
+                <div class="insight-block">
+                    <p>Belief is patient capital.<br>
+                    Belief is asymmetric opportunity.</p>
+                </div>
+            </section>
+
+            <!-- The new founder playbook -->
+            <section class="content-section" id="new-founder-playbook">
+                <h2>The new founder playbook</h2>
+                
+                <p><strong>We are entering a founder era where:</strong></p>
+                
+                <ul>
+                    <li>Strategy is narrative</li>
+                    <li>Onboarding is initiation</li>
+                    <li>Brand is belief infrastructure</li>
+                    <li>Leadership is energetic transmission</li>
+                </ul>
+                
+                <div class="insight-block">
+                    <p>The old founder optimized for efficiency.<br>
+                    The new founder channels archetypes.<br>
+                    They know how to move reality with words.</p>
+                    
+                    <p>They don't just run companies.<br>
+                    They forge belief into form.</p>
+                </div>
+            </section>
+
+            <!-- FAQs -->
+            <section class="content-section faq-section" id="faqs">
+                <h2>FAQs</h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>What does 'founders as myth-makers' mean?</h3>
+                        <p>It means modern founders succeed not just by managing or building, but by creating belief systems that shape how employees, investors, and customers perceive reality.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Why is belief considered an edge in business?</h3>
+                        <p>In over-optimized markets, most actors chase reaction speed. Belief provides patient conviction, creating asymmetric opportunities others miss.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How does belief become infrastructure inside a company?</h3>
+                        <p>Through stories, rituals, symbols, and culture. These create coherence and resonance, aligning people with the company's mission.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Is this just branding in disguise?</h3>
+                        <p>No. Branding decorates. Belief infrastructure transforms—turning companies into living myths people want to inhabit.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>How can leaders cultivate belief without it becoming cultish?</h3>
+                        <p>By grounding vision in truth, humility, and service. The point is not manipulation, but resonance with something meaningful and real.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Ready to forge belief into form?</h2>
+                    <p>Transform your leadership approach with reality-shaping methodology.</p>
+                    <a href="../scan/" class="btn btn-primary">Start the conversation</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">Zokratiq</div>
+                    <div class="footer-tagline">Reality Exploration Studio</div>
+                    <div class="footer-description">
+                        We turn curiosity into operating leverage—designing Playful Businesses where exploration fuels strategy, product, and culture.
+                    </div>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../labs">Zokratiq Labs</a></li>
+                        <li><a href="../work-is-weird">Work is Weird</a></li>
+                        <li><a href="../scan">Reality Scan</a></li>
+                        <li><a href="../consulting">Strategic Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Section -->
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about">About</a></li>
+                        <li><a href="../essays">Essays</a></li>
+                        <li><a href="../resources">Resources</a></li>
+                        <li><a href="../contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    © 2024 Zokratiq. All rights reserved. Built for the perceptive.
+                </div>
+                <div class="footer-social">
+                    <a href="https://twitter.com/zokratiq" target="_blank" aria-label="Twitter">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/zokratiq" target="_blank" aria-label="LinkedIn">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Animate elements on page load
+    const elements = document.querySelectorAll('.logo, .hero-content, .coming-soon-features, .cta-section');
+    elements.forEach((element, index) => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.8s ease';
+        
+        setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }, index * 200 + 300);
+    });
+    
+    // Notify button click handler
+    const notifyBtn = document.querySelector('.notify-btn');
+    notifyBtn.addEventListener('click', function() {
+        // Add click animation
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 150);
+        
+        // Show notification
+        showNotification('Thanks! We\'ll notify you when we launch.', 'success');
+    });
+    
+    // Feature hover effects
+    const features = document.querySelectorAll('.feature');
+    features.forEach(feature => {
+        feature.addEventListener('mouseenter', function() {
+            this.style.animation = 'pulse 0.6s ease-in-out';
+        });
+        
+        feature.addEventListener('mouseleave', function() {
+            this.style.animation = 'none';
+        });
+    });
+    
+    // Dynamic particle creation
+    function createRandomParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const size = Math.random() * 60 + 20;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        
+        document.querySelector('.background-animation').appendChild(particle);
+        
+        // Remove particle after animation
+        setTimeout(() => {
+            particle.remove();
+        }, 8000);
+    }
+    
+    // Create new particles periodically
+    setInterval(createRandomParticle, 3000);
+    
+    // Notification system
+    function showNotification(message, type = 'info') {
+        // Remove existing notification if any
+        const existing = document.querySelector('.notification');
+        if (existing) {
+            existing.remove();
+        }
+        
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+            <span>${message}</span>
+            <button class="notification-close">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        
+        // Add styles
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? '#10b981' : '#6366f1'};
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: all 0.3s ease;
+            max-width: 350px;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Auto hide
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 3000);
+        
+        // Close button
+        notification.querySelector('.notification-close').addEventListener('click', () => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        });
+        
+        // Style the close button
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.style.cssText = `
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        `;
+        
+        closeBtn.addEventListener('mouseenter', () => {
+            closeBtn.style.opacity = '1';
+            closeBtn.style.background = 'rgba(255,255,255,0.1)';
+        });
+        
+        closeBtn.addEventListener('mouseleave', () => {
+            closeBtn.style.opacity = '0.8';
+            closeBtn.style.background = 'none';
+        });
+    }
+    
+    // Add pulse animation keyframes
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .notification {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+        
+        .notification i {
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 480px) {
+            .notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Easter egg - click logo 5 times
+    let logoClicks = 0;
+    const logo = document.querySelector('.logo h1');
+    logo.addEventListener('click', function() {
+        logoClicks++;
+        if (logoClicks === 5) {
+            showNotification('🎉 Easter egg! You found the secret click!', 'success');
+            this.style.animation = 'glow 0.5s ease-in-out 3';
+            logoClicks = 0;
+        }
+    });
+    
+    console.log('🚀 Zokratiq coming soon page loaded!');
+    console.log('💡 Try clicking the logo 5 times for a surprise...');
+    
+});

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Zokratiq</title>
+    <meta name="description" content="The page you're looking for has wandered into an alternate reality. Let us help you find your way back.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+            color: #F5F7FA;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-weird-purple: #8B5CF6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            margin-bottom: 1rem;
+        }
+
+        .error-subtitle {
+            font-size: 1.25rem;
+            color: var(--color-bright-aqua);
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: var(--color-cloud-gray);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua));
+            color: var(--color-base-black);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-weird-purple);
+            border: 2px solid var(--color-weird-purple);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-weird-purple);
+            color: var(--color-base-black);
+        }
+
+        .suggestions {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+
+        .suggestions h3 {
+            color: var(--color-bright-aqua);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .suggestion-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .suggestion-list li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .suggestion-list li::before {
+            content: "→";
+            color: var(--color-weird-purple);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .suggestion-list a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .suggestion-list a:hover {
+            color: var(--color-bright-aqua);
+        }
+
+        .reality-note {
+            font-size: 0.9rem;
+            color: var(--color-warm-accent);
+            font-style: italic;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 5rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        /* Background animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(74, 223, 214, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="error-animation">
+            <div class="error-code">404</div>
+        </div>
+        
+        <h1 class="error-title">You're on the right page.</h1>
+        <p class="error-subtitle">"Not all those who wander are lost."</p>
+        
+        <div class="error-message">
+            <p>Sometimes you're looking for <span style="color: var(--color-primary-teal); font-weight: 600;">the missing pixel</span> in the vast canvas of digital reality. The space between what is and what could be. The gap in the system where innovation lives.</p>
+        </div>
+
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary">Return to Base Reality</a>
+            <a href="javascript:history.back()" class="btn btn-secondary">← Previous Timeline</a>
+        </div>
+
+        <div class="suggestions">
+            <h3>🌀 Suggested Explorations</h3>
+            <ul class="suggestion-list">
+                <li><a href="/belief/">Belief Capital Diagnostic</a> — Score what buyers really buy</li>
+                <li><a href="/linkedin-optimizer/">LinkedIn Optimizer</a> — Transform your professional weird</li>
+                <li><a href="/labs/">Zokratiq Labs</a> — Portal for alternate futures</li>
+                <li><a href="/work-is-weird/">Work is Weird</a> — High resonance talent placement</li>
+                <li><a href="/scan/">Reality Scan</a> — Free strategic perception audit</li>
+            </ul>
+        </div>
+
+        <p class="reality-note">
+            "In infinite realities, every 404 is just a 200 waiting to happen." — Zokratiq Archives
+        </p>
+    </div>
+
+    <script>
+        // Add some interactive flair
+        document.addEventListener('DOMContentLoaded', function() {
+            // Random reality quotes that cycle
+            const quotes = [
+                '"In infinite realities, every 404 is just a 200 waiting to happen." — Zokratiq Archives',
+                '"The best paths often start with getting magnificently lost." — Reality Navigation Manual',
+                '"What you seek in one timeline, seeks you in another." — Interdimensional Wisdom',
+                '"Every broken link leads to an unexpected discovery." — The Chaos Code'
+            ];
+            
+            const noteEl = document.querySelector('.reality-note');
+            let quoteIndex = 0;
+            
+            setInterval(() => {
+                quoteIndex = (quoteIndex + 1) % quotes.length;
+                noteEl.style.opacity = '0';
+                
+                setTimeout(() => {
+                    noteEl.textContent = quotes[quoteIndex];
+                    noteEl.style.opacity = '1';
+                }, 300);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

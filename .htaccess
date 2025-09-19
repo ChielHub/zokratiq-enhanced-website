@@ -1,0 +1,45 @@
+# Custom 404 Error Page
+ErrorDocument 404 /zokratiq/404.html
+
+# Enable URL Rewriting
+RewriteEngine On
+
+# Force HTTPS (if SSL is available)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove .html extension from URLs (optional - for clean URLs)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Handle common directory requests
+RewriteRule ^about/?$ about.html [NC,L]
+RewriteRule ^partner/?$ partner.html [NC,L]
+RewriteRule ^manifesto/?$ manifesto-for-misfits.html [NC,L]
+
+# Directory index fallbacks
+DirectoryIndex index.html index.php
+
+# Security headers
+Header always set X-Content-Type-Options nosniff
+Header always set X-Frame-Options DENY
+Header always set X-XSS-Protection "1; mode=block"
+
+# Cache static assets
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot|ico)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
+# Prevent access to sensitive files
+<Files ~ "^\.">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Block access to specific file types
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf|bak)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

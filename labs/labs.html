@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zokratiq Labs — A Portal for Alternate Futures and Signal Intelligence | Zokratiq</title>
+    <meta name="description" content="Where we experiment in public. Live explorations, speculative tools, and philosophical briefings on frontier tech, narrative dynamics, and paradigm shifts.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors */
+        .text-soft-white { color: #F5F7FA; }
+        .text-cloud-gray { color: #C7D2FE; }
+        .text-primary-teal { color: #00B3A6; }
+        .bg-charcoal-light { background-color: #1a1a1a; }
+        .bg-charcoal-medium { background-color: #141414; }
+        .bg-base-black { background-color: #0a0a0a; }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F5F7FA;
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: #C7D2FE;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: #00B3A6;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00B3A6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(12, 12, 12, 0.8) 0%, rgba(20, 20, 20, 0.7) 50%, rgba(12, 12, 12, 0.8) 100%),
+                        url('hero-image.jpeg');
+            background-size: 400% 400%, cover;
+            background-position: 0% 50%, center;
+            background-repeat: no-repeat;
+            animation: gradientShift 20s ease infinite;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 179, 166, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-family: 'Crimson Text', serif;
+            color: #4ADFD6;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #C7D2FE;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+        }
+
+        /* Lab Categories */
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .lab-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .lab-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 179, 166, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 179, 166, 0.15);
+        }
+
+        .lab-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .lab-card h3 {
+            color: #00B3A6;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lab-card p {
+            color: #C7D2FE;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .lab-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lab-features li {
+            color: #F5F7FA;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .lab-features li::before {
+            content: '•';
+            color: #00B3A6;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* CTA Button */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            border-top: 1px solid rgba(0, 179, 166, 0.2);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            color: #00B3A6;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-section a {
+            color: #C7D2FE;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #00B3A6;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #F5F7FA;
+        }
+        
+        .footer-tagline {
+            color: #C7D2FE;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .footer-description {
+            color: #9CA3AF;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero {
+                min-height: 70vh;
+                padding: 2rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .lab-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .lab-card {
+                padding: 2rem;
+            }
+            
+            .lab-icon {
+                font-size: 2.5rem;
+            }
+            
+            .lab-card h3 {
+                font-size: 1.25rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .btn-primary {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .nav-container {
+                padding: 0.75rem 1rem;
+            }
+            
+            .nav-logo {
+                font-size: 1.25rem;
+            }
+            
+            .nav-logo-img {
+                height: 32px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .lab-card {
+                padding: 1.5rem;
+            }
+            
+            .lab-icon {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .lab-card h3 {
+                font-size: 1.125rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .lab-card p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            
+            .lab-features li {
+                font-size: 0.875rem;
+                margin-bottom: 0.375rem;
+            }
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            background: rgba(0, 179, 166, 0.1);
+            color: #00B3A6;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../about">About</a></li>
+                <li><a href="../labs" style="color: #00B3A6;">Labs</a></li>
+                <li><a href="../work-is-weird">Work is Weird</a></li>
+                <li><a href="../essays">Essays</a></li>
+                <li><a href="../contact">Contact</a></li>
+                <li><a href="../scan/" class="nav-cta">Reality Scan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="status-badge">Beta Laboratory</div>
+                
+                <h1 class="hero-title text-soft-white">
+                    Zokratiq <span style="color: #4ADFD6; font-family: 'Playfair Display', serif; font-style: italic;">Labs</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    A Portal for Alternate Futures and Signal Intelligence
+                </p>
+                
+                <div class="hero-description">
+                    <p>Where we experiment in public. Live explorations, speculative tools, and philosophical briefings on frontier technologies and paradigm shifts.</p>
+                </div>
+                
+                <a href="../contact" class="btn-primary">
+                    Join the Experiments
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="margin-left: 0.5rem;">
+                        <path d="M4 10h12m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Categories -->
+    <section class="section bg-base-black">
+        <div class="container">
+            <div class="lab-grid">
+                <div class="lab-card">
+                    <span class="lab-icon">🔬</span>
+                    <h3>Frontier Tech Intelligence</h3>
+                    <p>Quantum computing, neuro-AI interfaces, synthetic biology—we track the edge of what's possible and what it means for business strategy.</p>
+                    <ul class="lab-features">
+                        <li>Technology emergence mapping</li>
+                        <li>Business model disruption analysis</li>
+                        <li>Ethical framework development</li>
+                    </ul>
+                </div>
+
+                <div class="lab-card">
+                    <span class="lab-icon">📖</span>
+                    <h3>Narrative Dynamics</h3>
+                    <p>Stories shape markets. We study memetic evolution, narrative markets, and how worldviews become business models.</p>
+                    <ul class="lab-features">
+                        <li>Memetic market analysis</li>
+                        <li>Story-driven strategy workshops</li>
+                        <li>Cultural mythology mapping</li>
+                    </ul>
+                </div>
+
+                <div class="lab-card">
+                    <span class="lab-icon">🌀</span>
+                    <h3>Future Simulations</h3>
+                    <p>Stress-test your assumptions against alternative realities. Scenario planning that goes beyond linear extrapolation.</p>
+                    <ul class="lab-features">
+                        <li>Paradigm pressure testing</li>
+                        <li>Alternative timeline workshops</li>
+                        <li>Chaos resilience design</li>
+                    </ul>
+                </div>
+
+                <div class="lab-card">
+                    <span class="lab-icon">🧙</span>
+                    <h3>Metaphysics for Operators</h3>
+                    <p>Philosophy as practical business tool. Reality exploration, consciousness studies, and ontological audits for decision-makers.</p>
+                    <ul class="lab-features">
+                        <li>Belief system diagnostics</li>
+                        <li>Reality lens calibration</li>
+                        <li>Sensemaking ritual design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="footer-logo">Zokratiq</div>
+                    <div class="footer-tagline">Reality Exploration Studio</div>
+                    <div class="footer-description">
+                        We turn curiosity into operating leverage—designing Playful Businesses where exploration fuels strategy, product, and culture.
+                    </div>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../labs">Zokratiq Labs</a></li>
+                        <li><a href="../work-is-weird">Work is Weird</a></li>
+                        <li><a href="../scan">Reality Scan</a></li>
+                        <li><a href="../consulting">Strategic Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Section -->
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../about">About</a></li>
+                        <li><a href="../essays">Essays</a></li>
+                        <li><a href="../resources">Resources</a></li>
+                        <li><a href="../contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>
+                    © 2024 Zokratiq. All rights reserved. Built for the perceptive.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Labs Interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Parallax effect for hero background
+            initParallaxEffect();
+            
+            // Lab card interactions
+            initLabCardEffects();
+            
+            // Scroll-triggered animations
+            initScrollAnimations();
+            
+            // Navigation bar background on scroll
+            initNavbarScroll();
+        });
+
+        function initParallaxEffect() {
+            const hero = document.querySelector('.hero');
+            
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                
+                if (hero) {
+                    hero.style.backgroundPosition = `0% ${50 + rate * 0.01}%, center`;
+                }
+            });
+        }
+
+        function initLabCardEffects() {
+            const labCards = document.querySelectorAll('.lab-card');
+            
+            labCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                    this.style.borderColor = 'rgba(0, 179, 166, 0.7)';
+                    this.style.boxShadow = '0 15px 40px rgba(0, 179, 166, 0.25)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.borderColor = 'rgba(0, 179, 166, 0.2)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        }
+
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe lab cards
+            const labCards = document.querySelectorAll('.lab-card');
+            labCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        }
+
+        function initNavbarScroll() {
+            const navbar = document.querySelector('.nav-header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                    navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.4)';
+                } else {
+                    navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                    navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.2)';
+                }
+            });
+        }
+
+        // Add CSS animation classes
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            
+            .lab-icon {
+                transition: transform 0.3s ease;
+            }
+            
+            .lab-card:hover .lab-icon {
+                transform: scale(1.1) rotate(5deg);
+            }
+            
+            @media (prefers-reduced-motion: reduce) {
+                *, *::before, *::after {
+                    animation-duration: 0.01ms !important;
+                    animation-iteration-count: 1 !important;
+                    transition-duration: 0.01ms !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

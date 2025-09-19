@@ -1,0 +1,28 @@
+{
+  "name": "zokratiq-newsletter-api",
+  "version": "1.0.0",
+  "description": "Newsletter subscription API for Zokratiq",
+  "main": "newsletter.js",
+  "scripts": {
+    "start": "node newsletter.js",
+    "dev": "nodemon newsletter.js"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^17.2.1",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.7",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "newsletter",
+    "subscription",
+    "email",
+    "api"
+  ],
+  "author": "Zokratiq",
+  "license": "MIT"
+}

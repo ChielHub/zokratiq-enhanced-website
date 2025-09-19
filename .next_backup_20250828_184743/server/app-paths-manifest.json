@@ -1,0 +1,17 @@
+{
+  "/_not-found": "app/_not-found.js",
+  "/about/page": "app/about/page.js",
+  "/api/belief-diagnostic/route": "app/api/belief-diagnostic/route.js",
+  "/api/decision-partner/route": "app/api/decision-partner/route.js",
+  "/belief-capital-diagnostic/page": "app/belief-capital-diagnostic/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/decision-partner/page": "app/decision-partner/page.js",
+  "/essays/page": "app/essays/page.js",
+  "/labs/page": "app/labs/page.js",
+  "/page": "app/page.js",
+  "/partner-with-us/page": "app/partner-with-us/page.js",
+  "/resources/page": "app/resources/page.js",
+  "/scan/page": "app/scan/page.js",
+  "/work-is-weird/page": "app/work-is-weird/page.js",
+  "/belief/page": "app/belief/page.js"
+}

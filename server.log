@@ -1,0 +1,176 @@
+
+> zokratiq-landing@0.1.0 dev
+> next dev
+
+   ▲ Next.js 14.0.4
+   - Local:        http://localhost:3000
+   - Environments: .env.local
+
+ ✓ Ready in 3.1s
+ ○ Compiling /api/contact ...
+ ✓ Compiled /api/contact in 1968ms (88 modules)
+Error processing contact form: ek [Error]: Page with `dynamic = "error"` couldn't be rendered statically because it used `request.json`.
+    at Object.eO [as staticGenerationBailout] (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:49797)
+    at s (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56078)
+    at Object.get (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56174)
+    at POST (webpack-internal:///(rsc)/./app/api/contact/route.ts:12:36)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:63257
+    at /var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:133:36
+    at NoopContextManager.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+    at /var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+    at NoopContextManager.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NextTracerImpl.trace (/var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:122:28)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56774
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Object.wrap (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37057)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:54547
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Object.wrap (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:36306)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:54509
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at eH.execute (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53902)
+    at eH.handle (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:64515)
+    at doRender (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1330:60)
+    at cacheEntry.responseCache.get.routeKind (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1552:34)
+    at ResponseCache.get (/var/www/html/zokratiq/node_modules/next/dist/server/response-cache/index.js:49:26)
+    at DevServer.renderToResponseWithComponentsImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1460:53)
+    at /var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:990:121
+    at NextTracerImpl.trace (/var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:104:20)
+    at DevServer.renderToResponseWithComponents (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:990:41)
+    at DevServer.renderPageComponent (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1843:35)
+    at async DevServer.renderToResponseImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1881:32)
+    at async DevServer.pipeImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/var/www/html/zokratiq/node_modules/next/dist/server/next-server.js:266:17)
+    at async DevServer.handleRequestImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:805:17) {
+  code: 'NEXT_STATIC_GEN_BAILOUT'
+}
+=== CONTACT FORM SUBMISSION (EMAIL FAILED) ===
+Error: ek [Error]: Page with `dynamic = "error"` couldn't be rendered statically because it used `request.json`.
+    at Object.eO [as staticGenerationBailout] (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:49797)
+    at s (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56078)
+    at Object.get (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56174)
+    at POST (webpack-internal:///(rsc)/./app/api/contact/route.ts:12:36)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:63257
+    at /var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:133:36
+    at NoopContextManager.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+    at /var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+    at NoopContextManager.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NextTracerImpl.trace (/var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:122:28)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56774
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Object.wrap (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37057)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:54547
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Object.wrap (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:36306)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:54509
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at eH.execute (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53902)
+    at eH.handle (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:64515)
+    at doRender (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1330:60)
+    at cacheEntry.responseCache.get.routeKind (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1552:34)
+    at ResponseCache.get (/var/www/html/zokratiq/node_modules/next/dist/server/response-cache/index.js:49:26)
+    at DevServer.renderToResponseWithComponentsImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1460:53)
+    at /var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:990:121
+    at NextTracerImpl.trace (/var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:104:20)
+    at DevServer.renderToResponseWithComponents (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:990:41)
+    at DevServer.renderPageComponent (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1843:35)
+    at async DevServer.renderToResponseImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1881:32)
+    at async DevServer.pipeImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/var/www/html/zokratiq/node_modules/next/dist/server/next-server.js:266:17)
+    at async DevServer.handleRequestImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:805:17) {
+  code: 'NEXT_STATIC_GEN_BAILOUT'
+}
+ ⨯ ek [Error]: Page with `dynamic = "error"` couldn't be rendered statically because it used `request.text`.
+    at Object.eO [as staticGenerationBailout] (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:49797)
+    at s (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56078)
+    at Object.get (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56174)
+    at POST (webpack-internal:///(rsc)/./app/api/contact/route.ts:133:52)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:63257
+    at /var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:133:36
+    at NoopContextManager.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NoopTracer.startActiveSpan (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+    at ProxyTracer.startActiveSpan (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+    at /var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+    at NoopContextManager.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+    at ContextAPI.with (/var/www/html/zokratiq/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+    at NextTracerImpl.trace (/var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:122:28)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:56774
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Object.wrap (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37057)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:54547
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Object.wrap (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:36306)
+    at /var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:54509
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at eH.execute (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53902)
+    at eH.handle (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:64515)
+    at doRender (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1330:60)
+    at cacheEntry.responseCache.get.routeKind (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1552:34)
+    at ResponseCache.get (/var/www/html/zokratiq/node_modules/next/dist/server/response-cache/index.js:49:26)
+    at DevServer.renderToResponseWithComponentsImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1460:53)
+    at /var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:990:121
+    at NextTracerImpl.trace (/var/www/html/zokratiq/node_modules/next/dist/server/lib/trace/tracer.js:104:20)
+    at DevServer.renderToResponseWithComponents (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:990:41)
+    at DevServer.renderPageComponent (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1843:35)
+    at async DevServer.renderToResponseImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:1881:32)
+    at async DevServer.pipeImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:909:25)
+    at async NextNodeServer.handleCatchallRenderRequest (/var/www/html/zokratiq/node_modules/next/dist/server/next-server.js:266:17)
+    at async DevServer.handleRequestImpl (/var/www/html/zokratiq/node_modules/next/dist/server/base-server.js:805:17) {
+  code: 'NEXT_STATIC_GEN_BAILOUT'
+}
+ ✓ Compiled in 265ms (88 modules)
+ ✓ Compiled in 107ms (88 modules)
+ ⨯ Error: export const dynamic = "force-dynamic" on page "/api/contact" cannot be used with "output: export". See more info here: https://nextjs.org/docs/advanced-features/static-html-export
+    at new eH (/var/www/html/zokratiq/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:52884)
+    at eval (webpack-internal:///(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fcontact%2Froute&page=%2Fapi%2Fcontact%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fcontact%2Froute.ts&appDir=%2Fvar%2Fwww%2Fhtml%2Fzokratiq%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2Fvar%2Fwww%2Fhtml%2Fzokratiq&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=export&preferredRegion=&middlewareConfig=e30%3D!:25:21)
+    at (rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fapi%2Fcontact%2Froute&page=%2Fapi%2Fcontact%2Froute&appPaths=&pagePath=private-next-app-dir%2Fapi%2Fcontact%2Froute.ts&appDir=%2Fvar%2Fwww%2Fhtml%2Fzokratiq%2Fapp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=%2Fvar%2Fwww%2Fhtml%2Fzokratiq&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=export&preferredRegion=&middlewareConfig=e30%3D! (/var/www/html/zokratiq/.next/server/app/api/contact/route.js:182:1)
+    at __webpack_require__ (/var/www/html/zokratiq/.next/server/webpack-runtime.js:33:42)
+    at __webpack_exec__ (/var/www/html/zokratiq/.next/server/app/api/contact/route.js:202:39)
+    at /var/www/html/zokratiq/.next/server/app/api/contact/route.js:203:110
+    at __webpack_require__.X (/var/www/html/zokratiq/.next/server/webpack-runtime.js:116:21)
+    at /var/www/html/zokratiq/.next/server/app/api/contact/route.js:203:47
+    at Object.<anonymous> (/var/www/html/zokratiq/.next/server/app/api/contact/route.js:206:3)
+    at Module._compile (node:internal/modules/cjs/loader:1356:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1414:10)
+    at Module.load (node:internal/modules/cjs/loader:1197:32)
+    at Module._load (node:internal/modules/cjs/loader:1013:12)
+    at Module.require (node:internal/modules/cjs/loader:1225:19)
+    at mod.require (/var/www/html/zokratiq/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/helpers:177:18)
+    at requirePage (/var/www/html/zokratiq/node_modules/next/dist/server/require.js:109:84)
+    at /var/www/html/zokratiq/node_modules/next/dist/server/load-components.js:59:84
+    at async loadComponentsImpl (/var/www/html/zokratiq/node_modules/next/dist/server/load-components.js:59:26)
+    at async DevServer.findPageComponentsImpl (/var/www/html/zokratiq/node_modules/next/dist/server/next-server.js:671:36) {
+  page: '/api/contact'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 5.8s (432 modules)
+ ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+   ▲ Next.js 14.0.4
+   - Local:        http://localhost:3000
+   - Environments: .env.local
+
+ ✓ Ready in 3.3s
+ ○ Compiling /api/contact ...
+ ✓ Compiled /api/contact in 1954ms (88 modules)
+Contact form email sent successfully: {
+  name: 'Test User',
+  email: 'test@example.com',
+  company: 'Test Company',
+  timestamp: '2025-09-01T07:12:17.899Z'
+}
+ ⚠ Found a change in next.config.js. Restarting the server to apply the changes...
+   ▲ Next.js 14.0.4
+   - Local:        http://localhost:3000
+   - Environments: .env.local
+
+ ✓ Ready in 3.5s

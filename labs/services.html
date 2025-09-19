@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zokratiq Labs — Alternate Futures & Signal Intelligence for Executive Teams</title>
+    <meta name="description" content="A portal for alternate futures and signal intelligence. When trend decks blur, Labs sharpens the edge. We map what's coming, simulate what matters, and help your team decide with conviction.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Strategic Foresight & Simulation",
+        "name": "Zokratiq Labs",
+        "description": "A portal for alternate futures and signal intelligence",
+        "provider": {
+            "@type": "Organization",
+            "name": "Zokratiq",
+            "url": "https://zokratiq.com",
+            "sameAs": [
+                "https://zokratiq.com"
+            ]
+        }
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What makes this different from a classic trend report?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We don't hand you a PDF and disappear. Labs is live, participatory, and decision‑oriented. You get maps and simulations you can use the same week."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much time does my team need to invest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Two workshops (90–120 min each) per phase + async comments. We handle the synthesis."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can we start small?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes—begin with the 10‑day Signal Scan and expand if valuable."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will you work with our research/strategy team?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Happily. We integrate your analysts and context from day one."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What if our domain is niche?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Great. We're translators by trade; we work from first principles, then enrich with SME input."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are artifacts shareable with the board?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Decks and canvases are built for executive forums—concise, legible, defensible."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer training?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We can train your team in the rituals and decision logs installed during the Lab."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the risk if it doesn't land?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For pilots, we extend work by a week at no cost if the first pass doesn't surface 3 actionable hypotheses."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-charcoal-light: #1a1a1a;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-heritage-red: #DC2626;
+            --color-deep-indigo: #1E293B;
+            --color-muted-ochre: #D97706;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-sm {
+            padding: 3rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: var(--color-primary-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-primary-teal);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary-teal);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua));
+            color: var(--color-base-black);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-primary-teal);
+            border: 2px solid var(--color-primary-teal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-primary-teal);
+            color: var(--color-base-black);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--color-cloud-gray);
+            border: 1px solid rgba(199, 210, 254, 0.3);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(199, 210, 254, 0.1);
+            color: var(--color-soft-white);
+        }
+
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--color-primary-teal);
+            padding: 1rem 0;
+            z-index: 999;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Cards and Grids */
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 179, 166, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 179, 166, 0.15);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary-teal); }
+        .text-accent { color: var(--color-bright-aqua); }
+        .text-muted { color: var(--color-cloud-gray); }
+        .text-heritage { color: var(--color-heritage-red); }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .sticky-cta-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            /* Hero adjustments */
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            /* Button stacking */
+            .btn {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            /* FAQ improvements */
+            .faq-item h3 {
+                font-size: 1.1rem !important;
+                padding-right: 2rem;
+            }
+
+            /* Card spacing */
+            .card {
+                padding: 1.5rem;
+            }
+
+            /* Form improvements */
+            #signupForm {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            #signupForm input {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            /* Social proof adjustments */
+            .hero div[style*="flex"] {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+
+            /* Engagement modes badges */
+            [style*="position: absolute"][style*="top: -10px"] {
+                position: relative !important;
+                top: 0 !important;
+                left: 0 !important;
+                transform: none !important;
+                margin-bottom: 1rem !important;
+                display: inline-block !important;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-deep-charcoal);
+            border: 1px solid var(--color-primary-teal);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--color-cloud-gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../about">About</a></li>
+                <li><a href="../labs" style="color: var(--color-primary-teal);">Labs</a></li>
+                <li><a href="../work-is-weird">Work is Weird</a></li>
+                <li><a href="../essays">Essays</a></li>
+                <li><a href="../contact">Contact</a></li>
+                <li><a href="../scan/" class="btn btn-primary" style="padding: 0.5rem 1rem;">Reality Scan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCTA">
+        <div class="sticky-cta-content">
+            <span>Ready to navigate from first principles—not headlines?</span>
+            <a href="#fit-check" class="btn btn-primary">Start a 15-min Fit-Check</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: 6rem; padding-bottom: 6rem; background: linear-gradient(135deg, rgba(12, 12, 12, 0.9) 0%, rgba(20, 20, 20, 0.8) 50%, rgba(12, 12, 12, 0.9) 100%);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                    <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.1; color: var(--color-soft-white);">
+                        Zokratiq <span class="font-playfair text-accent" style="font-style: italic;">Labs</span>
+                    </h1>
+                    
+                    <p style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--color-primary-teal); font-family: 'Crimson Text', serif; font-style: italic;">
+                        A portal for alternate futures and signal intelligence.
+                    </p>
+                    
+                    <p style="font-size: 1.2rem; color: var(--color-cloud-gray); line-height: 1.7; margin-bottom: 3rem;">
+                        When trend decks blur, Labs sharpens the edge. We map what's coming, simulate what matters, and help your team decide with conviction.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 4rem; flex-wrap: wrap;">
+                        <a href="#fit-check" class="btn btn-primary" onclick="trackCTA('hero_primary')">
+                            Book a 15-min Fit-Check
+                        </a>
+                        <a href="#primer" class="btn btn-secondary" onclick="trackCTA('hero_secondary')">
+                            Download the Labs Primer
+                        </a>
+                    </div>
+                    
+                    <!-- Social Proof Strip -->
+                    <div style="border-top: 1px solid rgba(0, 179, 166, 0.2); padding-top: 2rem;">
+                        <p style="font-size: 0.9rem; color: var(--color-cloud-gray); margin-bottom: 1rem; font-style: italic;">
+                            "Clarity you can steer by." — Strategy Lead, Global Brand
+                        </p>
+                        
+                        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 0.875rem; color: var(--color-muted-ochre); font-family: 'JetBrains Mono', monospace;">
+                            <span>Deep Tech</span>
+                            <span>·</span>
+                            <span>Consumer</span>
+                            <span>·</span>
+                            <span>Finance</span>
+                            <span>·</span>
+                            <span>Public Sector</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Planning Trap Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        The Planning Trap
+                    </h2>
+                    
+                    <p style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.7; margin-bottom: 1.5rem;">
+                        Most teams plan inside yesterday's frame. The result: slide theater, safe consensus, and missed optionality.
+                    </p>
+                    
+                    <p style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.7; margin-bottom: 3rem;">
+                        Labs is where we experiment in public—live explorations, speculative tools, and philosophical briefings that expand your decision space before you commit capital.
+                    </p>
+                    
+                    <a href="#" class="btn btn-ghost" onclick="openModal(); trackCTA('planning_trap');">
+                        Open an example foresight deck
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-left: 0.5rem;">
+                            <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Zokratiq Labs Is Section -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        What Zokratiq Labs Is
+                    </h2>
+                    
+                    <p style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.7;">
+                        Zokratiq Labs blends foresight, systems mapping, and narrative design to help leaders see around corners. We work at the edges—then translate the edges into executive‑ready choices.
+                    </p>
+                </div>
+
+                <!-- Three Pillars -->
+                <div class="grid grid-3" style="margin-top: 3rem;">
+                    <div class="card">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🔬</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                                Frontier Tech
+                            </h3>
+                        </div>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            Quantum, neuro‑AI, synthetic biology translated into business relevance.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">📖</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                                Narrative Dynamics
+                            </h3>
+                        </div>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            How stories move markets, talent, and policy; memetic radar.
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <div style="text-align: center; margin-bottom: 1.5rem;">
+                            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🌀</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                                Paradigm Stress‑Testing
+                            </h3>
+                        </div>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            Simulations that pressure decisions under alternate futures.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        How It Works
+                    </h2>
+                </div>
+
+                <!-- 4-step horizontal flow -->
+                <div class="grid grid-4" style="margin-bottom: 3rem;">
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--color-base-black); font-weight: 700; font-size: 1.5rem;">1</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                            Discover
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            We frame the real question and collect your signals.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--color-base-black); font-weight: 700; font-size: 1.5rem;">2</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                            Map
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            We build immersive maps and speculative canvases to reveal the terrain.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--color-base-black); font-weight: 700; font-size: 1.5rem;">3</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                            Simulate
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            We run paradigm stress‑tests and future‑pressure scenarios.
+                        </p>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: var(--color-base-black); font-weight: 700; font-size: 1.5rem;">4</div>
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                            Decide
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            We converge on options, kill‑criteria, and next experiments.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <p style="font-size: 1.1rem; color: var(--color-cloud-gray); margin-bottom: 2rem; font-family: 'JetBrains Mono', monospace;">
+                        Cadence: 10‑day Signal Scan → 4–6 week Core Lab → optional Summit build.
+                    </p>
+                    <a href="#engagement-modes" class="btn btn-secondary">
+                        Book the micro‑pilot
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outputs/Deliverables Section -->
+        <section class="section" id="outputs">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        What You Get
+                    </h2>
+                    <p style="font-size: 1.1rem; color: var(--color-cloud-gray); margin-bottom: 3rem;">
+                        Deliverables that bridge insight and action.
+                    </p>
+                </div>
+
+                <!-- Outputs Grid -->
+                <div class="grid grid-2" style="gap: 1.5rem;">
+                    <div class="card" style="border-left: 4px solid var(--color-primary-teal);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                            Immersive Maps & Speculative Canvases
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            The landscape made visible.
+                        </p>
+                    </div>
+
+                    <div class="card" style="border-left: 4px solid var(--color-bright-aqua);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 1rem;">
+                            Foresight Decks & Future‑Pressure Tests
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            Decision‑ready artifacts you can drop into the LT deck.
+                        </p>
+                    </div>
+
+                    <div class="card" style="border-left: 4px solid var(--color-warm-accent);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-warm-accent); margin-bottom: 1rem;">
+                            Collaboration Rituals
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            Meeting formats that produce signal, not theater.
+                        </p>
+                    </div>
+
+                    <div class="card" style="border-left: 4px solid var(--color-heritage-red);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-heritage-red); margin-bottom: 1rem;">
+                            Narrative Radar
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            A running read on memes, momentum, and meaning.
+                        </p>
+                    </div>
+
+                    <div class="card" style="border-left: 4px solid var(--color-primary-teal); grid-column: 1 / -1;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem;">
+                            Decision Log
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                            Bets, assumptions, trip‑wires, and review rhythm.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#primer" class="btn btn-secondary" onclick="trackCTA('outputs_primer');">
+                        Download the Labs Primer
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value/Outcomes Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        Why It Matters
+                    </h2>
+                </div>
+
+                <div class="grid grid-2" style="gap: 2rem;">
+                    <div style="display: flex; align-items: start; padding: 1.5rem;">
+                        <div style="width: 12px; height: 12px; background: var(--color-primary-teal); border-radius: 50%; margin-right: 1rem; margin-top: 0.5rem; flex-shrink: 0;"></div>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 0.5rem;">
+                                Speed to Clarity
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                First maps in 10 days, not quarters.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: start; padding: 1.5rem;">
+                        <div style="width: 12px; height: 12px; background: var(--color-bright-aqua); border-radius: 50%; margin-right: 1rem; margin-top: 0.5rem; flex-shrink: 0;"></div>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 0.5rem;">
+                                Risk Reduced
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                Pressure‑test choices before spend.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: start; padding: 1.5rem;">
+                        <div style="width: 12px; height: 12px; background: var(--color-warm-accent); border-radius: 50%; margin-right: 1rem; margin-top: 0.5rem; flex-shrink: 0;"></div>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 0.5rem;">
+                                Narrative Coherence
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                Align product, comms, and talent around a shared map.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: start; padding: 1.5rem;">
+                        <div style="width: 12px; height: 12px; background: var(--color-heritage-red); border-radius: 50%; margin-right: 1rem; margin-top: 0.5rem; flex-shrink: 0;"></div>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 0.5rem;">
+                                Non‑Consensus Advantage
+                            </h3>
+                            <p style="color: var(--color-cloud-gray); line-height: 1.6;">
+                                Find the ideas others won't see for six months.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="#fit-check" class="btn btn-primary" onclick="trackCTA('value_fit_check');">
+                        Book a Fit‑Check Call
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Modes Section -->
+        <section class="section" id="engagement-modes">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        Engagement Modes
+                    </h2>
+                </div>
+
+                <!-- Three tiers -->
+                <div class="grid grid-3" style="gap: 2rem;">
+                    <div class="card" style="text-align: center; position: relative;">
+                        <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--color-primary-teal); color: var(--color-base-black); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; font-weight: 600;">
+                            10 DAYS
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-primary-teal); margin: 2rem 0 1rem;">
+                            Signal Scan
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6; margin-bottom: 2rem; font-size: 0.95rem;">
+                            A rapid clarity sprint. One question in focus. Deliverables: mini‑map, hypothesis list, next experiments.
+                        </p>
+                        <p style="color: var(--color-bright-aqua); font-weight: 600; margin-bottom: 1.5rem;">
+                            Best for: fast triage, board prep, or high‑noise topics.
+                        </p>
+                    </div>
+
+                    <div class="card" style="text-align: center; position: relative; border: 2px solid var(--color-primary-teal);">
+                        <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--color-bright-aqua); color: var(--color-base-black); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; font-weight: 600;">
+                            4–6 WEEKS
+                        </div>
+                        <div style="position: absolute; top: -30px; right: -10px; background: var(--color-heritage-red); color: var(--color-soft-white); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; transform: rotate(15deg);">
+                            POPULAR
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-bright-aqua); margin: 2rem 0 1rem;">
+                            Core Lab
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Deep mapping + simulations across 2–3 futures. Deliverables: maps, foresight deck, decision log, collaboration rituals.
+                        </p>
+                        <p style="color: var(--color-bright-aqua); font-weight: 600; margin-bottom: 1.5rem;">
+                            Best for: strategy cycles, new category bets, narrative resets.
+                        </p>
+                    </div>
+
+                    <div class="card" style="text-align: center; position: relative;">
+                        <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--color-warm-accent); color: var(--color-base-black); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.875rem; font-weight: 600;">
+                            8–10 WEEKS
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-warm-accent); margin: 2rem 0 1rem;">
+                            Summit Lab
+                        </h3>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6; margin-bottom: 2rem; font-size: 0.95rem;">
+                            Build narrative infrastructure and operating rituals; install a repeating radar.
+                        </p>
+                        <p style="color: var(--color-warm-accent); font-weight: 600; margin-bottom: 1.5rem;">
+                            Best for: orgs scaling a durable edge.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="#compare" class="btn btn-ghost" onclick="trackCTA('engagement_compare');">
+                        Compare plans
+                    </a>
+                    <a href="#fit-check" class="btn btn-primary" onclick="trackCTA('engagement_fit_check');">
+                        Book a Fit‑Check
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof Layer Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        Proof Layer
+                    </h2>
+                    <p style="font-size: 1.1rem; color: var(--color-cloud-gray);">
+                        Redacted vignettes from recent Labs.
+                    </p>
+                </div>
+
+                <!-- Vignettes -->
+                <div class="grid grid-3" style="gap: 2rem; margin-bottom: 3rem;">
+                    <div class="card" style="border-left: 4px solid var(--color-primary-teal);">
+                        <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-teal); margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace;">
+                            CONSUMER FINTECH
+                        </h4>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6; font-size: 0.95rem;">
+                            Identified a non‑consensus wedge; ran three futures; paused one launch, doubled‑down on the winner.
+                        </p>
+                    </div>
+
+                    <div class="card" style="border-left: 4px solid var(--color-bright-aqua);">
+                        <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-bright-aqua); margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace;">
+                            PUBLIC SECTOR
+                        </h4>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6; font-size: 0.95rem;">
+                            Translated research noise into a 2‑page decision brief; secured cross‑department alignment in a week.
+                        </p>
+                    </div>
+
+                    <div class="card" style="border-left: 4px solid var(--color-warm-accent);">
+                        <h4 style="font-size: 1rem; font-weight: 700; color: var(--color-warm-accent); margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace;">
+                            DEEP TECH
+                        </h4>
+                        <p style="color: var(--color-cloud-gray); line-height: 1.6; font-size: 0.95rem;">
+                            Map clarified sequencing of partnerships; avoided 6‑month detour; saved budget and goodwill.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div style="text-align: center;">
+                    <blockquote style="font-size: 1.25rem; font-style: italic; color: var(--color-cloud-gray); margin-bottom: 1rem; font-family: 'Crimson Text', serif;">
+                        "Think tank clarity, startup speed."
+                    </blockquote>
+                    <cite style="color: var(--color-primary-teal); font-size: 0.9rem; font-weight: 600;">— COO</cite>
+                    
+                    <br><br>
+                    
+                    <blockquote style="font-size: 1.25rem; font-style: italic; color: var(--color-cloud-gray); margin-bottom: 1rem; font-family: 'Crimson Text', serif;">
+                        "The only deck the LT asked to keep in the room."
+                    </blockquote>
+                    <cite style="color: var(--color-primary-teal); font-size: 0.9rem; font-weight: 600;">— VP Strategy</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        Frequently Asked Questions
+                    </h2>
+                </div>
+
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            What makes this different from a classic trend report?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            We don't hand you a PDF and disappear. Labs is live, participatory, and decision‑oriented. You get maps and simulations you can use the same week.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            How much time does my team need to invest?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            Two workshops (90–120 min each) per phase + async comments. We handle the synthesis.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            Can we start small?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            Yes—begin with the 10‑day Signal Scan and expand if valuable.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            Will you work with our research/strategy team?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            Happily. We integrate your analysts and context from day one.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            What if our domain is niche?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            Great. We're translators by trade; we work from first principles, then enrich with SME input.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            Are artifacts shareable with the board?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            Yes. Decks and canvases are built for executive forums—concise, legible, defensible.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="border-bottom: 1px solid rgba(199, 210, 254, 0.2); padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            Do you offer training?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            We can train your team in the rituals and decision logs installed during the Lab.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" style="padding: 2rem 0;">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--color-soft-white); margin-bottom: 1rem; cursor: pointer;" onclick="toggleFAQ(this)">
+                            What's the risk if it doesn't land?
+                            <span style="float: right; transition: transform 0.3s ease;">+</span>
+                        </h3>
+                        <div class="faq-answer" style="display: none; color: var(--color-cloud-gray); line-height: 1.6; padding-left: 1rem;">
+                            For pilots, we extend work by a week at no cost if the first pass doesn't surface 3 actionable hypotheses.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="section" id="fit-check" style="background: linear-gradient(135deg, var(--color-deep-charcoal) 0%, var(--color-charcoal-light) 100%); text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--color-soft-white);">
+                    Ready to navigate from first principles—not headlines?
+                </h2>
+                
+                <p style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.7; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Book a 15‑min Fit‑Check and we'll show you a map of how Labs could run for your question.
+                </p>
+                
+                <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 4rem; flex-wrap: wrap;">
+                    <a href="#calendar" class="btn btn-primary" onclick="trackCTA('final_fit_check');" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">
+                        Book a Fit‑Check
+                    </a>
+                    <a href="#primer" class="btn btn-secondary" onclick="trackCTA('final_primer');" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">
+                        Download the Labs Primer
+                    </a>
+                    <a href="#signal-list" class="btn btn-ghost" onclick="trackCTA('final_signal_list');" style="padding: 1.25rem 2.5rem; font-size: 1.125rem;">
+                        Join the Signal List
+                    </a>
+                </div>
+
+                <!-- Calendar Embed Placeholder -->
+                <div id="calendar" style="background: rgba(20, 20, 20, 0.5); border: 1px solid var(--color-primary-teal); border-radius: 12px; padding: 3rem; margin-bottom: 2rem;">
+                    <h3 style="color: var(--color-primary-teal); margin-bottom: 1rem;">Calendar Integration</h3>
+                    <p style="color: var(--color-cloud-gray);">
+                        [Calendar widget would be embedded here - Calendly, Acuity, or custom booking system]
+                    </p>
+                </div>
+
+                <!-- Email Capture -->
+                <div id="primer" style="background: rgba(20, 20, 20, 0.5); border: 1px solid var(--color-bright-aqua); border-radius: 12px; padding: 3rem;">
+                    <h3 style="color: var(--color-bright-aqua); margin-bottom: 1rem;">Labs Primer & Signal List</h3>
+                    <p style="color: var(--color-cloud-gray); margin-bottom: 2rem;">
+                        Get the Labs overview deck plus monthly signal intelligence.
+                    </p>
+                    
+                    <form id="signupForm" style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; max-width: 500px; margin: 0 auto;">
+                        <input type="email" id="signup-email" name="email" placeholder="your@email.com" required 
+                               style="flex: 1; min-width: 250px; padding: 1rem; border: 1px solid var(--color-cloud-gray); border-radius: 6px; background: var(--color-deep-charcoal); color: var(--color-soft-white);">
+                        <button type="submit" class="btn btn-primary" style="white-space: nowrap;">
+                            Get Primer
+                        </button>
+                    </form>
+                    
+                    <p style="font-size: 0.875rem; color: var(--color-cloud-gray); margin-top: 1rem; opacity: 0.8;">
+                        One-click privacy respected. Unsubscribe anytime.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Example Deck Modal -->
+    <div class="modal" id="exampleModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 class="mb-4 text-primary">Example Foresight Deck</h3>
+            <p class="mb-6 text-muted">See how we translate complex signals into executive-ready insights.</p>
+            
+            <form id="exampleForm" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" required 
+                           class="w-full p-3 border border-gray-600 rounded bg-gray-800 text-white">
+                </div>
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                    <input type="text" id="name" name="name" required 
+                           class="w-full p-3 border border-gray-600 rounded bg-gray-800 text-white">
+                </div>
+                <button type="submit" class="btn btn-primary w-full">
+                    Get Example Deck
+                </button>
+                <p class="text-xs text-muted">We respect your privacy. Unsubscribe at any time.</p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sticky CTA visibility
+        window.addEventListener('scroll', function() {
+            const stickyCTA = document.getElementById('stickyCTA');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 500) {
+                stickyCTA.classList.add('visible');
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+
+            // Update navbar background
+            const navbar = document.querySelector('.nav-header');
+            if (scrollPosition > 100) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.2)';
+            }
+        });
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('exampleModal').classList.add('active');
+            // Track event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_example_deck_click');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('exampleModal').classList.remove('active');
+        }
+
+        // Close modal on backdrop click
+        document.getElementById('exampleModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Form submission
+        document.getElementById('exampleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Track event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_primer_download');
+            }
+            // Handle form submission here
+            alert('Thank you! Check your email for the example deck.');
+            closeModal();
+        });
+
+        // Track CTA clicks
+        function trackCTA(location) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'cta_click', {
+                    'location': location
+                });
+            }
+        }
+
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('.btn-primary')) {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'cta_primary_click');
+                }
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+                icon.innerHTML = '−';
+                icon.style.transform = 'rotate(0deg)';
+                
+                // Track FAQ open event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'faq_open', {
+                        'question': element.textContent.replace('+', '').replace('−', '').trim()
+                    });
+                }
+            } else {
+                answer.style.display = 'none';
+                icon.innerHTML = '+';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Form submission handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Main signup form
+            const signupForm = document.getElementById('signupForm');
+            if (signupForm) {
+                signupForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = document.getElementById('signup-email').value;
+                    
+                    // Track event
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'cta_primer_download', {
+                            'email': email
+                        });
+                    }
+                    
+                    // Handle form submission here - integrate with your email service
+                    alert('Thank you! Check your email for the Labs Primer.');
+                    signupForm.reset();
+                });
+            }
+
+            // Observe elements when they're added to the page
+            const animatedElements = document.querySelectorAll('.card, .section');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

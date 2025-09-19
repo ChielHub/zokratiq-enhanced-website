@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zokratiq - Wisdom for a Post-Knowledge Work Era</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="/logo.svg" alt="Zokratiq" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#what-we-do" class="nav-link">What We Do</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/zokratiq-for-business" class="nav-link">Work With Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/our-daimon" class="nav-link">Our Daímōn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/become-a-zokratiq" class="nav-link">Careers</a>
+                    </li>
+                </ul>
+                <div class="nav-buttons">
+                    <a href="#schedule-demo" class="contact-btn">Contact Us</a>
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <h1 class="hero-title">Wisdom for a Post-Knowledge Work Era</h1>
+                <div class="hero-subtitle">
+                    <p>🔍 Uncover hidden truths about your business</p>
+                    <p>🧠 Think beyond conventional wisdom</p>
+                    <p>⚡ Transform insights into action</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#schedule-demo" class="cta-primary">Let's chat ></a>
+                    <a href="#what-we-do" class="cta-secondary">Learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="what-we-do">
+            <div class="section-container">
+                <h2 class="section-title">Build the Tao of Business for the Age of Wizardry</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Discovery</h3>
+                        <p>Uncover hidden patterns and insights in your business operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation</h3>
+                        <p>Transform traditional thinking with breakthrough methodologies.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>Implementation</h3>
+                        <p>Turn wisdom into actionable strategies that drive results.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Growth</h3>
+                        <p>Scale your business with sustainable, wisdom-driven practices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Leadership</h3>
+                        <p>Develop leaders who think beyond conventional boundaries.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Strategy</h3>
+                        <p>Craft strategies that blend ancient wisdom with modern insights.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Balance</h3>
+                        <p>Achieve harmony between innovation and sustainable growth.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Transformation</h3>
+                        <p>Revolutionize your business for the post-knowledge era.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <div class="section-container">
+                <h2 class="section-title">Think Whole-Brain</h2>
+                <p class="section-subtitle">Discover Hidden Truths about your Business</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-emoji">🎯</div>
+                        <h3>Strategic Clarity</h3>
+                        <p>Cut through complexity to find your true north.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-emoji">💡</div>
+                        <h3>Innovation Mindset</h3>
+                        <p>Cultivate breakthrough thinking across your organization.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-emoji">⚡</div>
+                        <h3>Rapid Implementation</h3>
+                        <p>Turn insights into action with proven methodologies.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-emoji">🧭</div>
+                        <h3>Future Navigation</h3>
+                        <p>Build capabilities for continuous adaptation and growth.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-emoji">🌟</div>
+                        <h3>Sustainable Success</h3>
+                        <p>Create lasting value through wisdom-driven practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="schedule-demo" class="contact">
+            <div class="section-container">
+                <h2 class="section-title">Ready to Begin?</h2>
+                <p class="section-subtitle">Let's explore how Zokratiq can transform your business</p>
+                <div class="contact-buttons">
+                    <button class="cta-primary">Schedule a Demo</button>
+                    <button class="cta-secondary">Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="/logo.svg" alt="Zokratiq" class="logo-img">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="/zokratiq-for-business">For Business</a></li>
+                            <li><a href="/consulting">Consulting</a></li>
+                            <li><a href="/training">Training</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="/blog">Blog</a></li>
+                            <li><a href="/guides">Guides</a></li>
+                            <li><a href="/events">Events</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zokratiq. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

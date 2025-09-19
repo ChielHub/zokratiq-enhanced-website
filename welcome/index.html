@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="preload" as="image" href="/zokratiq-logo-new.jpeg"/>
+  <link rel="stylesheet" href="/_next/static/css/12de429fa5899632.css" crossorigin="" data-precedence="next"/>
+  <title>Welcome to The Signal - Zokratiq</title>
+  <meta name="description" content="Welcome to The Signal - your gateway to reality exploration artifacts from Zokratiq."/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-base-black text-soft-white font-sans antialiased overflow-x-hidden">
+  <div class="min-h-screen bg-base-black text-soft-white flex items-center justify-center px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-8">
+        <img src="/zokratiq-logo-new.jpeg" alt="Zokratiq" class="w-16 h-16 rounded-full object-cover mx-auto mb-6"/>
+        <div class="font-bold text-soft-white text-2xl mb-2">Zokratiq</div>
+        <div class="text-sm font-mono text-primary-teal uppercase tracking-wider">Reality Exploration Studio</div>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h1 class="text-4xl md:text-6xl font-bold text-primary-teal mb-6">Welcome to The Signal</h1>
+          <div class="w-24 h-1 bg-gradient-to-r from-primary-teal to-bright-aqua mx-auto mb-8"></div>
+        </div>
+        
+        <div class="space-y-6 text-lg md:text-xl text-cloud-gray leading-relaxed max-w-3xl mx-auto">
+          <p class="text-xl md:text-2xl font-serif text-soft-white font-semibold">
+            Your inbox just became a gate.
+          </p>
+          
+          <p>You're now connected to <span class="text-primary-teal font-semibold">The Signal</span> — our irregular transmission of reality exploration artifacts.</p>
+          
+          <p>What you'll receive: new frameworks, prompts, and tools that nudge perception. Not noise. Delivered infrequently, intentionally.</p>
+          
+          <div class="bg-deep-charcoal/50 border border-primary-teal/20 rounded-lg p-8 my-12">
+            <div class="text-2xl mb-4">📡</div>
+            <p class="text-primary-teal font-semibold text-lg mb-4">First transmission incoming soon</p>
+            <p class="text-base">Add <span class="font-mono text-bright-aqua">hello@zokratiq.com</span> to your safe senders to ensure our artifacts reach you.</p>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-800">
+          <p class="text-lg font-serif italic text-primary-teal mb-6">
+            "This is where the useful things hide."
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/" class="inline-flex items-center px-6 py-3 bg-primary-teal text-base-black font-semibold rounded-lg hover:bg-bright-aqua transition-all duration-300">
+              ← Back to Zokratiq
+            </a>
+            <a href="/resources/" class="inline-flex items-center px-6 py-3 border-2 border-primary-teal/60 text-primary-teal font-semibold rounded-lg hover:border-primary-teal hover:bg-primary-teal/10 transition-all duration-300">
+              Explore Resources
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-8 text-sm text-cloud-gray/60">
+          <p class="mb-2">— The Zokratiq Team</p>
+          <p class="font-mono">Reality Exploration Studio</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Track newsletter confirmation
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'newsletter_confirmed', {
+        'event_category': 'engagement',
+        'event_label': 'the_signal'
+      });
+    }
+    
+    // Add some subtle animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const elements = document.querySelectorAll('[class*="space-y-"], h1, p, div');
+      elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    });
+  </script>
+</body>
+</html>

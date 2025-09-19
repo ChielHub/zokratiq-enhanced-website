@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weird LinkedIn Optimizer – Lead Gen Prompt Pack | Zokratiq</title>
+    <meta name="description" content="An interactive tool that helps unconventional professionals optimize their LinkedIn profile with weird-but-workable improvements. Free taste, then email capture for full audit.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-charcoal-light: #1a1a1a;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-heritage-red: #DC2626;
+            --color-deep-indigo: #1E293B;
+            --color-muted-ochre: #D97706;
+            --color-weird-purple: #8B5CF6;
+            --color-beta-orange: #FB923C;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: var(--color-primary-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-weird-purple), var(--color-bright-aqua));
+            color: var(--color-base-black);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-weird-purple);
+            border: 2px solid var(--color-weird-purple);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-weird-purple);
+            color: var(--color-base-black);
+        }
+
+        .btn-copy {
+            background: rgba(74, 223, 214, 0.2);
+            color: var(--color-bright-aqua);
+            border: 1px solid var(--color-bright-aqua);
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 6px;
+        }
+
+        .btn-copy:hover {
+            background: var(--color-bright-aqua);
+            color: var(--color-base-black);
+        }
+
+        /* Share Buttons */
+        .share-section {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .btn-share {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-share-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .btn-share-linkedin:hover {
+            background: #005885;
+            transform: translateY(-2px);
+        }
+
+        .btn-share-x {
+            background: #000000;
+            color: white;
+        }
+
+        .btn-share-x:hover {
+            background: #333333;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-share {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-soft-white);
+            font-weight: 600;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(199, 210, 254, 0.3);
+            border-radius: 6px;
+            background: var(--color-deep-charcoal);
+            color: var(--color-soft-white);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-weird-purple);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Profile Preview */
+        .profile-preview {
+            background: rgba(0, 119, 181, 0.1);
+            border: 1px solid rgba(0, 119, 181, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .linkedin-blue {
+            color: #0077B5;
+        }
+
+        /* Output Sections */
+        .output-section {
+            margin: 2rem 0;
+        }
+
+        .free-output {
+            background: rgba(74, 223, 214, 0.1);
+            border: 2px solid var(--color-bright-aqua);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .locked-output {
+            background: rgba(139, 92, 246, 0.05);
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .locked-content {
+            filter: blur(3px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .unlock-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .unlock-overlay h3 {
+            color: var(--color-weird-purple);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .unlock-overlay p {
+            color: var(--color-cloud-gray);
+            margin-bottom: 2rem;
+            max-width: 400px;
+        }
+
+        /* Email Capture Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 10, 10, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--color-deep-charcoal);
+            border: 2px solid var(--color-weird-purple);
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--color-cloud-gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--color-soft-white);
+        }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-weird-purple); }
+        .text-accent { color: var(--color-bright-aqua); }
+        .text-muted { color: var(--color-cloud-gray); }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+
+        .mt-8 { margin-top: 2rem; }
+
+        .hidden { display: none; }
+
+        /* Step indicators */
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--color-cloud-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .step.active {
+            background: var(--color-weird-purple);
+            color: var(--color-base-black);
+        }
+
+        .step.completed {
+            background: var(--color-bright-aqua);
+            color: var(--color-base-black);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: 4rem; padding-bottom: 4rem; background: linear-gradient(135deg, rgba(12, 12, 12, 0.9) 0%, rgba(20, 20, 20, 0.8) 50%, rgba(12, 12, 12, 0.9) 100%);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                    <h1 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.1; color: var(--color-soft-white);">
+                        Weird LinkedIn <span class="font-playfair text-primary" style="font-style: italic;">Optimizer</span>
+                    </h1>
+                    
+                    <p style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--color-weird-purple); font-family: 'Crimson Text', serif; font-style: italic;">
+                        Lead Gen Prompt Pack for Unconventional Professionals
+                    </p>
+                    
+                    <div style="font-size: 1.1rem; color: var(--color-cloud-gray); line-height: 1.7; margin-bottom: 3rem;">
+                        <p style="margin-bottom: 1rem;">Turn your LinkedIn profile from beige to brilliant.</p>
+                        <p style="font-weight: 600; color: var(--color-soft-white);">Weird-but-workable optimizations that attract the right kind of weird.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step Indicator -->
+        <section class="section" style="padding: 1rem 0;">
+            <div class="container">
+                <div class="step-indicator">
+                    <div class="step active" id="step1">1</div>
+                    <div class="step" id="step2">2</div>
+                    <div class="step" id="step3">3</div>
+                    <div class="step" id="step4">4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LinkedIn Input Section -->
+        <section class="section" id="linkedin-input">
+            <div class="container">
+                <div class="card" style="max-width: 600px; margin: 0 auto;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-soft-white); text-align: center;">
+                        Step 1: Extract Your LinkedIn Profile
+                    </h2>
+                    <p style="color: var(--color-cloud-gray); text-align: center; margin-bottom: 2rem;">
+                        Paste your LinkedIn profile URL to extract your current headline and bio.
+                        <br><small style="color: var(--color-muted-ochre); margin-top: 0.5rem; display: block;">Note: Due to LinkedIn's privacy protections, extraction may not work for all profiles.</small>
+                    </p>
+
+                    <form id="linkedinForm">
+                        <div class="form-group">
+                            <label for="linkedin-url" class="form-label">LinkedIn Profile URL</label>
+                            <input type="url" id="linkedin-url" name="linkedin-url" class="form-input" 
+                                   placeholder="https://linkedin.com/in/your-profile" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Extract Profile →
+                        </button>
+                    </form>
+                    
+                    <p style="color: var(--color-cloud-gray); text-align: center; margin-top: 1.5rem; font-size: 0.9rem;">
+                        Make sure your LinkedIn profile is public or 
+                        <a href="#" onclick="showManualInput()" style="color: var(--color-weird-purple); text-decoration: underline;">click here if you want to copy-paste your LinkedIn headline and bio</a>.
+                    </p>
+
+                    <!-- Profile Preview (hidden initially) -->
+                    <div id="profile-preview" class="hidden">
+                        <h3 style="color: var(--color-bright-aqua); margin: 2rem 0 1rem 0;">Your Current Profile</h3>
+                        <div class="profile-preview">
+                            <div style="margin-bottom: 1rem;">
+                                <strong class="linkedin-blue">Headline:</strong>
+                                <div id="current-headline" style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0, 119, 181, 0.1); border-radius: 4px;">
+                                    <!-- Extracted headline will appear here -->
+                                </div>
+                            </div>
+                            <div>
+                                <strong class="linkedin-blue">About/Bio:</strong>
+                                <div id="current-bio" style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0, 119, 181, 0.1); border-radius: 4px;">
+                                    <!-- Extracted bio will appear here -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-8">
+                            <button class="btn btn-secondary" onclick="proceedToQuestions()">
+                                Continue to Weirdness Discovery →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manual Profile Input Section (Step 1a) -->
+        <section class="section hidden" id="manual-profile-input">
+            <div class="container">
+                <div class="card" style="max-width: 600px; margin: 0 auto;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-soft-white); text-align: center;">
+                        Step 1a: Enter Your Profile Info
+                    </h2>
+                    <p style="color: var(--color-cloud-gray); text-align: center; margin-bottom: 2rem;">
+                        Copy-paste your current LinkedIn headline and bio from your profile.
+                    </p>
+
+                    <form id="manualProfileForm">
+                        <div class="form-group">
+                            <label for="manual-headline" class="form-label">Your Current LinkedIn Headline</label>
+                            <input type="text" id="manual-headline" name="manual-headline" class="form-input" 
+                                   placeholder="Senior Marketing Manager | Growth-focused | Results-driven professional" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="manual-bio" class="form-label">Your Current LinkedIn Bio/About Section</label>
+                            <textarea id="manual-bio" name="manual-bio" class="form-textarea" 
+                                      placeholder="Experienced marketing professional with 8+ years in digital marketing. Proven track record of driving growth and increasing ROI..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Continue with This Profile →
+                        </button>
+                    </form>
+                    
+                    <div class="text-center" style="margin-top: 1rem;">
+                        <a href="#" onclick="hideManualInput()" style="color: var(--color-cloud-gray); font-size: 0.9rem; text-decoration: underline;">
+                            ← Back to URL extraction
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weirdness Questions Section -->
+        <section class="section hidden" id="weirdness-questions">
+            <div class="container">
+                <div class="card" style="max-width: 700px; margin: 0 auto;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem; color: var(--color-soft-white); text-align: center;">
+                        Step 2: Weirdness Discovery
+                    </h2>
+                    <p style="color: var(--color-cloud-gray); text-align: center; margin-bottom: 3rem;">
+                        Answer these 7 questions to unlock your weird professional superpowers.
+                    </p>
+
+                    <form id="weirdnessForm">
+                        <div class="form-group">
+                            <label for="q1" class="form-label">1. What's your weird superpower?</label>
+                            <textarea id="q1" name="q1" class="form-textarea" 
+                                      placeholder="The thing you do that others find mysterious but valuable..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="q2" class="form-label">2. Which rabbit holes do you fall into?</label>
+                            <textarea id="q2" name="q2" class="form-textarea" 
+                                      placeholder="Topics you obsess over, research for hours, can't stop thinking about..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="q3" class="form-label">3. What do people come to you for that's not in your job description?</label>
+                            <textarea id="q3" name="q3" class="form-textarea" 
+                                      placeholder="The unofficial expertise you've developed..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="q4" class="form-label">4. If your vibe were a movie character or mythical figure, who would it be?</label>
+                            <input type="text" id="q4" name="q4" class="form-input" 
+                                   placeholder="Hermione Granger, Tyrion Lannister, Athena, etc..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="q5" class="form-label">5. Which three words would your best friend use to describe your professional energy?</label>
+                            <input type="text" id="q5" name="q5" class="form-input" 
+                                   placeholder="Intense, curious, unconventional..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="q6" class="form-label">6. What's the most unconventional thing you've done at work that actually worked?</label>
+                            <textarea id="q6" name="q6" class="form-textarea" 
+                                      placeholder="The time you broke the rules and it paid off..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="q7" class="form-label">7. What kind of opportunities or collaborators are you trying to attract right now?</label>
+                            <textarea id="q7" name="q7" class="form-textarea" 
+                                      placeholder="The weird, the ambitious, the boundary-pushers..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Generate My Weird Audit →
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Output Section -->
+        <section class="section hidden" id="free-output">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white); text-align: center;">
+                        Step 3: Your Free Weird Optimization
+                    </h2>
+
+                    <div class="free-output">
+                        <h3 style="color: var(--color-bright-aqua); margin-bottom: 1rem; font-size: 1.25rem;">
+                            🎯 New Headline Idea
+                        </h3>
+                        <div id="new-headline" style="background: rgba(74, 223, 214, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 1rem; font-weight: 600;">
+                            <!-- Generated headline will appear here -->
+                        </div>
+                        <button class="btn-copy" onclick="copyToClipboard('new-headline')">Click to Copy</button>
+
+                        <h3 style="color: var(--color-bright-aqua); margin: 2rem 0 1rem 0; font-size: 1.25rem;">
+                            ⚡ Quick Win Tip
+                        </h3>
+                        <div id="quick-tip" style="background: rgba(74, 223, 214, 0.2); padding: 1rem; border-radius: 6px; color: var(--color-cloud-gray); line-height: 1.6;">
+                            <!-- Generated tip will appear here -->
+                        </div>
+                    </div>
+
+                    <!-- Locked Content Preview -->
+                    <div class="locked-output">
+                        <div class="locked-content">
+                            <h3 style="color: var(--color-weird-purple); margin-bottom: 1rem;">🔥 4 More Headline Options</h3>
+                            <div style="background: rgba(139, 92, 246, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                                "Narrative Architect | Professional Chaos Tamer | [Industry] Systems Whisperer"
+                            </div>
+                            <div style="background: rgba(139, 92, 246, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                                "Question-Everything [Role] | Pattern Detector | Rabbit-Hole Professional"
+                            </div>
+                            <div style="background: rgba(139, 92, 246, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 2rem;">
+                                "[Your Weird Superpower] Specialist | Unconventional Problem Solver"
+                            </div>
+
+                            <h3 style="color: var(--color-warm-accent); margin-bottom: 1rem;">✨ Bio Rewrite</h3>
+                            <div style="background: rgba(198, 151, 44, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 2rem;">
+                                A complete rewrite of your About section that weaves together your professional expertise with your weird obsessions, unconventional approaches, and the specific kinds of challenges that light you up...
+                            </div>
+
+                            <h3 style="color: var(--color-heritage-red); margin-bottom: 1rem;">🎯 5 Personalized Tips</h3>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="background: rgba(220, 38, 38, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                                    Based on your rabbit hole obsession with [specific topic]...
+                                </li>
+                                <li style="background: rgba(220, 38, 38, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                                    Your [movie character] energy should show up in...
+                                </li>
+                                <li style="background: rgba(220, 38, 38, 0.2); padding: 1rem; border-radius: 6px;">
+                                    That unconventional thing you did? Turn it into...
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="unlock-overlay">
+                            <h3>Want the Full Weird Audit?</h3>
+                            <p>Drop your email and we'll send you your complete Weird LinkedIn Optimizer Pack with 4 more headlines, bio rewrite, and personalized tips.</p>
+                            <button class="btn btn-primary" onclick="showEmailModal()">
+                                Unlock Full Audit →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unlocked Content Section -->
+        <section class="section hidden" id="unlocked-content">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white); text-align: center;">
+                        Step 4: Your Complete Weird LinkedIn Optimizer Pack
+                    </h2>
+
+                    <!-- Additional Headlines -->
+                    <div class="card" style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--color-weird-purple); margin-bottom: 1rem;">🔥 4 More Headline Options</h3>
+                        <div id="additional-headlines">
+                            <!-- Generated headlines will appear here -->
+                        </div>
+                    </div>
+
+                    <!-- Bio Rewrite -->
+                    <div class="card" style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--color-warm-accent); margin-bottom: 1rem;">✨ Suggested Bio Rewrite</h3>
+                        <div id="bio-rewrite" style="background: rgba(198, 151, 44, 0.1); padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--color-warm-accent); line-height: 1.7;">
+                            <!-- Generated bio will appear here -->
+                        </div>
+                        <button class="btn-copy" onclick="copyToClipboard('bio-rewrite')" style="margin-top: 1rem;">Click to Copy</button>
+                    </div>
+
+                    <!-- Personalized Tips -->
+                    <div class="card" style="margin-bottom: 2rem;">
+                        <h3 style="color: var(--color-heritage-red); margin-bottom: 1rem;">🎯 Your Personalized Tips</h3>
+                        <div id="personalized-tips">
+                            <!-- Generated tips will appear here -->
+                        </div>
+                    </div>
+
+                    <!-- Bonus General Tips -->
+                    <div class="card">
+                        <h3 style="color: var(--color-bright-aqua); margin-bottom: 1rem;">💎 Bonus: General Weird Tips</h3>
+                        <ul style="list-style: none; padding: 0; color: var(--color-cloud-gray); line-height: 1.7;">
+                            <li style="margin-bottom: 1rem;">• <strong>Lead with your weirdest strength, not your title.</strong> "Systems Poet" beats "Senior Manager" every time.</li>
+                            <li style="margin-bottom: 1rem;">• <strong>Replace corporate speak with your actual obsessions.</strong> "Results-driven" → "Process-obsessed" or "Detail-hypnotized"</li>
+                            <li style="margin-bottom: 1rem;">• <strong>Use your unconventional background as a superpower.</strong> That philosophy degree? It's not irrelevant—it's your edge.</li>
+                            <li style="margin-bottom: 1rem;">• <strong>Write for the people you want to work with, not HR.</strong> If they don't get your weird, they're not your people.</li>
+                            <li>• <strong>Show the process behind the result.</strong> Don't just say you "increased conversion." Say you "obsessed over micro-interactions until users couldn't help but click."</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Share Section -->
+                    <div class="share-section">
+                        <h3 style="color: var(--color-weird-purple); margin-bottom: 0.5rem; font-size: 1.25rem;">✨ Share Your Weird Optimization</h3>
+                        <p style="color: var(--color-cloud-gray); margin-bottom: 0;">Help other unconventional professionals discover their weird edge</p>
+                        <div class="share-buttons">
+                            <a href="#" onclick="shareOnLinkedIn()" class="btn-share btn-share-linkedin">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                Share on LinkedIn
+                            </a>
+                            <a href="#" onclick="shareOnX()" class="btn-share btn-share-x">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                                Share on X
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Email Capture Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEmailModal()">&times;</button>
+            <h2 style="color: var(--color-weird-purple); margin-bottom: 1rem; text-align: center;">
+                Unlock Your Full Weird Audit
+            </h2>
+            <p style="color: var(--color-cloud-gray); text-align: center; margin-bottom: 2rem;">
+                Get your complete optimization pack with 4 more headlines, bio rewrite, and personalized tips based on your weirdness profile.
+            </p>
+            
+            <form id="emailCaptureForm">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="form-label">First Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Send Me My Full Weird Audit →
+                </button>
+                
+                <p style="font-size: 0.875rem; color: var(--color-cloud-gray); text-align: center; margin-top: 1rem; opacity: 0.8;">
+                    We'll email you the complete pack. No spam, unsubscribe anytime.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Application State
+        let currentStep = 1;
+        let profileData = {};
+        let weirdnessAnswers = {};
+        let emailCaptured = false;
+        let manualInputMode = false;
+
+        // Step Navigation
+        function updateStepIndicator(step) {
+            for (let i = 1; i <= 4; i++) {
+                const stepEl = document.getElementById(`step${i}`);
+                stepEl.classList.remove('active', 'completed');
+                if (i < step) {
+                    stepEl.classList.add('completed');
+                } else if (i === step) {
+                    stepEl.classList.add('active');
+                }
+            }
+        }
+
+        // LinkedIn Profile Extraction
+        document.getElementById('linkedinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const url = document.getElementById('linkedin-url').value;
+            
+            // Simulate profile extraction (in real implementation, this would call LinkedIn API or scraping service)
+            extractLinkedInProfile(url);
+        });
+        
+        // Manual Profile Input
+        document.getElementById('manualProfileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const headline = document.getElementById('manual-headline').value;
+            const bio = document.getElementById('manual-bio').value;
+            
+            // Set profile data from manual input
+            profileData = {
+                headline: headline,
+                bio: bio
+            };
+            
+            // Display entered profile
+            document.getElementById('current-headline').textContent = profileData.headline;
+            document.getElementById('current-bio').textContent = profileData.bio;
+            document.getElementById('profile-preview').classList.remove('hidden');
+            
+            // Hide manual input and show preview
+            document.getElementById('manual-profile-input').classList.add('hidden');
+            document.getElementById('linkedin-input').classList.remove('hidden');
+            document.getElementById('profile-preview').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        function extractLinkedInProfile(url) {
+            // Show loading state
+            const submitBtn = document.querySelector('#linkedinForm button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Trying to Extract...';
+            submitBtn.disabled = true;
+            
+            // Call PHP backend to extract profile
+            fetch('extract-profile.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ url: url })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                if (data.success) {
+                    // Store extracted profile data
+                    profileData = {
+                        headline: data.headline,
+                        bio: data.bio
+                    };
+                    
+                    // Display extracted profile
+                    document.getElementById('current-headline').textContent = profileData.headline;
+                    document.getElementById('current-bio').textContent = profileData.bio;
+                    document.getElementById('profile-preview').classList.remove('hidden');
+                    
+                    // Scroll to preview
+                    document.getElementById('profile-preview').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    // Show error message and auto-redirect to manual input
+                    showLinkedInBlockedMessage();
+                }
+            })
+            .catch(error => {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                console.error('Error:', error);
+                showLinkedInBlockedMessage();
+            });
+        }
+        
+        function showLinkedInBlockedMessage() {
+            // Create helpful message div
+            let messageDiv = document.getElementById('linkedin-blocked-message');
+            if (!messageDiv) {
+                messageDiv = document.createElement('div');
+                messageDiv.id = 'linkedin-blocked-message';
+                messageDiv.style.cssText = `
+                    background: rgba(198, 151, 44, 0.1);
+                    border: 2px solid var(--color-warm-accent);
+                    color: var(--color-soft-white);
+                    padding: 1.5rem;
+                    border-radius: 8px;
+                    margin-top: 1.5rem;
+                    text-align: center;
+                `;
+                messageDiv.innerHTML = `
+                    <h4 style="color: var(--color-warm-accent); margin-bottom: 1rem; font-size: 1.1rem;">🛡️ LinkedIn Privacy Protection Active</h4>
+                    <p style="margin-bottom: 1rem; line-height: 1.5;">LinkedIn blocks automated profile extraction to protect user privacy. No worries—we've got you covered!</p>
+                    <button onclick="showManualInput()" class="btn btn-secondary" style="margin-top: 0.5rem;">
+                        📝 Use Manual Input Instead →
+                    </button>
+                    <p style="font-size: 0.85rem; color: var(--color-cloud-gray); margin-top: 1rem;">Just copy-paste your headline and bio manually. Takes 30 seconds!</p>
+                `;
+                document.getElementById('linkedinForm').appendChild(messageDiv);
+            }
+            
+            messageDiv.style.display = 'block';
+        }
+        
+        function showErrorMessage(message) {
+            // Create or update error message div
+            let errorDiv = document.getElementById('linkedin-error');
+            if (!errorDiv) {
+                errorDiv = document.createElement('div');
+                errorDiv.id = 'linkedin-error';
+                errorDiv.style.cssText = `
+                    background: rgba(220, 38, 38, 0.1);
+                    border: 1px solid var(--color-heritage-red);
+                    color: var(--color-heritage-red);
+                    padding: 1rem;
+                    border-radius: 6px;
+                    margin-top: 1rem;
+                    text-align: center;
+                `;
+                document.getElementById('linkedinForm').appendChild(errorDiv);
+            }
+            
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            
+            // Hide error after 10 seconds
+            setTimeout(() => {
+                if (errorDiv) {
+                    errorDiv.style.display = 'none';
+                }
+            }, 10000);
+        }
+
+        function proceedToQuestions() {
+            currentStep = 2;
+            updateStepIndicator(currentStep);
+            
+            document.getElementById('linkedin-input').classList.add('hidden');
+            document.getElementById('weirdness-questions').classList.remove('hidden');
+            document.getElementById('weirdness-questions').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Weirdness Questions Form
+        document.getElementById('weirdnessForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect answers
+            const formData = new FormData(this);
+            weirdnessAnswers = Object.fromEntries(formData.entries());
+            
+            // Generate free output
+            generateFreeOutput();
+        });
+
+        function generateFreeOutput() {
+            currentStep = 3;
+            updateStepIndicator(currentStep);
+            
+            // Generate weird headline based on answers
+            const weirdSuperpower = weirdnessAnswers.q1.slice(0, 50) + (weirdnessAnswers.q1.length > 50 ? '...' : '');
+            const character = weirdnessAnswers.q4;
+            const energy = weirdnessAnswers.q5;
+            
+            const newHeadline = generateWeirdHeadline(weirdSuperpower, character, energy);
+            const quickTip = generateQuickTip();
+            
+            document.getElementById('new-headline').textContent = newHeadline;
+            document.getElementById('quick-tip').innerHTML = quickTip;
+            
+            document.getElementById('weirdness-questions').classList.add('hidden');
+            document.getElementById('free-output').classList.remove('hidden');
+            document.getElementById('free-output').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateWeirdHeadline(superpower, character, energy) {
+            // Comprehensive archetype library for metaphor-rich headlines
+            const archetypeLibrary = {
+                explorer: ['Navigator of Uncharted Territory', 'Cartographer of Hidden Signals', 'Pathbreaker', 'Horizon-Seeker', 'Lighthouse Keeper'],
+                maker: ['Architect of Possibilities', 'Alchemist of Ideas', 'Weaver of Solutions', 'Builder of Bridges', 'Sculptor of Chaos'],
+                story: ['Mythmaker', 'Professional Trickster', 'Business Bard', 'Oracle of Innovation', 'Dreamsmith'],
+                nature: ['Gardener of Ideas', 'River Guide', 'Pattern Tracker', 'Forest Whisperer', 'Ecosystem Designer'],
+                tech: ['Signal Decoder', 'Systems Hacker', 'Code Whisperer', 'Quantum Tinkerer', 'Data Archaeologist'],
+                mystic: ['Threshold Guardian', 'Seer of Patterns', 'Ritual Designer', 'Shadow Walker', 'Reality Translator'],
+                playful: ['Jester of Serious Business', 'Curiosity Engineer', 'Chaos Surfer', 'Professional Rebel', 'Boundary Bender']
+            };
+            
+            // Get random archetypes from different categories
+            const categories = Object.keys(archetypeLibrary);
+            const randomCategory1 = categories[Math.floor(Math.random() * categories.length)];
+            const randomCategory2 = categories[Math.floor(Math.random() * categories.length)];
+            
+            const archetype1 = archetypeLibrary[randomCategory1][Math.floor(Math.random() * archetypeLibrary[randomCategory1].length)];
+            const archetype2 = archetypeLibrary[randomCategory2][Math.floor(Math.random() * archetypeLibrary[randomCategory2].length)];
+            
+            const templates = [
+                `${archetype1} | ${archetype2}`,
+                `${archetype1} | ${energy.split(',')[0]} Systems Mystic`,
+                `Professional ${character} | ${archetype2}`,
+                `${archetype1} | Edge-Walker in ${getIndustryFromProfile()}`
+            ];
+            
+            return templates[Math.floor(Math.random() * templates.length)];
+        }
+        
+        function getIndustryFromProfile() {
+            const headline = profileData.headline || '';
+            if (headline.includes('Marketing')) return 'Marketing Mysteries';
+            if (headline.includes('Engineer')) return 'Engineering Reality';
+            if (headline.includes('Design')) return 'Design Dimensions';
+            if (headline.includes('Sales')) return 'Sales Alchemy';
+            if (headline.includes('Product')) return 'Product Universes';
+            if (headline.includes('Manager')) return 'Management Magic';
+            return 'Professional Realms';
+        }
+
+        function generateQuickTip() {
+            const mysticalTips = [
+                `Transform your professional title into an archetype. Instead of listing what you do, reveal <em>who you are</em> in the work. Your essence as a <strong>"${weirdnessAnswers.q4}"</strong> contains more magnetism than any job description.`,
+                `Your obsession with <strong>"${weirdnessAnswers.q2.split(',')[0]}"</strong> isn't a hobby—it's a lens. Frame it as your unique way of seeing patterns others miss. You're not just in your industry; you're translating hidden signals within it.`,
+                `Replace corporate speak with your actual magic. That thing you do that others find mysterious? <strong>"${weirdnessAnswers.q1.slice(0, 60)}..."</strong> That's not a skill—it's your professional superpower wrapped in mystique.`
+            ];
+            
+            return mysticalTips[Math.floor(Math.random() * mysticalTips.length)];
+        }
+
+        // Email Modal Functions
+        function showEmailModal() {
+            document.getElementById('emailModal').classList.add('active');
+        }
+
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.remove('active');
+        }
+
+        // Email Capture Form
+        document.getElementById('emailCaptureForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            
+            // Simulate email capture (in real implementation, this would integrate with ConvertKit/Mailchimp)
+            emailCaptured = true;
+            closeEmailModal();
+            unlockFullContent();
+        });
+
+        function unlockFullContent() {
+            currentStep = 4;
+            updateStepIndicator(currentStep);
+            
+            // Generate full content
+            generateAdditionalHeadlines();
+            generateBioRewrite();
+            generatePersonalizedTips();
+            
+            document.getElementById('free-output').classList.add('hidden');
+            document.getElementById('unlocked-content').classList.remove('hidden');
+            document.getElementById('unlocked-content').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateAdditionalHeadlines() {
+            // Generate 4 different archetypal headlines using the comprehensive library
+            const archetypeLibrary = {
+                explorer: ['Navigator of Uncharted Territory', 'Cartographer of Hidden Signals', 'Pathbreaker', 'Horizon-Seeker'],
+                maker: ['Architect of Possibilities', 'Alchemist of Ideas', 'Weaver of Solutions', 'Sculptor of Chaos'],
+                story: ['Mythmaker', 'Professional Trickster', 'Business Bard', 'Oracle of Innovation'],
+                mystic: ['Threshold Guardian', 'Seer of Patterns', 'Reality Translator', 'Shadow Walker'],
+                playful: ['Curiosity Engineer', 'Chaos Surfer', 'Professional Rebel', 'Boundary Bender']
+            };
+            
+            const energy = weirdnessAnswers.q5.split(',')[0] || 'Mysterious';
+            const industry = getIndustryFromProfile();
+            
+            const archetypeHeadlines = [
+                `${archetypeLibrary.explorer[0]} | ${energy} Truth Excavator`,
+                `${archetypeLibrary.maker[1]} | Professional Edge Walker in ${industry}`,
+                `${archetypeLibrary.mystic[2]} | ${archetypeLibrary.playful[0]}`,
+                `${archetypeLibrary.story[3]} | ${weirdnessAnswers.q4} Energy Practitioner`
+            ];
+            
+            const headlinesHTML = archetypeHeadlines.map((headline, index) => 
+                `<div style="background: rgba(139, 92, 246, 0.2); padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+                    "${headline}"
+                    <button class="btn-copy" onclick="copyText('${headline.replace(/'/g, "\\'")}')" style="float: right; padding: 0.25rem 0.5rem; font-size: 0.75rem;">Copy</button>
+                </div>`
+            ).join('');
+            
+            document.getElementById('additional-headlines').innerHTML = headlinesHTML;
+        }
+
+        function generateBioRewrite() {
+            const bio = `I walk the edges where ${profileData.headline.split(' | ')[0] || 'conventional thinking'} meets the unmapped territories of possibility.
+
+While others ${getCommonApproach()}, I disappear into the labyrinth of "${weirdnessAnswers.q2.slice(0, 80)}..." and return with ${weirdnessAnswers.q1.slice(0, 60)}... — that strange alchemy others find mysterious but somehow always works.
+
+The unconventional path? ${weirdnessAnswers.q6.slice(0, 120)}... It succeeded because I've learned to trust the ${weirdnessAnswers.q5.split(',')[0]} frequency that most professional spaces try to mute. When you combine intuitive ${weirdnessAnswers.q2.split(',')[0] || 'pattern recognition'} with systematic execution, breakthrough becomes inevitable.
+
+I'm drawn to: ${weirdnessAnswers.q7.slice(0, 100)}... — the spaces where conventional wisdom breaks down and new possibilities emerge.
+
+If you need someone who can ${weirdnessAnswers.q3.slice(0, 60)}... while operating at the intersection of ${weirdnessAnswers.q4} wisdom and practical magic, we should explore what's possible together.`;
+            
+            document.getElementById('bio-rewrite').textContent = bio;
+        }
+
+        function getCommonApproach() {
+            const approaches = [
+                "follow best practices",
+                "stick to proven methods",
+                "play it safe",
+                "use standard approaches",
+                "follow the playbook"
+            ];
+            return approaches[Math.floor(Math.random() * approaches.length)];
+        }
+
+        function generatePersonalizedTips() {
+            // Archetype-enhanced personalized tips
+            const archetypeMap = {
+                'explorer': 'Navigate uncharted professional territories by',
+                'maker': 'Architect new possibilities by',
+                'story': 'Weave compelling narratives by',
+                'mystic': 'Decode hidden patterns by',
+                'playful': 'Engineer curiosity by'
+            };
+            
+            const tips = [
+                `<strong>Your ${weirdnessAnswers.q2.split(',')[0] || 'mystical obsession'}:</strong> This isn't a hobby—it's your secret cartography for mapping territories others can't see. Create content series: "What the hidden signals in ${weirdnessAnswers.q2.split(',')[0] || 'your domain'} reveal about transformation." You're not just an expert; you're a bridge between dimensions of knowledge.`,
+                
+                `<strong>Channel your inner ${weirdnessAnswers.q4}:</strong> Stop writing like everyone else. Let your content pulse with ${weirdnessAnswers.q4} energy. Approach industry challenges as this archetype would—whether that's strategic wisdom, rebellious insight, or mystical clarity. The right frequency will call your tribe home.`,
+                
+                `<strong>Your unconventional breakthrough story:</strong> "${weirdnessAnswers.q6.slice(0, 80)}..." This isn't just a success—it's modern mythology. Frame it as a teaching parable about trusting the path others fear to walk. You're giving permission for professional courage.`,
+                
+                `<strong>The shadow mastery people seek:</strong> "${weirdnessAnswers.q3.slice(0, 60)}..." This invisible expertise often carries more transformative power than your official role. Lead with this mystery—it's the real magic people are hunting for, even if they can't name it.`,
+                
+                `<strong>Your rare frequency:</strong> "${weirdnessAnswers.q1.slice(0, 60)}..." This isn't strange—it's precious signal in a noisy world. The right collaborators have been scanning for exactly this wavelength. Stop dimming your transmission; amplify it.`
+            ];
+            
+            const tipsHTML = tips.map(tip => 
+                `<div style="background: rgba(220, 38, 38, 0.1); padding: 1rem; border-radius: 6px; margin-bottom: 1rem; border-left: 3px solid var(--color-heritage-red);">
+                    ${tip}
+                </div>`
+            ).join('');
+            
+            document.getElementById('personalized-tips').innerHTML = tipsHTML;
+        }
+
+        // Copy to Clipboard Functions
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                showCopyFeedback();
+            });
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                showCopyFeedback();
+            });
+        }
+
+        function showCopyFeedback() {
+            // Simple feedback - in real implementation, you might want a toast notification
+            const feedback = document.createElement('div');
+            feedback.textContent = 'Copied!';
+            feedback.style.position = 'fixed';
+            feedback.style.top = '20px';
+            feedback.style.right = '20px';
+            feedback.style.background = 'var(--color-bright-aqua)';
+            feedback.style.color = 'var(--color-base-black)';
+            feedback.style.padding = '0.5rem 1rem';
+            feedback.style.borderRadius = '6px';
+            feedback.style.zIndex = '3000';
+            feedback.style.fontWeight = '600';
+            
+            document.body.appendChild(feedback);
+            
+            setTimeout(() => {
+                document.body.removeChild(feedback);
+            }, 2000);
+        }
+
+        // Manual Input Functions
+        function showManualInput() {
+            manualInputMode = true;
+            document.getElementById('linkedin-input').classList.add('hidden');
+            document.getElementById('manual-profile-input').classList.remove('hidden');
+            document.getElementById('manual-profile-input').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function hideManualInput() {
+            manualInputMode = false;
+            document.getElementById('manual-profile-input').classList.add('hidden');
+            document.getElementById('linkedin-input').classList.remove('hidden');
+            document.getElementById('linkedin-input').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Share Functions
+        function shareOnLinkedIn() {
+            const shareText = "Just got my LinkedIn profile optimized with weird-but-workable improvements ✨ Turns out being professionally weird is actually a superpower. Check out this free tool that transforms bland profiles into magnetic ones:";
+            const shareUrl = window.location.href;
+            const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}&summary=${encodeURIComponent(shareText)}`;
+            window.open(linkedinUrl, '_blank', 'width=600,height=600');
+        }
+        
+        function shareOnX() {
+            const shareText = "Just discovered my professional weird edge 🔮 This LinkedIn optimizer transforms boring profiles into magnetic ones with mystical-but-practical improvements. Free taste of the magic:";
+            const shareUrl = window.location.href;
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            window.open(twitterUrl, '_blank', 'width=600,height=600');
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('emailModal');
+            if (event.target === modal) {
+                closeEmailModal();
+            }
+        });
+    </script>
+</body>
+</html>

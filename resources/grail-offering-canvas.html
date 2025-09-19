@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grail Offering Canvas | Strategic Design Tool | Zokratiq</title>
+    <meta name="description" content="Download the Grail Offering Canvas - a strategic tool to clarify the deeper value behind your product, project, or leadership arc. Free PDF download.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "The Grail Offering Canvas",
+        "description": "A strategic tool to clarify the deeper value behind your product, project, or leadership arc.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Zokratiq",
+            "url": "https://zokratiq.com"
+        }
+    }
+    </script>
+
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #F5F7FA;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Zokratiq Palette */
+        :root {
+            --color-base-black: #0a0a0a;
+            --color-deep-charcoal: #141414;
+            --color-charcoal-light: #1a1a1a;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C7D2FE;
+            --color-warm-accent: #C6972C;
+            --color-heritage-red: #DC2626;
+            --color-deep-indigo: #1E293B;
+            --color-muted-ochre: #D97706;
+            --color-weird-purple: #8B5CF6;
+            --color-beta-orange: #FB923C;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-sm {
+            padding: 3rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: var(--color-primary-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--color-primary-teal);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary-teal);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-deep-indigo), var(--color-primary-teal));
+            color: var(--color-soft-white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-warm-accent);
+            border: 2px solid var(--color-warm-accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-warm-accent);
+            color: var(--color-base-black);
+        }
+
+        .btn-lg {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+        }
+
+        /* Cards and Grids */
+        .card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+        /* Utilities */
+        .text-center { text-align: center; }
+        .text-primary { color: var(--color-primary-teal); }
+        .text-accent { color: var(--color-warm-accent); }
+        .text-muted { color: var(--color-cloud-gray); }
+        .text-heritage { color: var(--color-heritage-red); }
+
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .section {
+                padding: 2rem 0;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.75rem !important;
+            }
+
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        /* Resource Page Specific Styles */
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-deep-indigo), var(--color-primary-teal));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .bullet-point {
+            display: flex;
+            align-items: start;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            color: var(--color-cloud-gray);
+        }
+
+        .bullet-point .bullet {
+            color: var(--color-primary-teal);
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.1), rgba(0, 179, 166, 0.1));
+            border: 1px solid rgba(0, 179, 166, 0.3);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="../about">About</a></li>
+                <li><a href="../labs">Labs</a></li>
+                <li><a href="../work-is-weird">Mis/Fits</a></li>
+                <li><a href="../essays">Essays</a></li>
+                <li><a href="../contact">Contact</a></li>
+                <li><a href="../scan/" class="btn btn-primary" style="padding: 0.5rem 1rem;">Reality Scan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: 6rem; padding-bottom: 6rem; background: linear-gradient(135deg, rgba(12, 12, 12, 0.9) 0%, rgba(30, 41, 59, 0.3) 50%, rgba(12, 12, 12, 0.9) 100%);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                    <div class="resource-icon" style="margin-bottom: 2rem;">
+                        🧠
+                    </div>
+                    
+                    <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.1; color: var(--color-soft-white); font-family: 'Playfair Display', serif;">
+                        The Grail Offering Canvas
+                    </h1>
+                    
+                    <p style="font-size: 1.5rem; margin-bottom: 3rem; color: var(--color-cloud-gray); line-height: 1.6;">
+                        A strategic tool to clarify the deeper value behind your product, project, or leadership arc.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#download" class="btn btn-primary btn-lg">
+                            📎 Download Canvas (PDF)
+                        </a>
+                        <a href="#ai-prompt" class="btn btn-secondary btn-lg">
+                            🤖 Get the AI Prompt Version
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Is This For Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="text-center mb-12">
+                        <div class="resource-icon">
+                            🎯
+                        </div>
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                            Who Is This For?
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-2" style="gap: 2rem;">
+                        <div class="card">
+                            <div class="bullet-point">
+                                <span class="bullet">•</span>
+                                <span><strong style="color: var(--color-primary-teal);">Innovation Managers</strong> seeking fresh frameworks beyond standard canvases</span>
+                            </div>
+                            <div class="bullet-point">
+                                <span class="bullet">•</span>
+                                <span><strong style="color: var(--color-primary-teal);">Founders</strong> aiming to align vision with deeper market meaning</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="bullet-point">
+                                <span class="bullet">•</span>
+                                <span><strong style="color: var(--color-primary-teal);">Brand & Narrative Strategists</strong> exploring symbolic or story-driven positioning</span>
+                            </div>
+                            <div class="bullet-point">
+                                <span class="bullet">•</span>
+                                <span><strong style="color: var(--color-primary-teal);">Strategy teams</strong> needing focus before a product pivot, sprint, or narrative shift</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Now Section -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="resource-icon mb-8">
+                        🕰️
+                    </div>
+                    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: var(--color-soft-white);">
+                        Why Now?
+                    </h2>
+                    
+                    <div style="font-size: 1.25rem; color: var(--color-cloud-gray); line-height: 1.8; margin-bottom: 2rem;">
+                        <p style="font-size: 1.5rem; color: var(--color-heritage-red); font-weight: 600; margin-bottom: 2rem;">
+                            The era of templated thinking is over.
+                        </p>
+                        
+                        <p style="margin-bottom: 1.5rem;">
+                            To lead in the next cycle, you need tools that help uncover the real reason your work matters.
+                        </p>
+                        
+                        <p style="font-size: 1.3rem; color: var(--color-primary-teal); font-style: italic; font-family: 'Crimson Text', serif;">
+                            The Grail Offering Canvas guides teams to discover the symbolic essence that makes your offering truly resonate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="text-center mb-12">
+                        <div class="resource-icon">
+                            🧰
+                        </div>
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                            What's Included?
+                        </h2>
+                    </div>
+
+                    <div class="card" style="border-color: rgba(0, 179, 166, 0.3);">
+                        <div class="bullet-point">
+                            <span class="bullet">✓</span>
+                            <span>A printable 8-block strategic canvas (landscape PDF)</span>
+                        </div>
+                        <div class="bullet-point">
+                            <span class="bullet">✓</span>
+                            <span>Guided prompts — clear and provocative questions in each block</span>
+                        </div>
+                        <div class="bullet-point">
+                            <span class="bullet">✓</span>
+                            <span>Built in the spirit of tools and frameworks you already know, but designed to go deeper</span>
+                        </div>
+                        <div class="bullet-point" style="margin-bottom: 0;">
+                            <span class="bullet">✓</span>
+                            <span>Usable in sprints, strategy offsites, or personal clarity sessions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You'll Walk Away With Section -->
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="text-center mb-12">
+                        <div class="resource-icon">
+                            🌟
+                        </div>
+                        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; color: var(--color-soft-white);">
+                            What You'll Walk Away With
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-3" style="gap: 2rem;">
+                        <div class="card">
+                            <h3 style="color: var(--color-primary-teal); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Clear Articulation
+                            </h3>
+                            <p style="color: var(--color-cloud-gray);">
+                                Your product or brand's core symbolic value
+                            </p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 style="color: var(--color-warm-accent); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Shared Alignment
+                            </h3>
+                            <p style="color: var(--color-cloud-gray);">
+                                Across product, story, and strategy
+                            </p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3 style="color: var(--color-heritage-red); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">
+                                Flexible Framework
+                            </h3>
+                            <p style="color: var(--color-cloud-gray);">
+                                To revisit during pivots, launches, or vision refinement
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="section" style="background-color: var(--color-charcoal-light);">
+            <div class="container">
+                <div class="cta-section" id="download">
+                    <div class="resource-icon mb-8">
+                        📎
+                    </div>
+                    <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 2rem; color: var(--color-soft-white);">
+                        Ready to Discover Your Grail?
+                    </h2>
+                    
+                    <p style="font-size: 1.25rem; color: var(--color-cloud-gray); margin-bottom: 3rem; line-height: 1.6;">
+                        Download the canvas and start uncovering the deeper symbolic value that makes your work truly matter.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#" class="btn btn-primary btn-lg" onclick="downloadPDF()">
+                            📥 Download Canvas (PDF)
+                        </a>
+                        <a href="#" class="btn btn-secondary btn-lg" id="ai-prompt" onclick="getAIPrompt()">
+                            🤖 Get AI Prompt Version
+                        </a>
+                    </div>
+                    
+                    <p style="font-size: 0.875rem; color: var(--color-cloud-gray); margin-top: 2rem; opacity: 0.8;">
+                        Free download. No email required. Start using immediately.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Update navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.nav-header');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 100) {
+                navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.2)';
+            }
+        });
+
+        // Download functionality
+        function downloadPDF() {
+            // Track download event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'download', {
+                    'file_type': 'pdf',
+                    'resource': 'grail_offering_canvas'
+                });
+            }
+            
+            // Here you would normally trigger the PDF download
+            alert('PDF download would start here. Link this to your actual PDF file.');
+        }
+
+        function getAIPrompt() {
+            // Track AI prompt request
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'ai_prompt_request', {
+                    'resource': 'grail_offering_canvas'
+                });
+            }
+            
+            // Here you could show a modal with the AI prompt or redirect to it
+            alert('AI Prompt version would be provided here. This could open a modal or redirect to the prompt.');
+        }
+
+        // Initialize animations when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.card, .section');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

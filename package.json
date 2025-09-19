@@ -1,0 +1,40 @@
+{
+  "name": "zokratiq-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@types/nodemailer": "^7.0.1",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.2",
+    "next": "14.0.4",
+    "nodemailer": "^7.0.6",
+    "openai": "^5.16.0",
+    "playwright": "^1.55.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^3.1.2",
+    "tailwind-merge": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3"
+  }
+}

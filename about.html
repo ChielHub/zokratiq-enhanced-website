@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Zokratiq | Reality Exploration Studio</title>
+    <meta name="description" content="Zokratiq is a Reality Exploration Studio for visionary teams and institutions. We help organizations navigate uncertainty, embrace oddness, and experiment in public.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Zokratiq | Reality Exploration Studio">
+    <meta property="og:description" content="We help organizations navigate uncertainty, embrace oddness, and experiment in public. Work should feel less like a cage and more like an expedition.">
+    <meta property="og:site_name" content="Zokratiq">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zokratiq",
+        "description": "Reality Exploration Studio for visionary teams and institutions",
+        "url": "https://zokratiq.com/about"
+    }
+    </script>
+
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0C0C0C;
+            color: #F5F7FA;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Colors - Consistent Zokratiq Palette */
+        :root {
+            --color-base-black: #0C0C0C;
+            --color-deep-charcoal: #141414;
+            --color-charcoal-light: #1a1a1a;
+            --color-primary-teal: #00B3A6;
+            --color-bright-aqua: #4ADFD6;
+            --color-soft-white: #F5F7FA;
+            --color-cloud-gray: #C8CCD2;
+            --color-warm-accent: #C6972C;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-sm {
+            padding: 3rem 0;
+        }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(12, 12, 12, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: var(--color-primary-teal);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--color-cloud-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--color-primary-teal);
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-primary-teal);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+        
+        /* Special styling for Mis/Fits link */
+        .misfits-link:hover {
+            color: #8B5CF6 !important;
+        }
+        
+        .misfits-link:hover::after {
+            background: #8B5CF6 !important;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-deep-indigo), var(--color-primary-teal));
+            color: var(--color-soft-white);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+        
+        /* Reality Scan button styling */
+        .nav-scan-btn {
+            padding: 0.4rem 1rem !important;
+            font-size: 0.9rem !important;
+        }
+        
+        .nav-scan-btn:hover::after {
+            width: 0 !important;
+        }
+        
+        /* Navigation alignment fix */
+        .nav-container {
+            align-items: center;
+        }
+        
+        .nav-menu {
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: 
+                linear-gradient(135deg, rgba(12, 12, 12, 0.8) 0%, rgba(20, 20, 20, 0.7) 25%, rgba(12, 12, 12, 0.8) 50%, rgba(20, 20, 20, 0.7) 75%, rgba(12, 12, 12, 0.8) 100%),
+                url('reality-explorers/hero-image.jpg');
+            background-size: 400% 400%, cover;
+            background-position: 0% 50%, center;
+            background-repeat: no-repeat;
+            padding: 8rem 0 6rem;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 179, 166, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--color-primary-teal);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--color-soft-white);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--color-cloud-gray);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            font-family: 'Crimson Text', serif;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
+        .belief-statement {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            color: var(--color-cloud-gray);
+            font-family: 'Crimson Text', serif;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .belief-statement strong {
+            color: var(--color-primary-teal);
+            font-weight: 600;
+        }
+
+        /* What We Do List */
+        .what-we-do-list {
+            list-style: none;
+            padding: 0;
+            margin: 3rem 0;
+        }
+
+        .what-we-do-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            color: var(--color-cloud-gray);
+            background: var(--color-deep-charcoal);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--color-primary-teal);
+            transition: all 0.3s ease;
+        }
+
+        .what-we-do-list li:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.1);
+        }
+
+        .what-we-do-list .bullet {
+            color: var(--color-primary-teal);
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+        }
+
+        .what-we-do-list .item-title {
+            color: var(--color-bright-aqua);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .what-we-do-list .item-description {
+            color: var(--color-cloud-gray);
+            font-style: italic;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, 
+                rgba(0, 179, 166, 0.1), 
+                rgba(20, 20, 20, 0.5));
+            border: 2px solid rgba(0, 179, 166, 0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .quote-text {
+            font-size: 1.75rem;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--color-soft-white);
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .quote-highlight {
+            color: var(--color-primary-teal);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, 
+                rgba(0, 179, 166, 0.1), 
+                rgba(20, 20, 20, 0.8));
+            border: 2px solid var(--color-primary-teal);
+            border-radius: 16px;
+            padding: 4rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-soft-white);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cta-text {
+            font-size: 1.25rem;
+            color: var(--color-cloud-gray);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary-teal), var(--color-bright-aqua));
+            color: #0a0a0a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-primary-teal);
+            border: 2px solid var(--color-primary-teal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-primary-teal);
+            color: #0a0a0a;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Scroll Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #F5F7FA;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(12, 12, 12, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                border-top: 1px solid rgba(0, 179, 166, 0.2);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .nav-cta {
+                margin-top: 1rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+
+            .belief-statement {
+                font-size: 1.25rem;
+            }
+
+            .what-we-do-list li {
+                font-size: 1.125rem;
+                padding: 1.5rem;
+            }
+
+            .quote-text {
+                font-size: 1.5rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .cta-section, .quote-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="./" class="nav-logo">
+                <img src="zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="about.html" style="color: var(--color-primary-teal);">About</a></li>
+                <li><a href="labs">Labs</a></li>
+                <li><a href="work-is-weird/v3.html" class="misfits-link">Mis/Fits</a></li>
+                <li><a href="resources#articles">Ramblings</a></li>
+                <li><a href="resources">Resources</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li><a href="scan/" class="btn btn-primary nav-scan-btn">Reality Scan</a></li>
+            </ul>
+            
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">About Zokratiq</h1>
+                    <p class="hero-subtitle">
+                        A Reality Exploration Studio for visionary teams and institutions
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Belief -->
+        <section class="section">
+            <div class="container">
+                <div class="content-section animate-on-scroll">
+                    <p class="belief-statement">
+                        We believe <strong>work should feel less like a cage and more like an expedition</strong>. 
+                        The world is getting weirder by the day — and that's not a bug, it's a feature. 
+                        The organizations that thrive will be those that learn to navigate uncertainty, 
+                        embrace oddness, and experiment in public.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do -->
+        <section class="section" style="background-color: rgba(20, 20, 20, 0.3);">
+            <div class="container">
+                <div class="content-section">
+                    <h2 class="section-title animate-on-scroll">At Zokratiq, we:</h2>
+                    
+                    <ul class="what-we-do-list">
+                        <li class="animate-on-scroll" data-delay="100">
+                            <span class="bullet">•</span>
+                            <div>
+                                <span class="item-title">Uncover hidden truths:</span>
+                                <span class="item-description">Seeing what dashboards and quarterly reports miss.</span>
+                            </div>
+                        </li>
+                        <li class="animate-on-scroll" data-delay="200">
+                            <span class="bullet">•</span>
+                            <div>
+                                <span class="item-title">Prototype alternate futures:</span>
+                                <span class="item-description">Turning signals into stories, and stories into strategy.</span>
+                            </div>
+                        </li>
+                        <li class="animate-on-scroll" data-delay="300">
+                            <span class="bullet">•</span>
+                            <div>
+                                <span class="item-title">Equip misfits & leaders:</span>
+                                <span class="item-description">Designing tools and rituals that make curiosity contagious.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Quote -->
+        <section class="section">
+            <div class="container">
+                <div class="content-section">
+                    <div class="quote-section animate-on-scroll">
+                        <p class="quote-text">
+                            We don't sell <span class="quote-highlight">trend reports</span>. 
+                            We build maps, labs, and myths that help you escape flatland and 
+                            <span class="quote-highlight">operate with a fuller reality headset</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="content-section">
+                    <div class="cta-section animate-on-scroll">
+                        <h2 class="cta-title">Ready to make work weird again?</h2>
+                        <p class="cta-text">
+                            👉 Read our Mis/Fits Manifesto to see why making work weird again matters.
+                        </p>
+                        
+                        <div class="btn-group">
+                            <a href="manifesto-for-misfits.html" class="btn btn-primary">
+                                Read the Manifesto
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M4 10h12m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <a href="partner.html" class="btn btn-secondary">
+                                Partner With Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); border-top: 1px solid rgba(0, 179, 166, 0.2); padding: 4rem 0 2rem;">
+        <div class="container">
+            <div class="footer-content" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <!-- Brand Section -->
+                <div class="footer-brand" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div class="footer-logo" style="font-size: 1.8rem; font-weight: 700; color: #F5F7FA;">Zokratiq</div>
+                    <div class="footer-tagline" style="color: #C8CCD2; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; opacity: 0.8;">Reality Exploration Studio</div>
+                    <div class="footer-description" style="color: #9CA3AF; line-height: 1.6; margin-top: 1rem;">
+                        We turn curiosity into operating leverage—designing Playful Businesses where exploration fuels strategy, product, and culture.
+                    </div>
+                </div>
+                
+                <!-- Services Section -->
+                <div class="footer-section">
+                    <h4 style="color: #00B3A6; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Services</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="labs" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">Zokratiq Labs</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="work-is-weird" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">Work is Weird</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="scan" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">Reality Scan</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="partner.html" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">Partner With Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Section -->
+                <div class="footer-section">
+                    <h4 style="color: #00B3A6; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Company</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.75rem;"><a href="about.html" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">About</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="resources" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">Resources</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="manifesto-for-misfits.html" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">Manifesto</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="contact" style="color: #C8CCD2; text-decoration: none; transition: color 0.3s ease;">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom" style="border-top: 1px solid #333; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; color: #9CA3AF; font-size: 0.9rem;">
+                <div>
+                    © 2024 Zokratiq. All rights reserved. Built for the perceptive.
+                </div>
+                <div class="footer-social" style="display: flex; gap: 1rem;">
+                    <a href="https://twitter.com/zokratiq" target="_blank" aria-label="Twitter" style="color: #9CA3AF; transition: color 0.3s ease;">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/zokratiq" target="_blank" aria-label="LinkedIn" style="color: #9CA3AF; transition: color 0.3s ease;">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Create floating particles background
+        function createFloatingParticles() {
+            const heroBg = document.getElementById('heroBg');
+            const particleCount = 12;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'floating-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                heroBg.appendChild(particle);
+            }
+        }
+
+        // Mobile menu toggle functionality
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!toggle.contains(event.target) && !navMenu.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseInt(entry.target.dataset.delay) || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay);
+                }
+            });
+        }, observerOptions);
+
+        // Update navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.nav-header');
+            const scrollPosition = window.scrollY;
+            
+            if (scrollPosition > 100) {
+                navbar.style.background = 'rgba(12, 12, 12, 0.98)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(12, 12, 12, 0.95)';
+                navbar.style.borderBottomColor = 'rgba(0, 179, 166, 0.2)';
+            }
+        });
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingParticles();
+            
+            // Observe elements for scroll animations
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

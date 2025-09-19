@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zokratiq Business Quiz — Measure Your Organization's Reality Maturity | Zokratiq</title>
+    <meta name="description" content="Interactive assessment measuring your organization's cognitive diversity, metaphysical maturity, and weirdness tolerance. Discover if you're ready for the Age of Wizardry.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #F5F7FA;
+            line-height: 1.6;
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        .font-serif { font-family: 'Crimson Text', serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+
+        /* Navigation */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 179, 166, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #F5F7FA;
+            text-decoration: none;
+        }
+        
+        .nav-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-logo span {
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            opacity: 0.8;
+        }
+
+        /* Quiz Container */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 8rem;
+            min-height: 100vh;
+        }
+
+        /* Quiz Step */
+        .quiz-step {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            margin-bottom: 4rem;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .quiz-step.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .quiz-step.completed {
+            opacity: 0.3;
+            transform: translateY(-50px);
+            pointer-events: none;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(20, 20, 20, 0.8);
+            border-radius: 50px;
+            padding: 0.5rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 179, 166, 0.2);
+            position: fixed;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            z-index: 999;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #00B3A6, #4ADFD6);
+            border-radius: 50px;
+            transition: width 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+            width: 0%;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: #00B3A6;
+            margin-top: 1rem;
+        }
+
+        /* Step Content */
+        .step-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .step-number {
+            font-family: 'JetBrains Mono', monospace;
+            color: #00B3A6;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #F5F7FA;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .step-question {
+            font-size: 1.3rem;
+            color: #C7D2FE;
+            font-family: 'Crimson Text', serif;
+            line-height: 1.5;
+        }
+
+        /* Options */
+        .options-container {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .option {
+            background: rgba(20, 20, 20, 0.6);
+            border: 2px solid rgba(0, 179, 166, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 179, 166, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .option:hover {
+            border-color: rgba(0, 179, 166, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.15);
+        }
+
+        .option:hover::before {
+            left: 100%;
+        }
+
+        .option.selected {
+            border-color: #00B3A6;
+            background: rgba(0, 179, 166, 0.1);
+            transform: scale(1.02);
+        }
+
+        .option-text {
+            font-size: 1.1rem;
+            color: #F5F7FA;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Results */
+        .results-container {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .score-display {
+            background: linear-gradient(135deg, rgba(0, 179, 166, 0.1) 0%, rgba(74, 223, 214, 0.05) 100%);
+            border: 2px solid #00B3A6;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .score-number {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #00B3A6;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 1rem;
+        }
+
+        .tier-label {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #F5F7FA;
+        }
+
+        .tier-description {
+            font-size: 1.2rem;
+            color: #C7D2FE;
+            font-family: 'Crimson Text', serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* CTA Buttons */
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00B3A6, #4ADFD6);
+            color: #0a0a0a;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 179, 166, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid #00B3A6;
+            color: #00B3A6;
+            background: transparent;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: #00B3A6;
+            color: #0a0a0a;
+            transform: translateY(-2px);
+        }
+
+        /* Intro Screen */
+        .intro-screen {
+            text-align: center;
+            padding: 4rem 0;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .intro-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .intro-subtitle {
+            font-size: 1.5rem;
+            color: #4ADFD6;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .intro-description {
+            font-size: 1.2rem;
+            color: #C7D2FE;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .quiz-container {
+                padding: 1rem;
+            }
+            
+            .intro-title {
+                font-size: 2.5rem;
+            }
+            
+            .step-title {
+                font-size: 2rem;
+            }
+            
+            .step-question {
+                font-size: 1.1rem;
+            }
+            
+            .option {
+                padding: 1rem;
+            }
+            
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(to right, #00B3A6, #4ADFD6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Calculating Screen */
+        .calculating-screen {
+            text-align: center;
+            padding: 4rem 0;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(0, 179, 166, 0.1);
+            border-top: 4px solid #00B3A6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .calculating-text {
+            font-size: 1.5rem;
+            color: #00B3A6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .calculating-subtext {
+            font-size: 1rem;
+            color: #C7D2FE;
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">
+                <img src="../zokratiq-logo.jpeg" alt="Zokratiq" class="nav-logo-img">
+                <span>Reality Exploration Studio</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="quiz-container">
+        <!-- Progress Bar (hidden initially) -->
+        <div class="progress-container" id="progressContainer" style="display: none;">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="progress-text" id="progressText">Question 1 of 5</div>
+        </div>
+
+        <!-- Intro Screen -->
+        <div class="quiz-step active" id="intro">
+            <div class="intro-screen">
+                <h1 class="intro-title">
+                    Zokratiq <span class="gradient-text">Business Quiz</span>
+                </h1>
+                
+                <p class="intro-subtitle">
+                    Measure Your Organization's Reality Maturity
+                </p>
+                
+                <div class="intro-description">
+                    <p>An interactive assessment measuring your organization's cognitive diversity, metaphysical maturity, and weirdness tolerance. Discover if you're ready for the Age of Wizardry.</p>
+                </div>
+                
+                <button class="btn-primary" onclick="startQuiz()">
+                    Begin Assessment
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10h12m-6-6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Steps (will be generated by JavaScript) -->
+        
+        <!-- Calculating Screen -->
+        <div class="quiz-step" id="calculating">
+            <div class="calculating-screen">
+                <div class="spinner"></div>
+                <h2 class="calculating-text">Calculating Your Reality Maturity Score</h2>
+                <p class="calculating-subtext">Analyzing cognitive patterns and metaphysical frameworks...</p>
+            </div>
+        </div>
+        
+        <!-- Results Screen -->
+        <div class="quiz-step" id="results">
+            <div class="results-container">
+                <h2 class="step-title">Your Organization's Reality Maturity</h2>
+                
+                <div class="score-display">
+                    <div class="score-number" id="finalScore">0</div>
+                    <div class="tier-label" id="tierLabel">Loading...</div>
+                    <div class="tier-description" id="tierDescription">Calculating your organization's readiness for the Age of Wizardry...</div>
+                </div>
+                
+                <div class="cta-container">
+                    <a href="../contact" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Schedule Reality Consultation
+                    </a>
+                    <a href="../" class="btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz Data
+        const quizData = {
+            "quiz": {
+                "title": "Zokratiq Business Quiz",
+                "description": "Measure your organization's cognitive diversity, metaphysical maturity, and weirdness tolerance.",
+                "steps": [
+                    {
+                        "step": 1,
+                        "title": "Perception of Reality",
+                        "question": "Which best describes how your organization relates to 'reality'?",
+                        "options": [
+                            { "label": "We operate strictly by the data", "value": 1, "score": 2 },
+                            { "label": "We rely on intuition and gut", "value": 2, "score": 6 },
+                            { "label": "We mix both, but don't question our assumptions", "value": 3, "score": 10 },
+                            { "label": "We actively explore competing realities", "value": 4, "score": 20 }
+                        ]
+                    },
+                    {
+                        "step": 2,
+                        "title": "Organizational Purpose",
+                        "question": "How does your company define and express its core purpose?",
+                        "options": [
+                            { "label": "We have a mission statement… somewhere.", "value": 1, "score": 2 },
+                            { "label": "Our purpose is mostly tied to shareholder value.", "value": 2, "score": 5 },
+                            { "label": "We've done purpose workshops, but it doesn't show up in daily decisions.", "value": 3, "score": 10 },
+                            { "label": "Our purpose actively shapes how we hire, build, and lead.", "value": 4, "score": 20 }
+                        ]
+                    },
+                    {
+                        "step": 3,
+                        "title": "Decision-Making Patterns",
+                        "question": "How are major decisions made in your company?",
+                        "options": [
+                            { "label": "Top-down: Strategy first, justification second.", "value": 1, "score": 2 },
+                            { "label": "Consensus-driven, even if slow.", "value": 2, "score": 6 },
+                            { "label": "Data-led, with strong analyst veto power.", "value": 3, "score": 10 },
+                            { "label": "We use multi-frame, time-horizon, and paradox tools.", "value": 4, "score": 20 }
+                        ]
+                    },
+                    {
+                        "step": 4,
+                        "title": "Weirdness Tolerance",
+                        "question": "How does your organization handle unorthodox thinkers and new ideas?",
+                        "options": [
+                            { "label": "We reward conformity and proven success.", "value": 1, "score": 2 },
+                            { "label": "We tolerate weirdness as long as it performs.", "value": 2, "score": 6 },
+                            { "label": "We have internal rebels but they're kept at the edges.", "value": 3, "score": 10 },
+                            { "label": "We promote 'generative weirdness' as a key strategic asset.", "value": 4, "score": 20 }
+                        ]
+                    },
+                    {
+                        "step": 5,
+                        "title": "Leadership Composition",
+                        "question": "What is the background mix of your senior leadership (VP+ or board)?",
+                        "options": [
+                            { "label": "90%+ business/finance/engineering", "value": 1, "score": 2 },
+                            { "label": "Mostly STEM + MBAs, 1–2 liberal arts.", "value": 2, "score": 6 },
+                            { "label": "Even mix of humanities and technical fields.", "value": 3, "score": 12 },
+                            { "label": "Intentionally diverse: includes neurodivergence + philosophy", "value": 4, "score": 20 }
+                        ]
+                    }
+                ],
+                "scoring": {
+                    "total_max": 100,
+                    "tiers": [
+                        {
+                            "range": [0, 29],
+                            "label": "📉 Flatland Org",
+                            "description": "Sees the map as the territory. Rigid, overly left-brained, low epistemic flexibility."
+                        },
+                        {
+                            "range": [30, 59],
+                            "label": "⚙️ Framework-Oriented",
+                            "description": "Some pluralism, but still running default scripts. Time to embrace metaphysical upgrades."
+                        },
+                        {
+                            "range": [60, 89],
+                            "label": "🧙‍♀️ Proto-Wizard Org",
+                            "description": "Explores new paradigms. Weirdness tolerated, purpose present, but not fully activated."
+                        },
+                        {
+                            "range": [90, 100],
+                            "label": "🌌 Zokratiq-Level Org",
+                            "description": "Radically future-ready. Weirdness embraced, purpose embodied, reality reimagined."
+                        }
+                    ]
+                }
+            }
+        };
+
+        // Quiz State
+        let currentStep = 0;
+        let answers = [];
+        let totalScore = 0;
+
+        // Initialize Quiz
+        function startQuiz() {
+            // Hide intro
+            document.getElementById('intro').classList.remove('active');
+            document.getElementById('intro').classList.add('completed');
+            
+            // Show progress bar
+            document.getElementById('progressContainer').style.display = 'block';
+            
+            // Generate quiz steps
+            generateQuizSteps();
+            
+            // Show first question
+            setTimeout(() => {
+                currentStep = 1;
+                showStep(currentStep);
+                updateProgress();
+            }, 600);
+        }
+
+        function generateQuizSteps() {
+            const container = document.querySelector('.quiz-container');
+            const calculating = document.getElementById('calculating');
+            
+            quizData.quiz.steps.forEach((stepData, index) => {
+                const stepDiv = document.createElement('div');
+                stepDiv.className = 'quiz-step';
+                stepDiv.id = `step-${stepData.step}`;
+                
+                stepDiv.innerHTML = `
+                    <div class="step-header">
+                        <div class="step-number">Question ${stepData.step} of ${quizData.quiz.steps.length}</div>
+                        <h2 class="step-title">${stepData.title}</h2>
+                        <p class="step-question">${stepData.question}</p>
+                    </div>
+                    
+                    <div class="options-container">
+                        ${stepData.options.map((option, optionIndex) => `
+                            <div class="option" onclick="selectOption(${stepData.step}, ${optionIndex}, ${option.score})">
+                                <div class="option-text">${option.label}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                container.insertBefore(stepDiv, calculating);
+            });
+        }
+
+        function showStep(stepNumber) {
+            // Hide all steps
+            document.querySelectorAll('.quiz-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            // Show current step
+            setTimeout(() => {
+                const currentStepElement = document.getElementById(`step-${stepNumber}`);
+                if (currentStepElement) {
+                    currentStepElement.classList.add('active');
+                }
+            }, 100);
+        }
+
+        function selectOption(stepNumber, optionIndex, score) {
+            // Mark option as selected
+            const step = document.getElementById(`step-${stepNumber}`);
+            const options = step.querySelectorAll('.option');
+            
+            options.forEach(option => option.classList.remove('selected'));
+            options[optionIndex].classList.add('selected');
+            
+            // Store answer
+            answers[stepNumber - 1] = {
+                step: stepNumber,
+                optionIndex: optionIndex,
+                score: score
+            };
+            
+            // Move to next step after delay
+            setTimeout(() => {
+                if (stepNumber < quizData.quiz.steps.length) {
+                    // Mark current step as completed
+                    step.classList.remove('active');
+                    step.classList.add('completed');
+                    
+                    // Move to next step
+                    currentStep = stepNumber + 1;
+                    setTimeout(() => {
+                        showStep(currentStep);
+                        updateProgress();
+                    }, 600);
+                } else {
+                    // Quiz completed, show calculating screen
+                    step.classList.remove('active');
+                    step.classList.add('completed');
+                    
+                    setTimeout(() => {
+                        showCalculating();
+                    }, 600);
+                }
+            }, 800);
+        }
+
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            
+            const progress = (currentStep / quizData.quiz.steps.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            progressText.textContent = `Question ${currentStep} of ${quizData.quiz.steps.length}`;
+        }
+
+        function showCalculating() {
+            // Hide progress bar
+            document.getElementById('progressContainer').style.display = 'none';
+            
+            // Show calculating screen
+            document.getElementById('calculating').classList.add('active');
+            
+            // Show results after 5 seconds
+            setTimeout(() => {
+                document.getElementById('calculating').classList.remove('active');
+                document.getElementById('calculating').classList.add('completed');
+                
+                setTimeout(() => {
+                    showResults();
+                }, 600);
+            }, 5000);
+        }
+
+        function showResults() {
+            // Calculate total score
+            totalScore = answers.reduce((sum, answer) => sum + answer.score, 0);
+            
+            // Find tier
+            const tier = quizData.quiz.scoring.tiers.find(t => 
+                totalScore >= t.range[0] && totalScore <= t.range[1]
+            );
+            
+            // Update results display
+            document.getElementById('finalScore').textContent = totalScore;
+            document.getElementById('tierLabel').textContent = tier.label;
+            document.getElementById('tierDescription').textContent = tier.description;
+            
+            // Show results
+            document.getElementById('results').classList.add('active');
+        }
+
+        // Auto-scroll function - scroll down to next question
+        function autoScrollToNext() {
+            setTimeout(() => {
+                // Scroll to the active quiz step
+                const activeStep = document.querySelector('.quiz-step.active');
+                if (activeStep) {
+                    // Calculate position to center the active step
+                    const stepTop = activeStep.offsetTop;
+                    const offset = 120; // Account for fixed progress bar
+                    window.scrollTo({ 
+                        top: stepTop - offset, 
+                        behavior: 'smooth' 
+                    });
+                }
+            }, 300);
+        }
+
+        // Override step transitions to include auto-scroll
+        const originalShowStep = showStep;
+        showStep = function(stepNumber) {
+            originalShowStep(stepNumber);
+            autoScrollToNext();
+        };
+
+        // Also handle calculating and results screens
+        const originalShowCalculating = showCalculating;
+        showCalculating = function() {
+            originalShowCalculating();
+            autoScrollToNext();
+        };
+
+        const originalShowResults = showResults;
+        showResults = function() {
+            originalShowResults();
+            autoScrollToNext();
+        };
+    </script>
+</body>
+</html>

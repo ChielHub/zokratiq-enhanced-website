@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Test Results Page</title></head>
+<body>
+<h1>Testing Results Page</h1>
+<p>Click the link below to test the results page with sample data:</p>
+<a href="index.html?score=62&band=Coalescing&company=Test%20Company&role=Founder&sector=B2B%20SaaS&dims=%7B%22Coherence%22%3A63%2C%22Resonance%22%3A25%2C%22Proof%22%3A100%2C%22Talent%20Signal%22%3A50%2C%22Rituals%22%3A0%2C%22Narrative%E2%80%93Market%20Fit%22%3A75%7D">Test Results Page</a>
+
+<script>
+// Generate a working test URL
+const testParams = new URLSearchParams({
+    score: 62,
+    band: 'Coalescing', 
+    company: 'Test Company',
+    role: 'Founder',
+    sector: 'B2B SaaS',
+    dims: JSON.stringify({
+        "Coherence": 63,
+        "Resonance": 25, 
+        "Proof": 100,
+        "Talent Signal": 50,
+        "Rituals": 0,
+        "Narrative–Market Fit": 75
+    })
+});
+
+console.log('Test URL:', `index.html?${testParams.toString()}`);
+</script>
+</body>
+</html>

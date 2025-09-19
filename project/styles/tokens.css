@@ -1,0 +1,109 @@
+/**
+ * ZOKRATIQ DESIGN TOKENS v1.0
+ * Single source of truth for design system
+ */
+
+:root {
+  /* Colors */
+  --color-ink: #0B0F14;
+  --color-fog: #6B7280; 
+  --color-glow: #F7F7F9;
+  --color-brand: #5B8CFF;
+  --color-brand-2: #A9C1FF;
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  
+  /* Shadows */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
+  
+  /* Typography */
+  --font-system: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Playfair Display", serif;
+  
+  /* Type Scale */
+  --text-h1: 40px;
+  --text-h1-line: 48px;
+  --text-h1-weight: 700;
+  
+  --text-h2: 28px;
+  --text-h2-line: 36px;
+  --text-h2-weight: 700;
+  
+  --text-h3: 20px;
+  --text-h3-line: 28px;
+  --text-h3-weight: 700;
+  
+  --text-body: 16px;
+  --text-body-line: 26px;
+  --text-body-weight: 400;
+  
+  --text-label: 12px;
+  --text-label-line: 16px;
+  --text-label-weight: 600;
+  
+  /* Spacers */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-xxl: 64px;
+  
+  /* Container */
+  --container-max: 1200px;
+  --container-pad: 20px;
+}
+
+/* Base typography classes */
+.text-h1 {
+  font-size: var(--text-h1);
+  line-height: var(--text-h1-line);
+  font-weight: var(--text-h1-weight);
+  font-family: var(--font-system);
+}
+
+.text-h2 {
+  font-size: var(--text-h2);
+  line-height: var(--text-h2-line);
+  font-weight: var(--text-h2-weight);
+  font-family: var(--font-system);
+}
+
+.text-h3 {
+  font-size: var(--text-h3);
+  line-height: var(--text-h3-line);
+  font-weight: var(--text-h3-weight);
+  font-family: var(--font-system);
+}
+
+.text-body {
+  font-size: var(--text-body);
+  line-height: var(--text-body-line);
+  font-weight: var(--text-body-weight);
+  font-family: var(--font-system);
+}
+
+.text-label {
+  font-size: var(--text-label);
+  line-height: var(--text-label-line);
+  font-weight: var(--text-label-weight);
+  font-family: var(--font-system);
+}
+
+.text-display {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* Container utility */
+.container-zk {
+  max-width: var(--container-max);
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+  margin-left: auto;
+  margin-right: auto;
+}

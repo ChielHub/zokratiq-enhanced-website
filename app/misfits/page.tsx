@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/sections/Footer'
 
 // Sticky CTA Bar Component
@@ -445,6 +444,126 @@ function WhoAndWhySection() {
               </a>
             </motion.div>
           </div>
+
+          {/* Misfits OS Blueprint Callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="mb-16 p-8 bg-gradient-to-r from-weird-purple/10 to-bright-aqua/5 border-2 border-weird-purple/40 rounded-2xl relative overflow-hidden"
+          >
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-weird-purple/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-bright-aqua/10 rounded-full blur-xl transform -translate-x-12 translate-y-12" />
+
+            <div className="relative z-10">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-weird-purple/20 border border-weird-purple/30 rounded-full text-weird-purple text-sm font-mono font-semibold mb-4">
+                  🎁 FREE TOOLKIT • VALUE $518
+                </div>
+                <h3 className="text-3xl md:text-4xl font-bold text-soft-white mb-4 font-playfair">
+                  Get Your Complete Misfits OS Toolkit
+                </h3>
+                <p className="text-lg md:text-xl text-cloud-gray leading-relaxed max-w-3xl mx-auto">
+                  Everything you need to transform your talent strategy from cognitive sameness to competitive advantage.
+                </p>
+              </div>
+
+              {/* Main offer */}
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div className="bg-base-black/30 border border-weird-purple/20 rounded-xl p-6">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="flex-shrink-0 w-12 h-12 bg-weird-purple rounded-lg flex items-center justify-center text-2xl">
+                      📋
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-weird-purple mb-2">
+                        The Misfits OS Blueprint
+                      </h4>
+                      <p className="text-cloud-gray mb-2">18-page premium PDF guide</p>
+                      <p className="text-sm text-cloud-gray/80">
+                        Complete framework for transforming your talent strategy from cognitive sameness to competitive advantage
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bonus items */}
+                  <div className="space-y-4">
+                    <h5 className="text-lg font-semibold text-soft-white mb-4">Plus These Bonus Assets:</h5>
+
+                    <div className="flex items-start gap-3">
+                      <span className="text-primary-teal text-lg">✓</span>
+                      <div>
+                        <div className="font-semibold text-soft-white">Cognitive Sameness Diagnostic</div>
+                        <div className="text-sm text-primary-teal font-mono">Value: $197</div>
+                        <div className="text-sm text-cloud-gray/80">15-question organizational assessment with automated scoring and custom recommendations</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <span className="text-primary-teal text-lg">✓</span>
+                      <div>
+                        <div className="font-semibold text-soft-white">Weird Talent Interview Vault</div>
+                        <div className="text-sm text-primary-teal font-mono">Value: $97</div>
+                        <div className="text-sm text-cloud-gray/80">47 unconventional interview questions with scenario-based evaluation frameworks</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <span className="text-primary-teal text-lg">✓</span>
+                      <div>
+                        <div className="font-semibold text-soft-white">Misfit Integration Playbook</div>
+                        <div className="text-sm text-primary-teal font-mono">Value: $147</div>
+                        <div className="text-sm text-cloud-gray/80">30/60/90-day onboarding templates with cultural translation strategies</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <span className="text-primary-teal text-lg">✓</span>
+                      <div>
+                        <div className="font-semibold text-soft-white">Case Study Collection</div>
+                        <div className="text-sm text-primary-teal font-mono">Value: $77</div>
+                        <div className="text-sm text-cloud-gray/80">5 detailed transformation stories with before/after organizational changes</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Column */}
+                <div className="text-center lg:text-left">
+                  <div className="mb-6">
+                    <div className="text-4xl md:text-5xl font-bold text-weird-purple mb-2">
+                      $518 VALUE
+                    </div>
+                    <div className="text-2xl md:text-3xl font-bold text-soft-white mb-4">
+                      Yours FREE
+                    </div>
+                    <p className="text-cloud-gray/80 text-sm">
+                      Download instantly. No strings. No spam.
+                    </p>
+                  </div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <a
+                      href="https://www.zokratiq.com/misfits-os-for-business/"
+                      className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-weird-purple to-bright-aqua text-base-black font-bold text-lg rounded-xl hover:shadow-lg hover:shadow-weird-purple/25 transition-all duration-300 w-full lg:w-auto"
+                    >
+                      Download Complete Toolkit →
+                    </a>
+                  </motion.div>
+
+                  <div className="mt-4 text-xs text-cloud-gray/60">
+                    📧 Delivered via email in under 2 minutes
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           <div className="p-12 bg-gradient-to-r from-weird-purple/20 to-heritage-red/10 border-2 border-weird-purple/30 rounded-2xl text-center">
             <div className="mb-6">
@@ -969,7 +1088,6 @@ export default function MisfitsPage() {
       <DualFormsSection />
       <FAQSection />
       <FinalCTASection />
-      <Contact />
       <Footer />
     </main>
   )

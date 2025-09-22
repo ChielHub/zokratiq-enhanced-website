@@ -138,7 +138,7 @@ function getFormHandlersOverview() {
         [
             'name' => 'Misfits OS Blueprint Form',
             'url' => '/api/misfits-os-form.php',
-            'page' => '/misfits-os',
+            'page' => '/misfits-os-for-business',
             'description' => 'Lead capture for Misfits OS Blueprint download',
             'fields' => ['email', 'company', 'role', 'challenge'],
             'database_table' => 'misfits_os_leads',

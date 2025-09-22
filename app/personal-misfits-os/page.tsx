@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Header } from '@/components/navigation/Header'
-import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/sections/Footer'
 
 // Get It Now Block Component (maintained from original)
@@ -85,7 +84,7 @@ export default function MisfitsOSPage() {
       <GetItNowBlock />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-8">
+      <section className="relative min-h-screen flex items-center justify-center px-6 lg:px-8 pt-32">
         {/* Background geometric patterns */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-1/4 left-1/4 w-32 h-32 border-2 border-weird-purple rotate-45 animate-pulse"></div>
@@ -315,7 +314,51 @@ export default function MisfitsOSPage() {
         </div>
       </section>
 
-      <Contact />
+      {/* LinkedIn Optimizer CTA Section */}
+      <section className="py-24 lg:py-32 px-6 lg:px-8 bg-deep-charcoal/40">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="p-8 bg-gradient-to-r from-weird-purple/10 to-bright-aqua/5 border-2 border-weird-purple/40 rounded-2xl relative overflow-hidden"
+          >
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-weird-purple/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-bright-aqua/10 rounded-full blur-xl transform -translate-x-12 translate-y-12" />
+
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-weird-purple/20 border border-weird-purple/30 rounded-full text-weird-purple text-sm font-mono font-semibold mb-4">
+                🔗 LINKEDIN TOOL
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold text-soft-white mb-4 font-playfair">
+                Transform Your LinkedIn from Bland to Magnetic
+              </h3>
+              <p className="text-lg md:text-xl text-cloud-gray leading-relaxed max-w-3xl mx-auto mb-8">
+                Turn your professional weirdness into LinkedIn gold with our free optimization tool. Get personalized headlines, bio rewrites, and weird-but-workable tips.
+              </p>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href="/linkedin-optimizer"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-weird-purple to-bright-aqua text-base-black font-bold text-lg rounded-xl hover:shadow-lg hover:shadow-weird-purple/25 transition-all duration-300"
+                >
+                  Optimize My LinkedIn Profile →
+                </a>
+              </motion.div>
+
+              <div className="mt-4 text-xs text-cloud-gray/60">
+                🚀 Free tool • No signup required for basic optimization
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

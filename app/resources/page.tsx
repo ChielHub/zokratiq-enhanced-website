@@ -27,7 +27,7 @@ const resources: Resource[] = [
     challenge: "strategy",
     typeLabel: "AI Tool",
     challengeLabel: "Strategic Decision Making",
-    link: "/decision-partner"
+    link: "/resources/decision-partner"
   },
   {
     id: 2,
@@ -107,7 +107,7 @@ const resources: Resource[] = [
     challenge: "strategy",
     typeLabel: "Operating System",
     challengeLabel: "Strategic Leverage",
-    link: "/resources/misfits-os"
+    link: "/misfits-os-for-business"
   },
   {
     id: 12,

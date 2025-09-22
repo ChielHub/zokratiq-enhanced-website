@@ -129,42 +129,39 @@ function HomepageFaultLineModule({ faultLine, index }: { faultLine: FaultLineMod
       className="fault-line-module animate-fade-in-up relative"
       style={{ animationDelay: `${index * 0.2}s` }}
     >
-      {/* Enhanced Timeline Elements */}
-      <div className="absolute left-8 top-0 bottom-0 flex flex-col items-center z-10">
-        {/* Pulsating Growth Circle */}
-        <div 
-          ref={timelineRef}
-          className="timeline-circle timeline-circle-pulse w-8 h-8 rounded-full bg-gradient-to-br from-primary-teal to-bright-aqua border-2 border-primary-teal/50 relative flex-shrink-0 mt-20 shadow-lg shadow-primary-teal/25"
-          style={{ 
-            animationDelay: `${index * 0.5}s`,
-            '--delay': `${index * 0.5}s`
-          } as React.CSSProperties & { '--delay': string }}
-        >
-          <div className="absolute inset-1 rounded-full bg-gradient-to-br from-primary-teal/60 to-bright-aqua/60"></div>
-          <div className="absolute inset-0 rounded-full border border-bright-aqua/40"></div>
-        </div>
-        
-        {/* Elegant Connecting Line with Gradient */}
-        {index < 5 && (
-          <div className="relative flex-1 mt-6" style={{ minHeight: '200px' }}>
-            <div 
-              className="timeline-line absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary-teal via-primary-teal/60 to-primary-teal/20"
-              style={{ 
-                animationDelay: `${index * 0.3 + 0.5}s`
-              }}
-            ></div>
-            {/* Subtle dots along the line */}
-            <div className="absolute left-1/2 top-1/3 w-1 h-1 bg-primary-teal/60 rounded-full transform -translate-x-1/2 animate-pulse" style={{ animationDelay: `${index * 0.5 + 1}s` }}></div>
-            <div className="absolute left-1/2 top-2/3 w-1 h-1 bg-bright-aqua/60 rounded-full transform -translate-x-1/2 animate-pulse" style={{ animationDelay: `${index * 0.5 + 1.5}s` }}></div>
-          </div>
-        )}
-      </div>
-
-      <div className="container mx-auto px-6 py-16 lg:py-24 pl-24">
+      <div className="container mx-auto px-6 py-16 lg:py-24">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-start gap-6 mb-8">
-            <div className="text-5xl lg:text-6xl glyph-shimmer flex-shrink-0">
-              {faultLine.glyph}
+          <div className="flex items-start gap-4 mb-8">
+            {/* Earthquake rings animation - moved closer to left */}
+            <div className="flex-shrink-0 relative -ml-2" style={{ width: '64px', height: '64px' }}>
+              <div className="relative inline-block w-16 h-16">
+                <div 
+                  className="absolute top-1/2 left-1/2 w-full h-full border-2 rounded-full opacity-100"
+                  style={{
+                    transform: 'translate(-50%, -50%)',
+                    borderColor: 'rgba(20, 184, 166, 0.6)',
+                    animation: 'earthquake-rings 2.5s ease-out infinite'
+                  }}
+                />
+                <div 
+                  className="absolute top-1/2 left-1/2 w-full h-full border-2 rounded-full"
+                  style={{
+                    transform: 'translate(-50%, -50%)',
+                    borderColor: 'rgba(74, 223, 214, 0.6)',
+                    animation: 'earthquake-rings 2.5s ease-out infinite',
+                    animationDelay: '0.8s'
+                  }}
+                />
+                <div 
+                  className="absolute top-1/2 left-1/2 w-full h-full border-2 rounded-full"
+                  style={{
+                    transform: 'translate(-50%, -50%)',
+                    borderColor: 'rgba(0, 179, 166, 0.4)',
+                    animation: 'earthquake-rings 2.5s ease-out infinite',
+                    animationDelay: '1.6s'
+                  }}
+                />
+              </div>
             </div>
             <div className="flex-1">
               <h3 className="text-3xl lg:text-4xl font-bold text-white mb-3 stagger-fade-in">
@@ -176,7 +173,7 @@ function HomepageFaultLineModule({ faultLine, index }: { faultLine: FaultLineMod
             </div>
           </div>
 
-          <div className="space-y-6 lg:pl-20">
+          <div className="space-y-6 lg:pl-4">
             <p className="text-xl text-gray-200 leading-relaxed stagger-fade-in delay-200">
               {faultLine.description}
             </p>
@@ -231,12 +228,39 @@ export function FaultLines() {
         </div>
 
         {faultLines.map((faultLine, index) => (
-          <HomepageFaultLineModule 
-            key={faultLine.id} 
-            faultLine={faultLine} 
+          <HomepageFaultLineModule
+            key={faultLine.id}
+            faultLine={faultLine}
             index={index}
           />
         ))}
+
+        {/* CTA: Cracks in the System Dispatch Series */}
+        <section className="relative py-16 px-6 md:px-12 border-t border-primary-teal/20">
+          <div className="absolute inset-0 bg-gradient-to-b from-deep-charcoal/50 to-base-black/80"></div>
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                There's something broken under the surface of business.
+              </h2>
+              <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                <span className="text-primary-teal font-semibold">"Cracks in the System"</span> is our 6-part dispatch
+                on the invisible shifts reshaping work, value, and perception.
+              </p>
+              <div className="pt-4">
+                <a
+                  href="/cracks"
+                  className="inline-flex items-center justify-center font-semibold transition-all duration-300 focus-ring bg-primary-teal text-white hover:bg-bright-aqua hover:shadow-lg hover:shadow-primary-teal/25 hover:-translate-y-1 px-8 py-4 text-lg rounded-xl border-2 border-primary-teal hover:border-bright-aqua"
+                >
+                  <span className="relative z-10">Send me the Dispatches →</span>
+                </a>
+              </div>
+              <p className="text-sm text-gray-400">
+                Join 1,500+ curious operators reframing their lens on work.
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
 
       <style jsx>{`
@@ -324,6 +348,21 @@ export function FaultLines() {
           50% {
             transform: scale(1.2);
             opacity: 0.8;
+          }
+        }
+
+        @keyframes earthquake-rings {
+          0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 1;
+          }
+          70% {
+            transform: translate(-50%, -50%) scale(1.5);
+            opacity: 0.3;
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1.8);
+            opacity: 0;
           }
         }
         

@@ -154,7 +154,7 @@ try {
         'success' => true,
         'message' => 'Thank you! Your Misfits OS Blueprint is being prepared.',
         'lead_score' => $lead_score,
-        'redirect_url' => '/misfits-os/thanks?email=' . urlencode($email)
+        'redirect_url' => '/misfits-os-for-business/thanks?email=' . urlencode($email)
     ];
 
     // Trigger email if we have email service configured

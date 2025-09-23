@@ -1,0 +1,9 @@
+form_id,form_type,canonical_handler,pages,existing_handler,status
+1,contact_general,/api/forms/1/submit,"https://zokratiq.com",/contact.php,needs_standardization
+2,newsletter_optin,/api/forms/2/submit,"https://zokratiq.com/labs,https://zokratiq.com/resources,https://zokratiq.com/cracks",unknown,needs_implementation
+3,download_leadmagnet,/api/forms/3/submit,https://zokratiq.com/linkedin-optimizer,unknown,needs_implementation
+4,download_leadmagnet,/api/forms/4/submit,https://zokratiq.com/misfits-os-for-business,/api/misfits-os-form.php,active_needs_enhancement
+5,intake_booking,/api/forms/5/submit,https://zokratiq.com/misfits,unknown,needs_implementation
+6,tool_usage,/api/forms/6/submit,https://zokratiq.com/linkedin-optimizer,javascript_only,needs_backend
+7,assessment_tool,/api/forms/7/submit,"https://zokratiq.com/linkedin-optimizer,https://zokratiq.com/cognitive-sameness-diagnostic",javascript_only,needs_backend
+8,community_signup,/api/forms/8/submit,https://zokratiq.com/misfits,unknown,needs_implementation

@@ -1,0 +1,335 @@
+# Zokratiq Email Automation Flows
+# Generated: 2025-09-23
+# Compliance: GDPR/EU, Double Opt-in, List-Unsubscribe
+
+global_settings:
+  from_address: "hello@zokratiq.com"
+  reply_to: "team@zokratiq.com"
+  owner_notification_email: "ops@zokratiq.com"
+  locale_primary: "en-GB"
+  locale_secondary: "nl-NL"
+  unsubscribe_endpoint: "https://zokratiq.com/unsubscribe"
+  consent_policy_version: "2025-09-23"
+
+utm_defaults:
+  utm_source: "zokratiq_email"
+  utm_medium: "email"
+  utm_campaign: "automated_flow"
+
+forms:
+  - form_id: 1
+    type: contact_general
+    name: "General Contact Form"
+    consent: single_opt_in  # Transactional only
+    existing_automation: "general_contact_flow"
+    action: enhance
+    sequence:
+      - id: user_receipt
+        trigger: immediate
+        delay: 0m
+        email: emails/zokratiq_contact_user_receipt.mjml
+        type: transactional
+        track_opens: false
+      - id: admin_notify
+        trigger: immediate
+        delay: 0m
+        email: emails/zokratiq_contact_admin_notify.mjml
+        type: transactional
+        to: "{{owner_notification_email}}"
+        track_opens: false
+    tags: ["contact", "inquiry"]
+    ga4_events: ["form_submit", "contact_inquiry"]
+
+  - form_id: 2
+    type: newsletter_optin
+    name: "Newsletter Signup (Labs/Resources/Cracks)"
+    consent: double_opt_in  # GDPR compliance
+    existing_automation: "signal_newsletter_flow"
+    action: bind_and_enhance
+    sequence:
+      - id: doi
+        trigger: immediate
+        delay: 0m
+        email: emails/zokratiq_doi.mjml
+        type: transactional
+        track_opens: true
+        required_confirmation: true
+      - id: welcome
+        trigger: on_confirm
+        delay: 0m
+        email: emails/zokratiq_welcome.mjml
+        type: marketing
+        track_opens: true
+      - id: reality_exploration
+        trigger: after_confirm
+        delay: 2d
+        email: emails/zokratiq_reality_exploration.mjml
+        type: marketing
+        track_opens: true
+      - id: how_we_work
+        trigger: after_confirm
+        delay: 5d
+        email: emails/zokratiq_how_we_work.mjml
+        type: marketing
+        track_opens: true
+      - id: proof_case
+        trigger: after_confirm
+        delay: 8d
+        email: emails/zokratiq_proof_case.mjml
+        type: marketing
+        track_opens: true
+      - id: book_discovery
+        trigger: after_confirm
+        delay: 12d
+        email: emails/zokratiq_book_discovery.mjml
+        type: marketing
+        track_opens: true
+    tags: ["newsletter", "signal_subscriber", "prospect"]
+    ga4_events: ["form_submit", "doi_sent", "doi_confirmed", "newsletter_signup"]
+
+  - form_id: 3
+    type: download_leadmagnet
+    name: "LinkedIn Audit Delivery"
+    consent: single_opt_in  # Lead magnet exception
+    existing_automation: none
+    action: create
+    sequence:
+      - id: audit_delivery
+        trigger: immediate
+        delay: 0m
+        email: emails/zokratiq_linkedin_audit_delivery.mjml
+        type: transactional
+        track_opens: true
+        attachment: linkedin_audit_report.pdf
+      - id: admin_notify_audit
+        trigger: immediate
+        delay: 5m
+        email: emails/zokratiq_leadmagnet_admin_notify.mjml
+        type: transactional
+        to: "{{owner_notification_email}}"
+        track_opens: false
+      - id: audit_followup_1
+        trigger: after_delivery
+        delay: 3d
+        email: emails/zokratiq_audit_followup_value.mjml
+        type: marketing
+        track_opens: true
+      - id: audit_followup_2
+        trigger: after_delivery
+        delay: 7d
+        email: emails/zokratiq_audit_book_session.mjml
+        type: marketing
+        track_opens: true
+    tags: ["leadmagnet", "linkedin_audit", "warm_lead"]
+    lead_scoring: true
+    ga4_events: ["form_submit", "leadmagnet_download", "audit_delivered"]
+
+  - form_id: 4
+    type: download_leadmagnet
+    name: "Misfits OS Business Blueprint"
+    consent: single_opt_in  # Lead magnet exception
+    existing_automation: "misfits_os_leadmagnet_flow"
+    action: bind
+    sequence:
+      - id: blueprint_delivery
+        trigger: immediate
+        delay: 0m
+        email: emails/zokratiq_misfits_os_delivery.mjml
+        type: transactional
+        track_opens: true
+        attachment: misfits_os_blueprint.pdf
+      - id: admin_notify_misfits
+        trigger: immediate
+        delay: 5m
+        email: emails/zokratiq_leadmagnet_admin_notify.mjml
+        type: transactional
+        to: "{{owner_notification_email}}"
+        track_opens: false
+      - id: misfits_followup_implementation
+        trigger: after_delivery
+        delay: 4d
+        email: emails/zokratiq_misfits_implementation_tips.mjml
+        type: marketing
+        track_opens: true
+      - id: misfits_followup_booking
+        trigger: after_delivery
+        delay: 10d
+        email: emails/zokratiq_misfits_consultation_offer.mjml
+        type: marketing
+        track_opens: true
+    tags: ["leadmagnet", "misfits_os", "hr_decision_maker"]
+    lead_scoring: true
+    ga4_events: ["form_submit", "leadmagnet_download", "misfits_os_delivered"]
+
+  - form_id: 5
+    type: intake_booking
+    name: "Misfits Talent Intake"
+    consent: single_opt_in  # Transactional service inquiry
+    existing_automation: none
+    action: create
+    sequence:
+      - id: intake_confirmation
+        trigger: immediate
+        delay: 0m
+        email: emails/zokratiq_talent_intake_confirmation.mjml
+        type: transactional
+        track_opens: true
+      - id: admin_notify_talent
+        trigger: immediate
+        delay: 2m
+        email: emails/zokratiq_talent_intake_admin_notify.mjml
+        type: transactional
+        to: "{{owner_notification_email}}"
+        track_opens: false
+      - id: intake_followup_prep
+        trigger: after_booking
+        delay: 1d
+        email: emails/zokratiq_talent_prep_guide.mjml
+        type: transactional
+        track_opens: true
+      - id: intake_followup_reminder
+        trigger: after_booking
+        delay: 6h
+        email: emails/zokratiq_talent_session_reminder.mjml
+        type: transactional
+        track_opens: true
+        condition: "session_scheduled"
+    tags: ["talent_inquiry", "b2b_prospect", "high_intent"]
+    lead_scoring: true
+    ga4_events: ["form_submit", "talent_intake_request", "booking_initiated"]
+
+  - form_id: 6
+    type: tool_usage
+    name: "LinkedIn Profile Extraction"
+    consent: tool_usage_no_storage
+    existing_automation: none
+    action: create_minimal
+    sequence:
+      - id: usage_log
+        trigger: immediate
+        delay: 0m
+        email: none
+        type: analytics_only
+        track_opens: false
+    tags: ["tool_usage", "linkedin", "engagement"]
+    ga4_events: ["tool_usage", "linkedin_extraction"]
+
+  - form_id: 7
+    type: assessment_tool
+    name: "Weirdness/Cognitive Assessment"
+    consent: tool_usage_no_storage
+    existing_automation: none
+    action: create_minimal
+    sequence:
+      - id: assessment_log
+        trigger: immediate
+        delay: 0m
+        email: none
+        type: analytics_only
+        track_opens: false
+    tags: ["assessment", "engagement", "weirdness"]
+    ga4_events: ["assessment_completed", "weirdness_score"]
+
+  - form_id: 8
+    type: community_signup
+    name: "Beta Collective Application"
+    consent: single_opt_in  # Community application
+    existing_automation: none
+    action: create
+    sequence:
+      - id: application_received
+        trigger: immediate
+        delay: 0m
+        email: emails/zokratiq_beta_collective_received.mjml
+        type: transactional
+        track_opens: true
+      - id: admin_notify_beta
+        trigger: immediate
+        delay: 2m
+        email: emails/zokratiq_beta_collective_admin_notify.mjml
+        type: transactional
+        to: "{{owner_notification_email}}"
+        track_opens: false
+      - id: community_nurture_1
+        trigger: after_application
+        delay: 7d
+        email: emails/zokratiq_beta_community_update.mjml
+        type: marketing
+        track_opens: true
+      - id: community_nurture_2
+        trigger: after_application
+        delay: 14d
+        email: emails/zokratiq_beta_exclusive_content.mjml
+        type: marketing
+        track_opens: true
+    tags: ["beta_collective", "community", "early_adopter"]
+    ga4_events: ["form_submit", "beta_application", "community_interest"]
+
+# Email Template Requirements
+email_templates:
+  transactional:
+    - zokratiq_contact_user_receipt
+    - zokratiq_contact_admin_notify
+    - zokratiq_doi
+    - zokratiq_linkedin_audit_delivery
+    - zokratiq_misfits_os_delivery
+    - zokratiq_talent_intake_confirmation
+    - zokratiq_talent_intake_admin_notify
+    - zokratiq_beta_collective_received
+    - zokratiq_beta_collective_admin_notify
+    - zokratiq_leadmagnet_admin_notify
+    - zokratiq_talent_prep_guide
+    - zokratiq_talent_session_reminder
+
+  marketing:
+    - zokratiq_welcome
+    - zokratiq_reality_exploration
+    - zokratiq_how_we_work
+    - zokratiq_proof_case
+    - zokratiq_book_discovery
+    - zokratiq_audit_followup_value
+    - zokratiq_audit_book_session
+    - zokratiq_misfits_implementation_tips
+    - zokratiq_misfits_consultation_offer
+    - zokratiq_beta_community_update
+    - zokratiq_beta_exclusive_content
+
+# Compliance Requirements
+compliance:
+  gdpr:
+    double_opt_in_forms: [2]
+    consent_logging:
+      - timestamp
+      - ip_address
+      - user_agent
+      - source_url
+      - form_id
+      - checkbox_state
+      - policy_version
+      - utm_parameters
+
+  unsubscribe:
+    one_click_header: true
+    visible_link: true
+    preference_center: true
+    suppression_list: true
+
+  email_headers:
+    list_unsubscribe: "<mailto:unsubscribe@zokratiq.com?subject=unsubscribe>, <https://zokratiq.com/unsubscribe?token={{unsubscribe_token}}>"
+    list_unsubscribe_post: "List-Unsubscribe=One-Click"
+
+# Deliverability Settings
+deliverability:
+  sender_authentication:
+    spf: true
+    dkim: true
+    dmarc: true
+
+  reputation_management:
+    bounce_handling: true
+    complaint_handling: true
+    suppression_list: true
+
+  sending_limits:
+    transactional: unlimited
+    marketing: 1000_per_hour

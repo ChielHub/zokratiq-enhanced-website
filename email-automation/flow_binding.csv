@@ -1,0 +1,9 @@
+form_id,form_type,matched_automation_id,match_score,doi_enabled,status,action,reason
+1,contact_general,general_contact_flow,0.65,false,active,enhance,"Existing contact.php handler found, needs standardization and user confirmation"
+2,newsletter_optin,signal_newsletter_flow,0.75,false,active,bind_and_enhance,"Signal newsletter system exists but needs DOI compliance and unified handler"
+3,download_leadmagnet,,0.0,false,missing,create,"No existing automation for LinkedIn audit delivery"
+4,download_leadmagnet,misfits_os_leadmagnet_flow,0.95,false,active,bind,"Excellent match with existing Misfits OS form handler"
+5,intake_booking,,0.0,false,missing,create,"No existing automation for talent intake booking"
+6,tool_usage,,0.0,false,missing,create_minimal,"Tool usage forms need minimal backend logging"
+7,assessment_tool,,0.0,false,missing,create_minimal,"Assessment tools need minimal backend logging"
+8,community_signup,,0.0,false,missing,create,"No existing automation for beta collective applications"

@@ -1,0 +1,50 @@
+<mjml>
+  <mj-head>
+    <mj-title>Confirm your subscription - Zokratiq</mj-title>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" />
+      <mj-text font-size="16px" line-height="1.6" color="#333333" />
+      <mj-button font-size="16px" font-weight="600" border-radius="6px" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#f8fafc">
+    <mj-section background-color="#ffffff" padding="0">
+      <mj-column>
+        <mj-image src="https://zokratiq.com/zokratiq-logo.jpeg" alt="Zokratiq" width="120px" padding="32px 0 24px 0" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="0 24px 40px 24px">
+      <mj-column>
+        <mj-text font-size="28px" font-weight="700" line-height="1.3" color="#1a202c" padding-bottom="16px">
+          Confirm your subscription
+        </mj-text>
+
+        <mj-text padding-bottom="20px">
+          Hi {{first_name}},
+        </mj-text>
+
+        <mj-text padding-bottom="24px">
+          Thanks for subscribing to our newsletter! To comply with EU regulations and ensure you actually want to hear from us, please confirm your subscription by clicking the button below.
+        </mj-text>
+
+        <mj-button background-color="#00B3A6" color="#ffffff" href="{{confirmation_url}}" padding="16px 0">
+          ✓ Yes, I want to subscribe
+        </mj-button>
+
+        <mj-text font-size="14px" color="#666666" padding-top="24px">
+          If you didn't sign up for this newsletter, you can safely ignore this email. You won't be subscribed if you don't click the confirmation button above.
+        </mj-text>
+
+        <mj-divider border-color="#e2e8f0" border-width="1px" padding="32px 0 24px 0" />
+
+        <mj-text font-size="14px" color="#666666" text-align="center">
+          Zokratiq — Reality Exploration Studio<br/>
+          <a href="{{unsubscribe_url}}" style="color: #00B3A6; text-decoration: none;">Unsubscribe</a> |
+          <a href="https://zokratiq.com" style="color: #00B3A6; text-decoration: none;">Visit Website</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

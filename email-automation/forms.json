@@ -1,0 +1,220 @@
+{
+  "scan_date": "2025-09-23",
+  "domain": "zokratiq.com",
+  "scan_summary": {
+    "total_forms_found": 13,
+    "total_pages_scanned": 24,
+    "deduplication_groups": 8,
+    "forms_by_category": {
+      "newsletter_optin": 4,
+      "contact_general": 1,
+      "download_leadmagnet": 1,
+      "intake_booking": 1,
+      "other": 6
+    }
+  },
+  "deduplication_mapping": {
+    "contact_general_signature": {
+      "signature": "name+email+company+primary_challenge+industry+message|contact_general",
+      "forms": ["homepage_contact"],
+      "canonical_form_id": 1
+    },
+    "newsletter_optin_signature": {
+      "signature": "email|newsletter_optin",
+      "forms": ["labs_newsletter", "resources_newsletter", "cracks_newsletter"],
+      "canonical_form_id": 2
+    },
+    "linkedin_audit_signature": {
+      "signature": "email+name|audit_delivery",
+      "forms": ["linkedin_email_capture"],
+      "canonical_form_id": 3
+    },
+    "misfits_os_leadmagnet_signature": {
+      "signature": "email+company+role+hiring_challenge|download_leadmagnet",
+      "forms": ["misfits_os_business_leadmagnet"],
+      "canonical_form_id": 4
+    },
+    "talent_intake_signature": {
+      "signature": "company+role+email+problem+urgency+careers_link|talent_intake",
+      "forms": ["misfits_talent_intake"],
+      "canonical_form_id": 5
+    },
+    "linkedin_tools_signature": {
+      "signature": "linkedin-url|linkedin_extraction",
+      "forms": ["linkedin_profile_extraction"],
+      "canonical_form_id": 6
+    },
+    "assessment_signature": {
+      "signature": "assessment_responses|diagnostic",
+      "forms": ["linkedin_weirdness_assessment", "cognitive_sameness_diagnostic"],
+      "canonical_form_id": 7
+    },
+    "community_signup_signature": {
+      "signature": "name+email+context|community",
+      "forms": ["misfits_beta_collective"],
+      "canonical_form_id": 8
+    }
+  },
+  "canonical_forms": [
+    {
+      "form_id": 1,
+      "form_type": "contact_general",
+      "canonical_name": "General Contact Form",
+      "pages": ["https://zokratiq.com"],
+      "fields": [
+        {"name": "name", "type": "text", "required": true, "label": "Name"},
+        {"name": "email", "type": "email", "required": true, "label": "Email"},
+        {"name": "company", "type": "text", "required": false, "label": "Company"},
+        {"name": "primary_challenge", "type": "select", "required": false, "label": "Primary Challenge"},
+        {"name": "industry", "type": "text", "required": false, "label": "Industry"},
+        {"name": "message", "type": "textarea", "required": false, "label": "Message"}
+      ],
+      "validation_rules": {
+        "email": "valid_email_format",
+        "name": "min_length_2",
+        "message": "max_length_2000"
+      },
+      "success_behavior": "inline_message",
+      "existing_handler": "/contact.php",
+      "utm_tracking": true
+    },
+    {
+      "form_id": 2,
+      "form_type": "newsletter_optin",
+      "canonical_name": "Newsletter Signup",
+      "pages": [
+        "https://zokratiq.com/labs",
+        "https://zokratiq.com/resources",
+        "https://zokratiq.com/cracks"
+      ],
+      "fields": [
+        {"name": "email", "type": "email", "required": true, "label": "Email Address"}
+      ],
+      "validation_rules": {
+        "email": "valid_email_format"
+      },
+      "success_behavior": "redirect_or_inline",
+      "existing_handler": "unknown",
+      "consent_policy": "double_opt_in_required",
+      "utm_tracking": true,
+      "notes": "Multiple variants across site, needs unified handler"
+    },
+    {
+      "form_id": 3,
+      "form_type": "download_leadmagnet",
+      "canonical_name": "LinkedIn Audit Delivery",
+      "pages": ["https://zokratiq.com/linkedin-optimizer"],
+      "fields": [
+        {"name": "email", "type": "email", "required": true, "label": "Email"},
+        {"name": "name", "type": "text", "required": false, "label": "Name"}
+      ],
+      "validation_rules": {
+        "email": "valid_email_format",
+        "name": "min_length_2"
+      },
+      "success_behavior": "asset_delivery",
+      "existing_handler": "unknown",
+      "consent_policy": "single_opt_in_leadmagnet",
+      "asset_type": "linkedin_audit_report"
+    },
+    {
+      "form_id": 4,
+      "form_type": "download_leadmagnet",
+      "canonical_name": "Misfits OS Business Blueprint",
+      "pages": ["https://zokratiq.com/misfits-os-for-business"],
+      "fields": [
+        {"name": "email", "type": "email", "required": true, "label": "Email Address"},
+        {"name": "company", "type": "text", "required": true, "label": "Company"},
+        {"name": "role", "type": "select", "required": true, "label": "Role"},
+        {"name": "hiring_challenge", "type": "select", "required": false, "label": "Biggest Hiring Challenge"}
+      ],
+      "validation_rules": {
+        "email": "valid_email_format",
+        "company": "min_length_2",
+        "role": "required_selection"
+      },
+      "success_behavior": "redirect_to_thanks",
+      "existing_handler": "/api/misfits-os-form.php",
+      "consent_policy": "single_opt_in_leadmagnet",
+      "lead_scoring": true,
+      "asset_type": "misfits_os_blueprint"
+    },
+    {
+      "form_id": 5,
+      "form_type": "intake_booking",
+      "canonical_name": "Misfits Talent Intake",
+      "pages": ["https://zokratiq.com/misfits"],
+      "fields": [
+        {"name": "company", "type": "text", "required": true, "label": "Company/Org Name"},
+        {"name": "role", "type": "text", "required": true, "label": "Your Role"},
+        {"name": "email", "type": "email", "required": true, "label": "Email"},
+        {"name": "problem", "type": "textarea", "required": true, "label": "Problem Description"},
+        {"name": "urgency", "type": "select", "required": true, "label": "Urgency"},
+        {"name": "careers_link", "type": "text", "required": false, "label": "Link to careers page"}
+      ],
+      "validation_rules": {
+        "email": "valid_email_format",
+        "company": "min_length_2",
+        "role": "min_length_2",
+        "problem": "min_length_10_max_1000"
+      },
+      "success_behavior": "booking_redirect",
+      "existing_handler": "unknown",
+      "consent_policy": "single_opt_in_transactional"
+    },
+    {
+      "form_id": 6,
+      "form_type": "tool_usage",
+      "canonical_name": "LinkedIn Profile Extraction",
+      "pages": ["https://zokratiq.com/linkedin-optimizer"],
+      "fields": [
+        {"name": "linkedin_url", "type": "text", "required": true, "label": "LinkedIn URL"}
+      ],
+      "validation_rules": {
+        "linkedin_url": "valid_linkedin_url_format"
+      },
+      "success_behavior": "inline_results",
+      "existing_handler": "javascript_only",
+      "consent_policy": "tool_usage_no_storage"
+    },
+    {
+      "form_id": 7,
+      "form_type": "assessment_tool",
+      "canonical_name": "Weirdness/Cognitive Assessment",
+      "pages": [
+        "https://zokratiq.com/linkedin-optimizer",
+        "https://zokratiq.com/cognitive-sameness-diagnostic"
+      ],
+      "fields": [
+        {"name": "assessment_responses", "type": "multiple_inputs", "required": true, "label": "Assessment Responses"}
+      ],
+      "validation_rules": {
+        "assessment_responses": "required_all_questions"
+      },
+      "success_behavior": "results_display",
+      "existing_handler": "javascript_only",
+      "consent_policy": "tool_usage_no_storage"
+    },
+    {
+      "form_id": 8,
+      "form_type": "community_signup",
+      "canonical_name": "Beta Collective Application",
+      "pages": ["https://zokratiq.com/misfits"],
+      "fields": [
+        {"name": "name", "type": "text", "required": true, "label": "Name"},
+        {"name": "email", "type": "email", "required": true, "label": "Email"},
+        {"name": "weirdness", "type": "text", "required": true, "label": "Weirdness in one sentence"},
+        {"name": "edge_links", "type": "text", "required": true, "label": "Links showing edge"},
+        {"name": "context", "type": "select", "required": true, "label": "Context"}
+      ],
+      "validation_rules": {
+        "email": "valid_email_format",
+        "name": "min_length_2",
+        "weirdness": "min_length_10_max_200"
+      },
+      "success_behavior": "application_submitted",
+      "existing_handler": "unknown",
+      "consent_policy": "application_consent"
+    }
+  ]
+}

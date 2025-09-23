@@ -1,0 +1,89 @@
+<mjml>
+  <mj-head>
+    <mj-title>Your Misfits OS Blueprint is ready - Zokratiq</mj-title>
+    <mj-font name="Inter" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" />
+      <mj-text font-size="16px" line-height="1.6" color="#333333" />
+      <mj-button font-size="16px" font-weight="600" border-radius="6px" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#f8fafc">
+    <mj-section background-color="#ffffff" padding="0">
+      <mj-column>
+        <mj-image src="https://zokratiq.com/zokratiq-logo.jpeg" alt="Zokratiq" width="120px" padding="32px 0 24px 0" />
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="0 24px">
+      <mj-column>
+        <mj-text font-size="28px" font-weight="700" line-height="1.3" color="#1a202c" padding-bottom="16px">
+          Your Misfits OS Blueprint 📋
+        </mj-text>
+
+        <mj-text padding-bottom="20px">
+          Hi there,
+        </mj-text>
+
+        <mj-text padding-bottom="24px">
+          Thanks for downloading the <strong>Misfits OS for Business Blueprint</strong>. This isn't another generic hiring guide—it's a battle-tested framework we've used with 100+ organizations to break their "culture of sameness."
+        </mj-text>
+
+        <mj-section background-color="#f1f5f9" border-radius="8px" padding="20px">
+          <mj-column>
+            <mj-text font-weight="600" color="#1a202c" padding-bottom="12px">
+              🎯 What you'll find inside:
+            </mj-text>
+            <mj-text font-size="14px" color="#475569" padding-bottom="8px">
+              ✓ The 5 stages of organizational sameness (and where you are)
+            </mj-text>
+            <mj-text font-size="14px" color="#475569" padding-bottom="8px">
+              ✓ How to identify "hiring for similarity" blind spots
+            </mj-text>
+            <mj-text font-size="14px" color="#475569" padding-bottom="8px">
+              ✓ Misfits OS implementation roadmap (90-day plan)
+            </mj-text>
+            <mj-text font-size="14px" color="#475569">
+              ✓ Real case studies from companies who got it right
+            </mj-text>
+          </mj-column>
+        </mj-section>
+
+        <mj-button background-color="#00B3A6" color="#ffffff" href="{{blueprint_download_url}}" padding="24px 0">
+          📥 Download Your Blueprint
+        </mj-button>
+
+        <mj-text padding-bottom="24px" padding-top="24px">
+          <strong>Pro tip:</strong> Don't just read it. The companies that see real results are the ones who actually implement the framework within 30 days.
+        </mj-text>
+
+        <mj-text padding-bottom="24px">
+          Questions about implementation? I'm running a <strong>free Misfits OS workshop</strong> next week where I'll walk through the blueprint step-by-step.
+        </mj-text>
+
+        <mj-button background-color="transparent" color="#00B3A6" border="2px solid #00B3A6" href="https://zokratiq.com/workshop?utm_source=email&utm_campaign=misfits_os_delivery" padding="0 0 24px 0">
+          🎪 Join the Workshop
+        </mj-button>
+
+        <mj-text>
+          Ready to break the sameness cycle,<br/>
+          <strong>Chiel</strong><br/>
+          <em style="color: #64748b;">Founder, Zokratiq</em>
+        </mj-text>
+
+        <mj-text font-size="14px" color="#64748b" padding-top="16px">
+          P.S. - Reply to this email if you want me to review your current hiring process. I'll give you one specific blind spot you're missing (takes 2 minutes).
+        </mj-text>
+
+        <mj-divider border-color="#e2e8f0" border-width="1px" padding="32px 0 24px 0" />
+
+        <mj-text font-size="14px" color="#666666" text-align="center">
+          Zokratiq — Reality Exploration Studio<br/>
+          <a href="{{unsubscribe_url}}" style="color: #00B3A6; text-decoration: none;">Unsubscribe</a> |
+          <a href="https://zokratiq.com" style="color: #00B3A6; text-decoration: none;">Visit Website</a> |
+          <a href="https://wa.me/31612345678" style="color: #00B3A6; text-decoration: none;">WhatsApp</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

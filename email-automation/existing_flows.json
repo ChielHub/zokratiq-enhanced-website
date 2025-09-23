@@ -1,0 +1,107 @@
+{
+  "discovery_date": "2025-09-23",
+  "domain": "zokratiq.com",
+  "discovery_summary": {
+    "total_existing_flows": 3,
+    "active_providers": ["sqlite_database", "custom_php"],
+    "newsletter_flows": 1,
+    "custom_automation_flows": 2
+  },
+  "existing_flows": [
+    {
+      "flow_id": "signal_newsletter_flow",
+      "provider": "sqlite_database",
+      "type": "newsletter",
+      "name": "The Signal Newsletter",
+      "status": "active",
+      "doi_enabled": false,
+      "template_id": "signal_template",
+      "from_email": "signal@zokratiq.com",
+      "from_name": "The Signal by Zokratiq",
+      "subscriber_table": "subscribers",
+      "database_path": "/var/www/html/zokratiq.com/api/subscribers.db",
+      "automation_type": "custom_php",
+      "features": {
+        "campaign_management": true,
+        "template_system": true,
+        "subscriber_tracking": true,
+        "analytics": "basic"
+      },
+      "last_modified": "2025-09-19"
+    },
+    {
+      "flow_id": "misfits_os_leadmagnet_flow",
+      "provider": "custom_php",
+      "type": "leadmagnet",
+      "name": "Misfits OS Business Blueprint",
+      "status": "active",
+      "endpoint": "/api/misfits-os-form.php",
+      "database_table": "misfits_os_leads",
+      "lead_scoring": true,
+      "doi_enabled": false,
+      "consent_policy": "single_opt_in",
+      "features": {
+        "utm_tracking": true,
+        "lead_scoring": true,
+        "duplicate_protection": true,
+        "subscriber_sync": true
+      },
+      "automation_steps": [
+        "lead_capture",
+        "score_calculation",
+        "email_queue_log",
+        "redirect_to_thanks"
+      ],
+      "last_modified": "2025-09-22"
+    },
+    {
+      "flow_id": "general_contact_flow",
+      "provider": "custom_php",
+      "type": "transactional",
+      "name": "General Contact Form Handler",
+      "status": "unknown",
+      "endpoint": "/contact.php",
+      "doi_enabled": false,
+      "consent_policy": "transactional",
+      "features": {
+        "admin_notification": true,
+        "user_confirmation": "unknown"
+      },
+      "automation_steps": [
+        "form_submission",
+        "admin_notification"
+      ],
+      "last_modified": "2025-09-05"
+    }
+  ],
+  "provider_analysis": {
+    "sqlite_database": {
+      "schema_file": "email-service-schema.sql",
+      "tables": [
+        "email_templates",
+        "email_campaigns",
+        "email_sends",
+        "email_settings",
+        "subscribers",
+        "misfits_os_leads"
+      ],
+      "smtp_configured": false,
+      "delivery_method": "php_mail"
+    },
+    "missing_providers": {
+      "external_esp": "No MailerLite, ConvertKit, or Brevo integration detected",
+      "transactional_service": "No Resend, Postmark, or SES integration found",
+      "automation_platform": "No n8n or Zapier workflows discovered"
+    }
+  },
+  "gaps_identified": [
+    "No double opt-in implementation for newsletter flows",
+    "No automated drip sequences beyond single welcome emails",
+    "No unsubscribe management system",
+    "No GDPR compliance logging (IP, timestamp, consent)",
+    "No email deliverability optimization (DKIM/SPF/DMARC)",
+    "Multiple newsletter signup forms but no unified flow",
+    "Limited email template system",
+    "No automated follow-up sequences"
+  ]
+}
